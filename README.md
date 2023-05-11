@@ -5,10 +5,8 @@ bodies using the Mage library which is itself based on the SDL.
 
 # Prerequisites
 
-Alire installed
-A GNAT compiler installed, if you don't have one, Alire can install the FSF
-version.
-A 
+Alire installed. The GNAT compiler, if you don't have one, Alire can install the FSF
+version. GNAT Studio. If you don't have it you can download it from a github release.
 
 # Run the "getting started" example
 
