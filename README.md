@@ -47,3 +47,7 @@ All solutions should run out of the box, if they don't it is a bug, feel free to
 
 The content is generated using "templated" files, which are situated in the various `template/` directories.
 Those files are transformed into "final" ada files through the use of `adacut`.
+
+Once you have updated a `template/xxx.adb` file, you can regenerate the associated files by calling
+
+`make generate`
