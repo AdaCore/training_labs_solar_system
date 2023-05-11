@@ -6,6 +6,6 @@ authors = ["Léo Germond"]
 maintainers = ["Léo Germond <germond@adacore.com>"]
 maintainers-logins = ["leogermond"]
 
-executables = ["labs_solar_system"]
+executables = ["getting_started"]
 [[depends-on]]
 mage = "~0.5.0"
