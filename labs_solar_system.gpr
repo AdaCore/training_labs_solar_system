@@ -1,0 +1,54 @@
+with "config/labs_solar_system_config.gpr";
+
+project Labs_Solar_System is
+
+   type Lab_T is ("Declarations", "Basic_Types", "Statements"); 
+   Lab : Lab_T := external ("Lab", "Declarations");
+
+   type Mode_Type is ("Problem", "Solution");
+   Mode : Mode_Type := external ("Mode", "Problem");
+
+   Answer_Mode_Dir := "";
+   case Mode is
+      when "Problem" =>
+         Answer_Mode_Dir := "src";
+
+      when "Solution" =>
+         Answer_Mode_Dir := "answers";
+   end case;
+
+   Lab_Number := "";
+   Lab_Name := "";
+   case Lab is
+   when "Declarations" =>
+      Lab_Number := "020";
+      Lab_Name := "declarations";
+   when "Basic_Types" =>
+      Lab_Number := "030";
+      Lab_Name := "basic_types";
+   when "Statements" =>
+      Lab_Number := "040";
+      Lab_Name := "statements";
+   end case;
+   Lab_Source_Dir :=  "src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir;
+
+   for Source_Dirs use ("config/", "src/common", Lab_Source_Dir);
+   for Object_Dir use "obj/" & Labs_Solar_System_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use (Lab_Name & "_main");
+
+   package Compiler is
+      for Default_Switches ("Ada") use Labs_Solar_System_Config.Ada_Compiler_Switches;
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+
+end Labs_Solar_System;
+

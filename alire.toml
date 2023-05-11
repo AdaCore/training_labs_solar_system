@@ -1,0 +1,9 @@
+name = "labs_solar_system"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Léo Germond"]
+maintainers = ["Léo Germond <germond@adacore.com>"]
+maintainers-logins = ["leogermond"]
+
+executables = ["labs_solar_system"]
