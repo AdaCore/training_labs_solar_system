@@ -3,7 +3,7 @@ with "mage.gpr";
 
 project Labs_Solar_System is
 
-   type Lab_T is ("Getting_Started"); 
+   type Lab_T is ("Getting_Started", "Array_Types");
    Lab : Lab_T := external ("Lab", "Getting_Started");
 
    type Mode_Type is ("Problem", "Solution");
@@ -25,10 +25,13 @@ project Labs_Solar_System is
       Lab_Number := "000";
       Lab_Name := "getting_started";
       Answer_Mode_Dir := "src"; -- no separate "answer" dir
+   when "Array_Types" =>
+      Lab_Number := "050";
+      Lab_Name := "array_types";
    end case;
    Lab_Source_Dir :=  "src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir;
 
-   for Source_Dirs use ("config/", Lab_Source_Dir);
+   for Source_Dirs use ("config/", "src/common/", Lab_Source_Dir);
    for Object_Dir use "obj/" & Labs_Solar_System_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Exec_Dir use "bin";

@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2009, AdaCore                  --
+--                 Copyright (C) 2008-2023, AdaCore                  --
 --                                                                   --
 -- Labs is free  software; you can redistribute it and/or modify  it --
 -- under the terms of the GNU General Public License as published by --
@@ -17,29 +17,30 @@
 -- Place - Suite 330, Boston, MA 02111-1307, USA.                    --
 -----------------------------------------------------------------------
 
-with Ada.Real_Time;                     use Ada.Real_Time;
+with Ada.Real_Time; use Ada.Real_Time;
+with Mage;          use Mage;
+with Mage.Draw;     use Mage.Draw;
+with Mage.Event;    use Mage.Event;
+with Float_Maths;   use Float_Maths;
 
-with Display;                           use Display;
-with Display.Basic;                     use Display.Basic;
-with Libm_Single;                       use Libm_Single;
-
-
-procedure Main is
+procedure Array_Types_Main is
 
    --  QUESTION 1 - Part 1
 
-   --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon, Satellite
+   --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
+   --  and Satellite
    type Bodies_Enum_T is (Sun, Earth, Moon, Satellite);
 
    --  define type Parameters_Enum_T as an enumeration of parameter X, Y,
    --  Radius, Speed, Distance, Angle
    type Parameters_Enum_T is (X, Y, Radius, Speed, Distance, Angle);
 
-   -- define type Bodies_Array_T as an array of float indexed by bodies and
-   -- parameters
+   --  define type Bodies_Array_T as an array of float indexed by bodies and
+   --  parameters
    type Bodies_Array_T is array (Bodies_Enum_T, Parameters_Enum_T) of Float;
 
-   --  define type Colors_Array_T as an array of color (RGBA_T) indexed by bodies
+   --  define type Colors_Array_T as an array of color (RGBA_T) indexed by
+   --  bodies
    type Colors_Array_T is array (Bodies_Enum_T) of RGBA_T;
 
    --  declare variable Bodies which is an instance of Bodies_Array_T
@@ -51,7 +52,8 @@ procedure Main is
    --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining the loop period
+   --  declare a constant Period of 40 milliseconds of type Time_Span
+   --  which defines the looping period
    Period  : constant Time_Span := Milliseconds (40);
 
    --  reference to the application window
@@ -62,18 +64,17 @@ procedure Main is
 
 begin
 
-   -- Create a window 240x320
-   Window := Create_Window(Width  => 240,
-                           Height => 320,
-                           Name   => "Solar System");
+   --  create a window 240x320
+   Window := Create_Window (Width  => 240,
+                            Height => 320,
+                            Name   => "Solar System");
 
-   -- Retrieve the graphical canvas from the window
+   --  retrieve the graphical canvas from the window
    Canvas := Get_Canvas (Window);
 
-
-
    --  QUESTION 1 - Part 2
-   --  initialize Bodies variable with parameters for each body using an aggregate
+   --  initialize Bodies variable with parameters for each body using an
+   --  aggregate:
    --    Sun Distance = 0.0, Angle = 0.0, Speed = 0.0, Radius = 20.0;
    --    Earth Distance = 50.0, Angle = 0.0, Speed = 0.02, Radius = 5.0;
    --    Moon Distance = 15.0, Angle = 0.0, Speed = 0.04, Radius = 2.0;
@@ -111,7 +112,7 @@ begin
               Moon => White,
               Satellite => Red);
 
-   --  initialize the Next step time begin the current time (Clock) + the period
+   --  initialize the Next step time as current time (Clock) + period
    Next := Clock + Period;
 
    while not Is_Killed loop
@@ -120,15 +121,16 @@ begin
       --  create a loop to update each body position and angles
       --  Note: the Sun does not orbit against any body, you may declare
       --  and use a subtype to reference the orbiting bodies
-      --    the position of an object around (0,0) at distance d with an angle a
-      --    is (d*cos(a), d*sin(a))
-      --    update angle parameter of each body adding speed to the previous angle
+      --    - the position of an object around (0,0) at distance d with an
+      --    angle a is (d*cos(a), d*sin(a))
+      --    - update angle parameter of each body adding speed to the previous
+      --    angle.
       for B in Earth .. Satellite loop
          --  This solution illustrates the use of a block statement with
          --  local constants to reduce repetition and improve readability
          --  in the loop body.
          declare
-            This_Pred : constant Bodies_Enum_T := Bodies_Enum_T'Pred(B);
+            This_Pred : constant Bodies_Enum_T := Bodies_Enum_T'Pred (B);
             D         : constant Float := Bodies (B, Distance);
             A         : constant Float := Bodies (B, Angle);
          begin
@@ -142,22 +144,23 @@ begin
 
       --  QUESTION 2 - part 2
       --  create a loop to draw every objects
-      --    use the Draw_Sphere procedure with the Point3D argument (using Z = 0.0) do to it
+      --    use the Draw_Sphere procedure with the Point3D
+      --    argument (using Z = 0.0) to draw
       for B in Bodies_Enum_T loop
-         Draw_Sphere(Canvas   => Canvas,
-                     Position => (Bodies (B, X), Bodies (B, Y), 0.0),
-                     Radius   => Bodies (B, Radius),
-                     Color    => Colors(B));
+         Draw_Sphere (Canvas   => Canvas,
+                      Position => (Bodies (B, X), Bodies (B, Y), 0.0),
+                      Radius   => Bodies (B, Radius),
+                      Color    => Colors (B));
       end loop;
 
       --  update the screen using procedure Swap_Buffers
-      Swap_Buffers(Window);
+      Handle_Events (Window);
 
-      -- wait until Next
+      --  wait until Next
       delay until Next;
 
       --  update the Next time adding the period for the next step
       Next := Next + Period;
 
    end loop;
-end Array_Type_Main;
+end Array_Types_Main;
