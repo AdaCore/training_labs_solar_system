@@ -17,6 +17,11 @@ With Alire simply run
 After a time downloading the libraries, and compiling the example, you should
 see a window appearing with a red ball bouncing of the corners.
 
+# Known issue
+
+On Windows `alr run` may fail silently. In that case start `alr edit` and run the "getting_starting" lab
+to check that it works correctly.
+
 # Solve the exercises
 
 On order to work on the labs you must first start gnat studio.
