@@ -1,9 +1,10 @@
 with "config/labs_solar_system_config.gpr";
+with "mage.gpr";
 
 project Labs_Solar_System is
 
-   type Lab_T is ("Declarations", "Basic_Types", "Statements"); 
-   Lab : Lab_T := external ("Lab", "Declarations");
+   type Lab_T is ("Getting_Started"); 
+   Lab : Lab_T := external ("Lab", "Getting_Started");
 
    type Mode_Type is ("Problem", "Solution");
    Mode : Mode_Type := external ("Mode", "Problem");
@@ -20,19 +21,14 @@ project Labs_Solar_System is
    Lab_Number := "";
    Lab_Name := "";
    case Lab is
-   when "Declarations" =>
-      Lab_Number := "020";
-      Lab_Name := "declarations";
-   when "Basic_Types" =>
-      Lab_Number := "030";
-      Lab_Name := "basic_types";
-   when "Statements" =>
-      Lab_Number := "040";
-      Lab_Name := "statements";
+   when "Getting_Started" =>
+      Lab_Number := "000";
+      Lab_Name := "getting_started";
+      Answer_Mode_Dir := "src"; -- no separate "answer" dir
    end case;
    Lab_Source_Dir :=  "src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir;
 
-   for Source_Dirs use ("config/", "src/common", Lab_Source_Dir);
+   for Source_Dirs use ("config/", Lab_Source_Dir);
    for Object_Dir use "obj/" & Labs_Solar_System_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Exec_Dir use "bin";
@@ -45,6 +41,10 @@ project Labs_Solar_System is
    package Binder is
       for Switches ("Ada") use ("-Es"); --  Symbolic traceback
    end Binder;
+
+   package Linker is
+      for Switches ("Ada") use Mage.Linker_Ada_Switches;
+   end Linker;
 
    package Install is
       for Artifacts (".") use ("share");
