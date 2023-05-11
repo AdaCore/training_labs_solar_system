@@ -35,9 +35,6 @@ procedure Record_Types_Main is
    subtype Rotating_Bodies_T is Bodies_Enum_T range Earth .. Satellite;
 
    --  define a type Body_T to store every information about a body
-   --   X, Y, Distance, Speed, Angle, Color, Radius
-
-   --  define a type Body_T to store every information about a body
    --   X, Y, Distance, Speed, Angle, Color type is RGBA_T, Radius
 
    --  define type Bodies_Array_T as an array of Body_T indexed by bodies
