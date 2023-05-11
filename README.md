@@ -42,3 +42,8 @@ Warning: After having changed the "Mode" variable, you may need to recompile the
 by cleaning it.
 
 All solutions should run out of the box, if they don't it is a bug, feel free to open a ticket.
+
+# Updating the content
+
+The content is generated using "templated" files, which are situated in the various `template/` directories.
+Those files are transformed into "final" ada files through the use of `adacut`.
