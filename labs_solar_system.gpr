@@ -3,7 +3,7 @@ with "mage.gpr";
 
 project Labs_Solar_System is
 
-   type Lab_T is ("Getting_Started", "Array_Types", "Record_Types");
+   type Lab_T is ("Getting_Started", "Array_Types", "Record_Types", "Subprograms");
    Lab : Lab_T := external ("Lab", "Getting_Started");
 
    type Mode_Type is ("Problem", "Solution");
@@ -31,6 +31,9 @@ project Labs_Solar_System is
    when "Record_Types" =>
       Lab_Number := "060";
       Lab_Name := "record_types";
+   when "Subprograms" =>
+      Lab_Number := "070";
+      Lab_Name := "subprograms";
    end case;
    Lab_Source_Dir :=  "src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir;
 
