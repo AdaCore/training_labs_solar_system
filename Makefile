@@ -3,7 +3,7 @@
 all:
 	# nothing
 
-generate: generate_basics generate_packages generate_private_types ALWAYS
+generate: generate_basics generate_packages generate_private_types generate_interfacing_with_c ALWAYS
 
 generate_basics: ALWAYS
 	adacut -m question src/050_array_types/template/array_types_main.adb > src/050_array_types/src/array_types_main.adb
@@ -27,3 +27,9 @@ generate_private_types: $(template_private_types)
 		adacut -m answer $$f > src/110_private_types/answers/$$(basename $$f); \
 	done
 
+template_interfacing_with_c := $(wildcard src/230_interfacing_with_c/template/*.ad?)
+generate_interfacing_with_c: $(template_interfacing_with_c)
+	for f in $^; do \
+		adacut -m question $$f > src/230_interfacing_with_c/src/$$(basename $$f); \
+		adacut -m answer $$f > src/230_interfacing_with_c/answers/$$(basename $$f); \
+	done

@@ -9,7 +9,8 @@ project Labs_Solar_System is
        "Record_Types",
        "Subprograms",
        "Packages",
-       "Private_Types");
+       "Private_Types",
+       "Interfacing_With_C");
    Lab : Lab_T := external ("Lab", "Getting_Started");
 
    type Mode_Type is ("Problem", "Solution");
@@ -26,6 +27,8 @@ project Labs_Solar_System is
 
    Lab_Number := "";
    Lab_Name := "";
+   Lab_Languages := ("Ada");
+   Lab_Source_Dir := ();
    case Lab is
    when "Getting_Started" =>
       Lab_Number := "000";
@@ -46,10 +49,16 @@ project Labs_Solar_System is
    when "Private_Types" =>
       Lab_Number := "110";
       Lab_Name := "private_types";
+   when "Interfacing_With_C" =>
+      Lab_Number := "230";
+      Lab_Name := "interfacing_with_c";
+      Lab_Languages := Lab_Languages & "C";
+      Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir & "/compute_c");
    end case;
-   Lab_Source_Dir :=  "src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir;
+   Lab_Source_Dir := Lab_Source_Dir & ("src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir);
 
-   for Source_Dirs use ("config/", "src/common/", Lab_Source_Dir);
+   for Languages use Lab_Languages;
+   for Source_Dirs use ("config/", "src/common/") & Lab_Source_Dir;
    for Object_Dir use "obj/" & Labs_Solar_System_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Exec_Dir use "bin";
@@ -57,6 +66,7 @@ project Labs_Solar_System is
 
    package Compiler is
       for Default_Switches ("Ada") use Labs_Solar_System_Config.Ada_Compiler_Switches;
+      for Default_Switches ("C") use ("-Wall", "-pedantic", "-Werror");
    end Compiler;
 
    package Binder is
