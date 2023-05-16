@@ -55,14 +55,14 @@ package body Solar_System is
    --  Question: import the 'compute_x' function from the C compute library
    function Compute_X (Body_To_Move : Body_T) return Float
       --$ line question
-      is (0.0); 
+      is (0.0);
       --$ line answer
       with Import, Convention => C, External_Name => "compute_x";
 
    --  Question: import the 'compute_y' function from the C compute library
    function Compute_Y (Body_To_Move : Body_T) return Float
       --$ line question
-      is (0.0); 
+      is (0.0);
       --$ line answer
       with Import, Convention => C, External_Name => "compute_y";
 
