@@ -10,6 +10,7 @@ project Labs_Solar_System is
        "Subprograms",
        "Packages",
        "Private_Types",
+       "Exceptions",
        "Interfacing_With_C");
    Lab : Lab_T := external ("Lab", "Getting_Started");
 
@@ -49,6 +50,10 @@ project Labs_Solar_System is
    when "Private_Types" =>
       Lab_Number := "110";
       Lab_Name := "private_types";
+   when "Exceptions" =>
+      Lab_Number := "190";
+      Lab_Name := "exceptions";
+      Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/common");
    when "Interfacing_With_C" =>
       Lab_Number := "230";
       Lab_Name := "interfacing_with_c";
