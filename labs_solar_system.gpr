@@ -11,7 +11,8 @@ project Labs_Solar_System is
        "Packages",
        "Private_Types",
        "Exceptions",
-       "Interfacing_With_C");
+       "Interfacing_With_C",
+       "Tasking_Protected_Objects");
    Lab : Lab_T := external ("Lab", "Getting_Started");
 
    type Mode_Type is ("Problem", "Solution");
@@ -59,6 +60,9 @@ project Labs_Solar_System is
       Lab_Name := "interfacing_with_c";
       Lab_Languages := Lab_Languages & "C";
       Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir & "/compute_c");
+   when "Tasking_Protected_Objects" =>
+      Lab_Number := "adv_240";
+      Lab_Name := "tasking_protected_objects";
    end case;
    Lab_Source_Dir := Lab_Source_Dir & ("src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir);
 

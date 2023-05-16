@@ -3,7 +3,13 @@
 all:
 	# nothing
 
-generate: generate_basics generate_packages generate_private_types generate_interfacing_with_c ALWAYS
+generate: \
+	generate_basics \
+	generate_packages \
+	generate_private_types \
+	generate_interfacing_with_c \
+	generate_tasking_protected_objects \
+	ALWAYS
 
 generate_basics: ALWAYS
 	adacut -m question src/050_array_types/template/array_types_main.adb > src/050_array_types/src/array_types_main.adb
@@ -34,4 +40,11 @@ generate_interfacing_with_c: $(template_interfacing_with_c)
 	for f in $^; do \
 		adacut -m question $$f > src/230_interfacing_with_c/src/$$(basename $$f); \
 		adacut -m answer $$f > src/230_interfacing_with_c/answers/$$(basename $$f); \
+	done
+
+template_tasking_protected_objects := $(wildcard src/adv_240_tasking_protected_objects/template/*.ad?)
+generate_tasking_protected_objects: $(template_tasking_protected_objects)
+	for f in $^; do \
+		adacut -m question $$f > src/adv_240_tasking_protected_objects/src/$$(basename $$f); \
+		adacut -m answer $$f > src/adv_240_tasking_protected_objects/answers/$$(basename $$f); \
 	done
