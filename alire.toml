@@ -6,6 +6,7 @@ authors = ["Léo Germond"]
 maintainers = ["Léo Germond <germond@adacore.com>"]
 maintainers-logins = ["leogermond"]
 
+licenses = "GPL-3.0-or-later"
 executables = ["getting_started_main"]
 [[depends-on]]
 mage = "~0.5.0"
