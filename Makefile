@@ -7,6 +7,7 @@ generate: \
 	generate_basics \
 	generate_packages \
 	generate_private_types \
+	generate_access_types \
 	generate_interfacing_with_c \
 	generate_tasking_protected_objects \
 	ALWAYS
@@ -33,6 +34,13 @@ generate_private_types: $(template_private_types)
 	for f in $^; do \
 		adacut -m question $$f > src/110_private_types/src/$$(basename $$f); \
 		adacut -m answer $$f > src/110_private_types/answers/$$(basename $$f); \
+	done
+
+template_access_types := $(wildcard src/140_access_types/template/*.ad?)
+generate_access_types: $(template_access_types)
+	for f in $^; do \
+		adacut -m question $$f > src/140_access_types/src/$$(basename $$f); \
+		adacut -m answer $$f > src/140_access_types/answers/$$(basename $$f); \
 	done
 
 template_interfacing_with_c := $(wildcard src/230_interfacing_with_c/template/*.ad?)

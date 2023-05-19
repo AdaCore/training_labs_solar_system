@@ -10,6 +10,7 @@ project Labs_Solar_System is
        "Subprograms",
        "Packages",
        "Private_Types",
+       "Access_Types",
        "Exceptions",
        "Interfacing_With_C",
        "Tasking_Protected_Objects");
@@ -51,6 +52,10 @@ project Labs_Solar_System is
    when "Private_Types" =>
       Lab_Number := "110";
       Lab_Name := "private_types";
+   when "Access_Types" =>
+      Lab_Number := "140";
+      Lab_Name := "access_types";
+      Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/common");
    when "Exceptions" =>
       Lab_Number := "190";
       Lab_Name := "exceptions";
