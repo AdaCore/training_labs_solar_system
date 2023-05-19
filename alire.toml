@@ -1,6 +1,7 @@
 name = "labs_solar_system"
 description = "A set of SDL-based exercises to learn Ada"
 version = "0.1.1"
+website = "https://github.com/AdaCore/training_labs_solar_system/"
 
 authors = ["Léo Germond"]
 maintainers = ["Léo Germond <germond@adacore.com>"]
