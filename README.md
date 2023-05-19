@@ -46,6 +46,13 @@ by cleaning it.
 
 All solutions should run out of the box, if they don't it is a bug, feel free to open a ticket.
 
+# Known issues
+
+If you are missing `gnat` or `gprbuild` from your PATH while running an Alire command, you may end up
+with a corrupted Alire state, at this point, any further `alr` may fail to run, complaining about
+missing config file. In that case, you must erase the `config/` and `alire/` directories, so that
+Alire can start back from scratch.
+
 # Updating the content
 
 The content is generated using "templated" files, which are situated in the various `template/` directories.
