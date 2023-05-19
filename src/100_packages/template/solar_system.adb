@@ -17,10 +17,11 @@
 -- along with this program.  If not, see                             --
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
+
 --$ begin answer
 with Float_Maths; use Float_Maths;
---$ end answer
 
+--$ end answer
 package body Solar_System is
 
    --$ begin answer

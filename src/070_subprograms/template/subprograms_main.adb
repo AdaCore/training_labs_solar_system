@@ -17,6 +17,7 @@
 -- along with this program.  If not, see                             --
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
+
 with Ada.Real_Time; use Ada.Real_Time;
 with Mage;          use Mage;
 with Mage.Draw;     use Mage.Draw;

@@ -17,6 +17,7 @@
 -- along with this program.  If not, see                             --
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
+
 package Solar_System is
 
 end Solar_System;

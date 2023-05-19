@@ -17,6 +17,7 @@
 -- along with this program.  If not, see                             --
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
+
 with Float_Maths; use Float_Maths;
 
 package body Solar_System is

@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage;      use Mage;
+with Mage; use Mage;
 
 package Solar_System is
 
