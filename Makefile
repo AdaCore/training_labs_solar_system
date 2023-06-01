@@ -1,7 +1,9 @@
 .PHONY: ALWAYS
 
-all:
-	# nothing
+all: doc_html
+
+doc_html: ALWAYS
+	make -C doc html
 
 generate: \
 	generate_basics \
