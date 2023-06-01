@@ -27,7 +27,7 @@ Question 1
     Class diagram for Q.1 and Q.2
 
 
-Create a hierarchy of interfaces as follow
+Create a hierarchy of interfaces as follows
 
 * :code:`Orbit_Ref_I` as an interface implementing :code:`Get_X` and
   :code:`Get_Y` (can be used as an orbit reference)
@@ -42,7 +42,7 @@ Create a hierarchy of interfaces as follow
 Question 2
 ----------
 
-Create a hierarchy of tagged types as follow
+Create a hierarchy of tagged types as follows
 
 * :code:`Body_Base_T` to store a position (:code:`X`, :code:`Y`) and
   implementing :code:`Orbit_Ref_I`

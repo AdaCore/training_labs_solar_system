@@ -43,7 +43,7 @@ Have both the :code:`Satellite` and the :code:`Moon` turn around the :code:`Eart
 Question 3
 ----------
 
-All the objects are turning counter-clockwise, make the :code:`Moon` turning clockwise.
+All the objects are turning counter-clockwise, make the :code:`Moon` turn clockwise.
 
 ---------------------
 Question 4 (Advanced)

@@ -19,8 +19,8 @@ The purpose of this exercise is to animate the planets using subprograms.
 Question 1
 ----------
 
-Implement :code:`Compute_X` and :code:`Compute_Y` function and use them in the main loop to
-update :code:`X` and :code:`Y` coordinates of every objects.
+Implement :code:`Compute_X` and :code:`Compute_Y` functions and use them in the main loop to
+update :code:`X` and :code:`Y` coordinates of every object.
 
 ----------
 Question 2

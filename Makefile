@@ -1,7 +1,6 @@
 .PHONY: ALWAYS
 
 all: doc_html
-	# nothing
 
 doc_html: ALWAYS
 	make -C doc html

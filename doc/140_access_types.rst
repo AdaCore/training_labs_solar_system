@@ -63,4 +63,4 @@ What is the problem with accessibility check? Try to fix it.
 Question 7
 ----------
 
-How to avoid using :code:`'Unchecked_Access`?
+How can usage of :code:`'Unchecked_Access` be avoided?

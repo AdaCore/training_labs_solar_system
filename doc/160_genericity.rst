@@ -1,9 +1,9 @@
 .. role:: ada(code)
     :language: ada
 
-==========
-Genericity
-==========
+=========================
+Genericity - Solar System
+=========================
 
 *The Generic Solar_System*
 
@@ -29,7 +29,7 @@ bodies.
 Question 2
 ----------
 
-Add a Set_Center procedure setting :code:`X` and :code:`Y` coordinate of the first
+Add a :code:`Set_Center` procedure setting :code:`X` and :code:`Y` coordinate of the first
 object of your solar system.
 
 ----------

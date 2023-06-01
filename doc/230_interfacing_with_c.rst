@@ -25,7 +25,7 @@ Random Number Generator peripheral.
 
 Use this description to write code that will map this peripheral and its associated
 registers (24.4 section) in the :code:`STM32_SVD.RNG` package. Don’t forget to use the Ada
-constructs specifically designed for this (records, representation clauses etc.).
+constructs specifically designed for this (records, representation clauses, etc.).
 
 ----------
 Question 2
