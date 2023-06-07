@@ -10,6 +10,15 @@ version. GNAT Studio. If you don't have it you can download it from a github rel
 
 # Install and run the code
 
+## Build the doc and setup the SDL
+
+Run
+
+`make`
+
+So that the instructions get built in `doc/` and Alire performs the necessary
+preliminary setup.
+
 ## Run the "getting started" example
 
 With Alire simply run
