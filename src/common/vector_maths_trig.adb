@@ -18,7 +18,24 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Ada.Numerics.Generic_Elementary_Functions;
+with Float_Maths; use Float_Maths;
 
-package Float_Maths is new Ada.Numerics.Generic_Elementary_Functions (Float);
-pragma Pure (Float_Maths);
+package body Vector_Maths_Trig is
+
+   function Angle_With_X (Right : Real_Vector) return Real_Angle_Radians
+   --  FIXME implement and use atan2-variant
+   is
+      Cos_Value : constant Float
+         := Right (Right'First) / abs (Right);
+      pragma Assert (abs (abs (Cos_Value) - 1.0) > 1.0e-4);
+      Half_Angle : constant Float
+         := Arccos (Cos_Value);
+      Bottom_Half : constant Boolean := Right (Right'First + 1) < 0.0;
+   begin
+      return
+         (if Bottom_Half
+          then 2.0 * Ada.Numerics.Pi - Half_Angle
+          else Half_Angle);
+   end Angle_With_X;
+
+end Vector_Maths_Trig;

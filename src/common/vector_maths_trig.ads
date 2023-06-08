@@ -18,7 +18,22 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Ada.Numerics.Generic_Elementary_Functions;
+with Ada.Numerics;
+with Vector_Maths; use Vector_Maths;
 
-package Float_Maths is new Ada.Numerics.Generic_Elementary_Functions (Float);
-pragma Pure (Float_Maths);
+package Vector_Maths_Trig is
+
+   pragma Pure (Vector_Maths_Trig);
+
+   subtype Real is Float;
+
+   subtype Real_Angle_Radians is Real
+      range 0.0 .. Real'Pred (2.0 * Ada.Numerics.Pi);
+
+   --  Non-oriented angle of a non-null 2D vector to (1, 0), in degrees
+   --  e.g. (1, 0) => 0.0, (0, 1) => Pi / 2, (0, -1) => 3 * Pi / 2
+   function Angle_With_X (Right : Real_Vector) return Real_Angle_Radians
+      --  poles of arccos at 1 and -1
+      with Pre => abs (abs (Right (Right'First) / abs (Right)) - 1.0) > 1.0e-4;
+
+end Vector_Maths_Trig;
