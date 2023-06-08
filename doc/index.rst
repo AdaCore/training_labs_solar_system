@@ -18,7 +18,6 @@ Welcome to Labs Solar System's documentation!
    110_private_types
    140_access_types
    160_genericity
-   160_genericity_text
    190_exceptions
    230_interfacing_with_c
    adv_170_multiple_inheritance
