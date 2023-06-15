@@ -1,0 +1,17 @@
+name: Generate_Doc
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: ['**']
+
+jobs:
+  Sphinx_Make_HTML:
+    runs-on: ubuntu-latest
+    container: sphinx
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: HTML_Doc
+        run: make -C doc html
