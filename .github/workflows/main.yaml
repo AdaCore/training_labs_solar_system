@@ -9,7 +9,7 @@ on:
 jobs:
   Sphinx_Make_HTML:
     runs-on: ubuntu-latest
-    container: sphinx
+    container: sphinxdoc/sphinx
 
     steps:
       - uses: actions/checkout@v3
