@@ -1,9 +1,12 @@
 .PHONY: ALWAYS
 
-all: doc_html
+all: doc_html alr_build
 
 doc_html: ALWAYS
 	make -C doc html
+
+alr_build: ALWAYS
+	alr build
 
 generate: \
 	generate_basics \
