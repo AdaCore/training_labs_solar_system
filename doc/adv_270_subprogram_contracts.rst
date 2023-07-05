@@ -55,7 +55,7 @@ The following requirements must be followed for every object:
 * `Y` : Body center vertical position, in Pixels. No constraint
 * `Distance` : If orbiting, it must be `> 0`, else it must be exactly `0`
 * `Speed` : If not orbiting, it must be exactly `0`, else it must be `/= 0`
-* `Angle` : Angle in radians, if orbiting should be in the range `[0, 2 * PI[`,
+* `Angle` : Angle in radians, if orbiting should be in the range `(0, 2 * PI(`,
   else it must be exactly `0`
 * `Radius` : If visible, it must be `> 0`, else it must be exactly `0`
 * `Color` : If not visible, it must be `black`
