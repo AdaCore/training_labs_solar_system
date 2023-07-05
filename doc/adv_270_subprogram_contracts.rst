@@ -63,7 +63,7 @@ The following requirements must be followed for every object:
 * `Turns_Around`: If orbiting, it must be `/= <the object itself>` else it must be `= <the object itself>`
 
 * **Question 2** Following the questions in `solar_system_spec.ads`, define the new types,
-  and the visibility contract
+  and the visibility contract.
 * **Question 3** Using the new types defined, modify the declaration of `Body_T` to follow
   the specification. This will cause an error at execution, fix that error by handling
   overflows and underflows.

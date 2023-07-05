@@ -27,11 +27,11 @@ package Solar_System_Spec is
    --  Requirements of the Solar System are formalized into a specification,
    --  which is defined in this package.
 
-   --  This package contains Pure functions, that has no side effect, or
+   --  This package contains Pure functions that have no side effects or
    --  globals.
    pragma Pure (Solar_System_Spec);
 
-   --  As additional constraint, all functions defined here return Boolean
+   --  As an additional constraint, all functions defined here return Boolean
    --  and don't raise exceptions (so they can't have contracts)
 
    ---------------------
@@ -73,7 +73,7 @@ package Solar_System_Spec is
 
    --  Question 2.b
    --  Implement the function for the visibility contract
-   --  - Visible bodies have a radius which is stricly positive
+   --  - Visible bodies have a radius which is strictly positive
    --  - Invisible bodies have the Black color, and a null radius, by
    --    convention
    function Body_Is_Visible_Or_Has_Default_Appearance
@@ -199,7 +199,7 @@ package Solar_System_Spec is
    --  Question 7.a
    --  Implement the function, which detects a cycle in the rotation order
    --  Since we don't want cycles, we return True when there are none, which
-   --  mean our solar system is correct.
+   --  means our solar system is correct.
    --  e.g. for any A and B, there is not both Orbits (A, B) and Orbits (B, A)
    function No_Cycle (All_Turns_Around : Orbit_Centers) return Boolean
       is (for all X in All_Turns_Around'Range

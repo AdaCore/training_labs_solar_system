@@ -228,7 +228,7 @@ package body Solar_System is
 
       --  loop over all bodies and call Move procedure
       for B of Bodies loop
-         --  call the move procedure, if the pre-condition holds
+         --  call the Move procedure, if the pre-condition holds
          if Does_Orbit (B, Bodies) then
             Move (B, Bodies);
          end if;

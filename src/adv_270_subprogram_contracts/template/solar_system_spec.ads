@@ -27,7 +27,7 @@ package Solar_System_Spec is
    --  Requirements of the Solar System are formalized into a specification,
    --  which is defined in this package.
 
-   --  This package contains Pure functions, that has no side effect, or
+   --  This package contains Pure functions that have no side effect or
    --  globals.
    pragma Pure (Solar_System_Spec);
 
