@@ -24,8 +24,8 @@ representable unambiguously and this representation should be used.
 Formula: For an expected `X` (`|X| > 1`), actual `A`, relative epsilon `E` (`/= 0`), the absolute
 margin of error is `X - X/E <= A <= X + X/E`, for `|X| <= 1`.
 
-**Question 1** Following the questions in the first part of `solar_system_spec.ads`,
-implement this comparison operation.
+* **Question 1** Following the questions in the first part of `solar_system_spec.ads`,
+  implement this comparison operation.
 
 ------------------------
 `Body` object attributes
