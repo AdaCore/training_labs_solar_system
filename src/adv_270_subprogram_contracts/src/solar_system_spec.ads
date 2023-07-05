@@ -62,7 +62,7 @@ package Solar_System_Spec is
    --  - one for those that are >= 0.0
    --  - one for those that are >= 0.0 and <= 2 * PI
 
-   --  Rounds the angle so that it stay in [0.0, 2.0 * Pi [
+   --  Rounds the angle so that it stays in [0.0, 2.0 * Pi [
    --  Deduced from a = b * floor (a / b) + mod (a, b)
    --  <=> mod (a, b) = a - b * floor (a / b)
    function Round_Angle (Raw_Angle : Float) return Float

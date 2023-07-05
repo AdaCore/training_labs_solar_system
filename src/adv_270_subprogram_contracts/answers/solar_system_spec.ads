@@ -65,7 +65,7 @@ package Solar_System_Spec is
    subtype Natural_Float is Float range 0.0 .. Float'Last;
    subtype Mod2Pi_Float is Float range 0.0 .. Float'Pred (Pi_2);
 
-   --  Rounds the angle so that it stay in [0.0, 2.0 * Pi [
+   --  Rounds the angle so that it stays in [0.0, 2.0 * Pi [
    --  Deduced from a = b * floor (a / b) + mod (a, b)
    --  <=> mod (a, b) = a - b * floor (a / b)
    function Round_Angle (Raw_Angle : Float) return Mod2Pi_Float
