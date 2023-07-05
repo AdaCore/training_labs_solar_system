@@ -145,18 +145,7 @@ package body Solar_System is
       return Solar_System_Spec.No_Cycle (To_Orbit_Centers (Bodies));
    end Init_With_No_Cycle;
 
-   --  implement a function to compute the X coordinate
-   --  x of the reference + distance * cos(angle)
-   function Compute_X
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
-
-   --  implement a function to compute the Y coordinate
-   --  y of the reference + distance * sin(angle)
-   function Compute_Y
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
-
+   --  X coordinate = x of the reference + distance * cos(angle)
    function Compute_X
      (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
@@ -165,6 +154,7 @@ package body Solar_System is
       return Turns_Around.X + Body_To_Move.Distance * Cos (Body_To_Move.Angle);
    end Compute_X;
 
+   --  Y coordinate = y of the reference + distance * sin(angle)
    function Compute_Y
      (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
@@ -228,7 +218,7 @@ package body Solar_System is
 
       --  loop over all bodies and call Move procedure
       for B of Bodies loop
-         --  call the Move procedure, if the pre-condition holds
+         --  call the move procedure, if the pre-condition holds
          if Does_Orbit (B, Bodies) then
             Move (B, Bodies);
          end if;
