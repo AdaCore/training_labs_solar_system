@@ -18,7 +18,6 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Ada.Numerics.Generic_Elementary_Functions;
+with Vector_Maths_Trig;
 
-package Float_Maths is new Ada.Numerics.Generic_Elementary_Functions (Float);
-pragma Pure (Float_Maths);
+package Vector_Maths.Trig renames Vector_Maths_Trig;

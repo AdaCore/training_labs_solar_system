@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Ada.Numerics.Generic_Elementary_Functions;
+with Ada.Numerics.Generic_Real_Arrays;
 
-package Float_Maths is new Ada.Numerics.Generic_Elementary_Functions (Float);
-pragma Pure (Float_Maths);
+package Vector_Maths is new Ada.Numerics.Generic_Real_Arrays (Float);
+pragma Pure (Vector_Maths);

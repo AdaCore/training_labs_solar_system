@@ -18,7 +18,14 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Ada.Numerics.Generic_Elementary_Functions;
+with Mage.Draw; use Mage.Draw;
 
-package Float_Maths is new Ada.Numerics.Generic_Elementary_Functions (Float);
-pragma Pure (Float_Maths);
+package Solar_System.Graphics is
+
+   procedure Draw_All (Bodies : Bodies_Array_T; Canvas : Canvas_ID);
+
+private
+
+   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID);
+
+end Solar_System.Graphics;

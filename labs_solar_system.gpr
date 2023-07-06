@@ -13,7 +13,8 @@ project Labs_Solar_System is
        "Access_Types",
        "Exceptions",
        "Interfacing_With_C",
-       "Tasking_Protected_Objects");
+       "Tasking_Protected_Objects",
+       "Subprogram_Contracts");
    Lab : Lab_T := external ("Lab", "Getting_Started");
 
    type Mode_Type is ("Problem", "Solution");
@@ -68,6 +69,10 @@ project Labs_Solar_System is
    when "Tasking_Protected_Objects" =>
       Lab_Number := "adv_240";
       Lab_Name := "tasking_protected_objects";
+   when "Subprogram_Contracts" =>
+      Lab_Number := "adv_270";
+      Lab_Name := "subprogram_contracts";
+      Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/common");
    end case;
    Lab_Source_Dir := Lab_Source_Dir & ("src/" & Lab_Number & "_" & Lab_Name & "/" & Answer_Mode_Dir);
 
@@ -85,7 +90,8 @@ project Labs_Solar_System is
    end Builder;
 
    package Compiler is
-      for Default_Switches ("Ada") use Labs_Solar_System_Config.Ada_Compiler_Switches;
+      for Default_Switches ("Ada") use Labs_Solar_System_Config.Ada_Compiler_Switches
+         & ("-O0", "-g", "-gnata");
       for Default_Switches ("C") use ("-Wall", "-pedantic", "-Werror");
    end Compiler;
 

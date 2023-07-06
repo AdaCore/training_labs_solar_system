@@ -23,6 +23,7 @@ Welcome to Labs Solar System's documentation!
    adv_170_multiple_inheritance
    adv_240_tasking_embedded
    adv_240_tasking_protected_objects
+   adv_270_subprogram_contracts
    adv_280_low_level_programming
 
 

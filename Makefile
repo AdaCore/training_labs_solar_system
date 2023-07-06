@@ -15,6 +15,7 @@ generate: \
 	generate_access_types \
 	generate_interfacing_with_c \
 	generate_tasking_protected_objects \
+	generate_subprogram_contracts \
 	ALWAYS
 
 generate_basics: ALWAYS
@@ -60,4 +61,11 @@ generate_tasking_protected_objects: $(template_tasking_protected_objects)
 	for f in $^; do \
 		adacut -m question $$f > src/adv_240_tasking_protected_objects/src/$$(basename $$f); \
 		adacut -m answer $$f > src/adv_240_tasking_protected_objects/answers/$$(basename $$f); \
+	done
+
+template_subprogram_contracts := $(wildcard src/adv_270_subprogram_contracts/template/*.ad?)
+generate_subprogram_contracts: $(template_subprogram_contracts)
+	for f in $^; do \
+		adacut -m question $$f > src/adv_270_subprogram_contracts/src/$$(basename $$f); \
+		adacut -m answer $$f > src/adv_270_subprogram_contracts/answers/$$(basename $$f); \
 	done
