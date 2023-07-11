@@ -1,5 +1,6 @@
 # v0.9.0
 
+* Add documentation
 * Add subprogram contracts lab
 
 # v0.1.1
