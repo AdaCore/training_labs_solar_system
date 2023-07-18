@@ -116,15 +116,11 @@ begin
          Turns_Around => Black_Hole,
          others       => <>));
 
-   --  initialize the Next step time at the current time (Clock) + the period
+   --  Making sun larger @antho
+   Bodies (Sun).X := 150.0;
+
    Next := Clock + Period;
 
-   --  create an infinite loop
-   --  call Move_All procedure
-   --  call Draw_All procedure
-   --  call Swap_Buffers to update the screen
-   --  wait until Next time
-   --  update the Next time
    while not Is_Killed loop
 
       Move_All (Bodies);
