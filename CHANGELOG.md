@@ -1,3 +1,8 @@
+# v0.9.1
+
+* Fix privacy lab's question
+* Add link to documentation
+
 # v0.9.0
 
 * Add documentation
