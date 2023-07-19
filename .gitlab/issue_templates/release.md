@@ -1,0 +1,4 @@
+- [ ] CHANGELOG.md
+- [ ] alire.toml
+- [ ] git tag
+- [ ] regenerate & push labs doc
