@@ -17,18 +17,18 @@ With Alire simply run
 ``make run``
 
 After a time downloading the libraries, and compiling the example, you should
-see a window appearing with a red ball bouncing of the corners.
+see a window appearing with a red ball bouncing off the corners.
 
 Solve the exercises
 -------------------
 
-On order to work on the labs you must first start gnat studio.
+In order to work on the labs you must first start gnat studio.
 
 ``make edit``
 
 On the scenario tab on the left (if it's not there click the View menu > Scenario), chose
 the lab you want to work by setting the "Lab" scenario variable. Make sure that "Mode" is set
-to "Problem"
+to "Problem".
 
 On the Project tab, you should then have access to the main file of the lab in question, which
 contains the questions.
