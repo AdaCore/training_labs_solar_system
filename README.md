@@ -23,16 +23,16 @@ preliminary setup.
 
 With Alire simply run
 
-`alr run`
+`make run`
 
 After a time downloading the libraries, and compiling the example, you should
 see a window appearing with a red ball bouncing of the corners.
 
 ## Solve the exercises
 
-On order to work on the labs you must first start gnat studio.
+On order to work on the labs you must first start GNAT Studio.
 
-`alr edit`
+`make edit`
 
 On the scenario tab on the left (if it's not there click the View menu > Scenario), chose
 the lab you want to work by setting the "Lab" scenario variable. Make sure that "Mode" is set
@@ -54,7 +54,7 @@ All solutions should run out of the box, if they don't it is a bug, feel free to
 
 ## Known issues
 
-1. On Windows `alr run` may fail silently. In that case start `alr edit` and run the "getting_starting" lab
+1. On Windows `make run` may fail silently. In that case start `make edit` and run the "getting_starting" lab
    to check that it works correctly.
 
 2. If you are missing `gnat` or `gprbuild` from your PATH while running an Alire command, you may end up
