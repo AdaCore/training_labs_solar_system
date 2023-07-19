@@ -2,3 +2,5 @@
 - [ ] alire.toml
 - [ ] git tag
 - [ ] regenerate & push labs doc
+
+/label ~"Category::Documentation"
