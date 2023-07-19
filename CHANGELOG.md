@@ -1,7 +1,8 @@
 # v0.9.1
 
 * Fix privacy lab's question
-* Add link to documentation
+* Define custom makefile targets
+* Documentation: add links, use Makefile
 
 # v0.9.0
 
