@@ -8,6 +8,12 @@ doc_html: ALWAYS
 alr_build: ALWAYS
 	alr build
 
+edit: alr_build ALWAYS
+	alr edit
+
+run: ALWAYS
+	alr run
+
 generate: \
 	generate_basics \
 	generate_packages \
