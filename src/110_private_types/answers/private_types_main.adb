@@ -133,15 +133,8 @@ begin
       Speed        => 0.1,
       Turns_Around => Black_Hole);
 
-   --  initialize the Next step time at the current time (Clock) + the period
    Next := Clock + Period;
 
-   --  create an infinite loop
-   --  call Move_All procedure
-   --  call Draw_All procedure
-   --  call Swap_Buffers to update the screen
-   --  wait until Next time
-   --  update the Next time
    while not Is_Killed loop
 
       Move_All (Bodies);
