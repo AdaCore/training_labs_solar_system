@@ -209,7 +209,7 @@ package body Solar_System is
    --$ end answer
    begin
 
-      --  Question 3.c: Fix the runtime error by handling issues with
+      --  Question 3.b: Fix the runtime error by handling issues with
       --  overflows and underflows.
 
       --$ begin answer
