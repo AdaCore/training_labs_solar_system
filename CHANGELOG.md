@@ -1,3 +1,10 @@
+# v0.9.1
+
+* Define custom makefile targets
+* Documentation: add links, use Makefile
+* Fix privacy lab's question
+* Fix subprogram contracts lab typo
+
 # v0.9.0
 
 * Add documentation
