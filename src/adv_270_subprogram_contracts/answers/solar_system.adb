@@ -185,7 +185,7 @@ package body Solar_System is
    is
    begin
 
-      --  Question 3.c: Fix the runtime error by handling issues with
+      --  Question 3.b: Fix the runtime error by handling issues with
       --  overflows and underflows.
 
       if Body_To_Move.Speed > 0.0

@@ -48,7 +48,7 @@ package Solar_System_Spec is
 
    --  Question 1.b: Implement the following function, which checks that two
    --  floats are equal, to an epsilon.
-   --  That is Equal_To_An_Epsilon (2.0, 2.0 + 2.0 * Epsilon) = True
+   --  Error (= X - Y) must be inferior to X * Epsilon
    function Almost_Equal (X, Y : Float) return Boolean
       is (Not_Implemented);
 

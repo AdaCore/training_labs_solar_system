@@ -95,7 +95,7 @@ package body Solar_System is
    procedure Move (Body_To_Move : in out Body_T; Bodies : Bodies_Array_T) is
    begin
 
-      --  Question 3.c: Fix the runtime error by handling issues with
+      --  Question 3.b: Fix the runtime error by handling issues with
       --  overflows and underflows.
 
       Body_To_Move.X :=

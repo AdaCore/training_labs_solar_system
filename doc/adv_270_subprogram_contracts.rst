@@ -21,8 +21,10 @@ as having a relative margin of error of :ada:`Epsilon = 1e-5`, unless the value 
 as being *exactly* as specified, in which case no margin of error is tolerated: the value is
 representable unambiguously and this representation should be used.
 
-Formula: For an expected `X` (`|X| > 1`), actual `A`, relative epsilon `E` (`/= 0`), the absolute
-margin of error is `X - X/E <= A <= X + X/E`, for `|X| <= 1`.
+Formula:
+
+For an expected `X`, actual `A`, relative epsilon `E` (`/= 0`), the absolute
+margin of error for `|X - A|` is `|X| * E`
 
 * **Question 1** Following the questions in the first part of `solar_system_spec.ads`,
   implement this comparison operation.
