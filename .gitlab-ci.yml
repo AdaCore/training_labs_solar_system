@@ -1,0 +1,15 @@
+sphinx:
+  services:
+    - image:ada-trainings
+  stage: build
+  script:
+      - make doc_html
+
+check_templates:
+  services:
+    - image:ada-trainings
+  stage: test
+  script:
+    - cp src src.actual
+    - make generate
+    - diff -rb src.actual src 
