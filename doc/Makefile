@@ -3,10 +3,11 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
-SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = _build
+THEME_RESOURCES_DIR ?= $(SOURCEDIR)/share
+SPHINXOPTS    ?= -c $(THEME_RESOURCES_DIR)
 
 # Put it first so that "make" without argument is like "make help".
 help:
