@@ -47,3 +47,7 @@ if Path('adacore_transparent.png').is_file():
 
 if Path('favicon.ico').is_file():
     html_favicon = 'favicon.ico'
+
+# By default, Sphinx expects the master doc to be `contents`
+# see https://stackoverflow.com/a/56448499/647828
+master_doc = 'index'
