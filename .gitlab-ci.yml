@@ -10,6 +10,6 @@ check_templates:
     - image:ada-trainings
   stage: test
   script:
-    - cp src src.actual
+    - cp -r src src.actual
     - make generate
     - diff -rb src.actual src 
