@@ -5,6 +5,13 @@ sphinx:
   script:
       - make doc_html
 
+solutions:
+  services:
+    - image:ada-trainings
+  stage: build
+  script:
+    - make build_solutions
+
 check_templates:
   services:
     - image:ada-trainings
