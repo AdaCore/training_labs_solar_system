@@ -1,14 +1,15 @@
 .. role:: ada(code)
     :language: ada
 
-==========
-Interfaces
-==========
+.. role:: C(code)
+    :language: C
 
-*The Solar_System API is not working anymore*
+==================
+Interfacing With C
+==================
 
-The purpose of this exercise is to write a driver for the STM32F4
-RNG (Random Number Generator) module
+The purpose of this exercise is to write a minimalistic interface
+to C code.
 
 .. figure:: img/05_1.png
     :height: 300px
@@ -20,42 +21,40 @@ RNG (Random Number Generator) module
 Question 1
 ----------
 
-The section 24 of the STM32F4 datasheet contains the description of the hardware
-Random Number Generator peripheral.
-
-Use this description to write code that will map this peripheral and its associated
-registers (24.4 section) in the :code:`STM32_SVD.RNG` package. Don’t forget to use the Ada
-constructs specifically designed for this (records, representation clauses, etc.).
+Modify the functions in :file:`ada_float_maths.ads` so that they
+are exported to C as :C:`float ada_cos(float)` and :C:`float ada_sin(float)`.
 
 ----------
 Question 2
 ----------
 
-Implement the missing subprograms in the :code:`STM32.RNG` package in
-order to fully control the RNG module.
-All the documentation needed is present in the 6.3.6 and
-24.3 sections of the STM32F4 datasheet.
+Modify the functions in :file:`compute_c/compute.c` so that they call the
+:C:`ada_cin` and :C:`ada_cos` functions.
+
+NB: If you're not comfortable using C you can skip this question by copying
+the answer source from the solution directly.
 
 ----------
 Question 3
 ----------
 
-Now that we have all the subprograms needed to enable/disable the RNG module,
-implement the missing subprograms in :code:`STM32.RNG.Interrupts` to have the
-RNG module working via interrupts.
+In :file:`solar_system.adb`, import :ada:`Compute_X` and :ada:`Compute_Y` from
+the C symbols :C:`compute_x` and :C:`compute_y`; and use them to update the position
+of the bodies.
 
-----------
+-----------
 Question 4
-----------
+-----------
 
-The purpose of this question is to implement a :code:`T_Change_Color_To_Random`
-task that will set a random color of all the solar system bodies, every 2 seconds.
+Make it compile and run, there is a last element of surprise.
 
-This task should preempt all the running tasks.
+If you are stuck you can use the following tips, piecewise.
 
-In order to achieve that, implement a :code:`Random_Color_Timing_Event` type that
-will derive from the :ada:`Ada.Real_Time.Timing_Event` type and its associated
-:code:`Random_Color_Timing_Event_PO`.
-This protected object will be responsible for synchronizing the timing event
-with the :code:`T_Change_Color_To_Random` task via a
-:code:`Wait_On_Random_Color_Timing_Event` entry.
+Tip: Multi-language projects are harder to build, namely the dependency tree is
+not automatically solved unlike Ada.
+
+Tip 2: You are building a piece of Ada calling C calling Ada, and the compiler
+is lazy: it will only compile what is ``with``
+
+Tip 3: Since C has implicit dependencies, it never ``with`` any package. And especially
+the ``Ada_Float_Math`` package.
