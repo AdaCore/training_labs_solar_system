@@ -1,9 +1,9 @@
 .. role:: ada(code)
     :language: ada
 
-=========================
-Genericity - Solar System
-=========================
+==========
+Genericity
+==========
 
 *The Generic Solar_System*
 
