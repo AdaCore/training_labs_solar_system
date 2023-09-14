@@ -63,7 +63,6 @@ All solutions should run out of the box, if they don't it is a bug, feel free to
    adv_240_tasking_embedded
    adv_240_tasking_protected_objects
    adv_270_subprogram_contracts
-   adv_280_low_level_programming
 
 
 Indices and tables
