@@ -10,6 +10,9 @@ solutions:
     - image:ada-trainings
   stage: build
   script:
+    - mkdir -p alire/cache/
+    - cp -r $HOME/mage_*/alire/cache/dependencies alire/cache
+    - cp -r $HOME/mage_* alire/cache/dependencies
     - make build_solutions
 
 check_templates:
