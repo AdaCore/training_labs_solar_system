@@ -4,6 +4,10 @@ sphinx:
   stage: build
   script:
       - make doc_html
+  artifacts:
+    name: "HTML_doc"
+    paths:
+      - doc/_build/html/*
 
 solutions:
   services:
