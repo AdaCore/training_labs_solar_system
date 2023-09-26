@@ -12,6 +12,7 @@ project Labs_Solar_System is
        "Private_Types",
        "Access_Types",
        "Genericity",
+       "Multiple_Inheritance",
        "Exceptions",
        "Interfacing_With_C",
        "Tasking_Protected_Objects",
@@ -34,6 +35,7 @@ project Labs_Solar_System is
    Lab_Name := "";
    Lab_Languages := ("Ada");
    Lab_Source_Dir := ();
+   Lab_Switches_Ada := ();
    case Lab is
    when "Getting_Started" =>
       Lab_Number := "000";
@@ -62,6 +64,10 @@ project Labs_Solar_System is
       Lab_Number := "160";
       Lab_Name := "genericity";
       Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/common");
+   when "Multiple_Inheritance" =>
+      Lab_Number := "adv_170";
+      Lab_Name := "multiple_inheritance";
+      Lab_Switches_Ada := ("-gnatw_A");
    when "Exceptions" =>
       Lab_Number := "190";
       Lab_Name := "exceptions";
@@ -96,7 +102,7 @@ project Labs_Solar_System is
 
    package Compiler is
       for Default_Switches ("Ada") use Labs_Solar_System_Config.Ada_Compiler_Switches
-         & ("-O0", "-g", "-gnata");
+         & ("-O0", "-g", "-gnata") & Lab_Switches_Ada;
       for Default_Switches ("C") use ("-Wall", "-pedantic", "-Werror");
    end Compiler;
 
