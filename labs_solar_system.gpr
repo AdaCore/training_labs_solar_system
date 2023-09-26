@@ -11,6 +11,7 @@ project Labs_Solar_System is
        "Packages",
        "Private_Types",
        "Access_Types",
+       "Genericity",
        "Exceptions",
        "Interfacing_With_C",
        "Tasking_Protected_Objects",
@@ -56,6 +57,10 @@ project Labs_Solar_System is
    when "Access_Types" =>
       Lab_Number := "140";
       Lab_Name := "access_types";
+      Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/common");
+   when "Genericity" =>
+      Lab_Number := "160";
+      Lab_Name := "genericity";
       Lab_Source_Dir := ("src/" & Lab_Number & "_" & Lab_Name & "/common");
    when "Exceptions" =>
       Lab_Number := "190";

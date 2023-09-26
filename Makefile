@@ -19,6 +19,7 @@ generate: \
 	generate_packages \
 	generate_private_types \
 	generate_access_types \
+	generate_genericity \
 	generate_interfacing_with_c \
 	generate_tasking_protected_objects \
 	generate_subprogram_contracts \
@@ -53,6 +54,13 @@ generate_access_types: $(template_access_types)
 	for f in $^; do \
 		adacut -m question $$f > src/140_access_types/src/$$(basename $$f); \
 		adacut -m answer $$f > src/140_access_types/answers/$$(basename $$f); \
+	done
+
+template_genericity := $(wildcard src/160_genericity/template/*.ad?)
+generate_genericity: $(template_genericity)
+	for f in $^; do \
+		adacut -m question $$f > src/160_genericity/src/$$(basename $$f); \
+		adacut -m answer $$f > src/160_genericity/answers/$$(basename $$f); \
 	done
 
 template_interfacing_with_c := $(wildcard src/230_interfacing_with_c/template/*.ad?)
