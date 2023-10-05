@@ -1,3 +1,13 @@
+# v1.0.0
+
+* Add back: 160 genericity and 170 multiple inheritance labs
+  - With that, porting from the old repo is complete
+* Code is automatically CI-tested
+* Review and fix all copyright notices
+* Fix "Interfacing with C" instructions
+* Sphinx Doc displays the package number
+* Sphinx index typo
+
 # v0.9.1
 
 * Define custom makefile targets

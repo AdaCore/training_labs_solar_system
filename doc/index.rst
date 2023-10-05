@@ -26,7 +26,7 @@ In order to work on the labs you must first start gnat studio.
 
 ``make edit``
 
-On the scenario tab on the left (if it's not there click the View menu > Scenario), chose
+On the scenario tab on the left (if it's not there click the View menu > Scenario), choose
 the lab you want to work by setting the "Lab" scenario variable. Make sure that "Mode" is set
 to "Problem".
 
