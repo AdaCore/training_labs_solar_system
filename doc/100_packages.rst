@@ -26,7 +26,7 @@ Implement the subprogram :code:`Move_All` that moves all the objects of a solar
 system.
 
 Use the :code:`Solar_System` package to obtain a behavior similar to
-the exercise *03_subprograms*.
+the exercise *subprograms*.
 
 ----------
 Question 2
