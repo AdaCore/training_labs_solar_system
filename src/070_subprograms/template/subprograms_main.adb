@@ -25,6 +25,10 @@ with Mage.Event;    use Mage.Event;
 with Float_Maths;   use Float_Maths;
 
 procedure Subprograms_Main is
+   --$ begin question
+   --  TODO: Remove once subprograms are implemented
+   pragma Warnings (Off, "not referenced");
+   --$ end question
 
    --  define type Bodies_Enum_T and Rotating_Bodies_T
    type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet);
@@ -64,12 +68,12 @@ procedure Subprograms_Main is
    --  reference to the graphical canvas associated with the application window
    Canvas : Canvas_ID;
 
+   --$ begin question
+   --  TODO: Remove once function is referenced
+   pragma Warnings (Off, "function ""Compute_X"" is not referenced");
+   --$ end question
    --  implement a function to compute the X coordinate
    --  x of the reference + distance * cos(angle)
-   function Compute_X
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
-
    function Compute_X
      (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
@@ -83,9 +87,6 @@ procedure Subprograms_Main is
 
    --  implement a function to compute the Y coordinate
    --  y of the reference + distance * sin(angle)
-   function Compute_Y
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
 
    --$ begin answer
    function Compute_Y
@@ -95,18 +96,20 @@ procedure Subprograms_Main is
    begin
       return Turns_Around.Y + Body_To_Move.Distance * Sin (Body_To_Move.Angle);
    end Compute_Y;
+
    --$ end answer
-
    --  move a given body over one time step
-   procedure Move
-     (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T);
 
-   --$ begin answer
    procedure Move
      (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T) is
+      --$ begin answer
       Body_To_Move : Body_T renames Bodies (Body_To_Move_Index);
       Turns_Around : constant Body_T := Bodies (Body_To_Move.Turns_Around);
+      --$ end answer
    begin
+      --$ line question
+      null;
+      --$ begin answer
       Body_To_Move.X :=
         Compute_X (Body_To_Move, Turns_Around);
 
@@ -114,16 +117,14 @@ procedure Subprograms_Main is
         Compute_Y (Body_To_Move, Turns_Around);
 
       Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed;
+      --$ end answer
    end Move;
-   --$ end answer
 
    --$ begin question
    --  procedure Draw_Body takes 2 parameters of your choice:
    --    it needs something to draw, and something to draw it on
    --$ end question
    --$ begin answer
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID);
-
    procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID) is
    begin
       Draw_Sphere
