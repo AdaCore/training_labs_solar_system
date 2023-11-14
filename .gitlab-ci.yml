@@ -17,6 +17,7 @@ check_builds:
     - mkdir -p alire/cache/
     - cp -r $HOME/mage_*/alire/cache/dependencies alire/cache
     - cp -r $HOME/mage_* alire/cache/dependencies
+    - export ADAFLAGS="-Werror"
     - make build_solutions
     - make build_problems
 
