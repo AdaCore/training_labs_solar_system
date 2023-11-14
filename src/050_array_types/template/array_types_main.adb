@@ -22,6 +22,14 @@ with Ada.Real_Time; use Ada.Real_Time;
 with Mage;          use Mage;
 with Mage.Draw;     use Mage.Draw;
 with Mage.Event;    use Mage.Event;
+--$ begin question
+
+--  TODO: Remove these two lines once Cos and Sin are used
+pragma Warnings (Off,
+   "no entities of ""Float_Maths"" are referenced");
+pragma Warnings (Off,
+   "use clause for package ""Float_Maths"" has no effect");
+--$ end question
 with Float_Maths;   use Float_Maths;
 
 procedure Array_Types_Main is
@@ -66,6 +74,11 @@ procedure Array_Types_Main is
    --  reference to the application window
    Window : Window_ID;
 
+   --$ begin question
+   --  TODO: Remove once you are drawing on the screen
+   pragma Warnings (Off,
+      "variable ""Canvas"" is assigned but never read");
+   --$ end question
    --  reference to the graphical canvas associated with the application window
    Canvas : Canvas_ID;
 
