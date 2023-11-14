@@ -97,7 +97,7 @@ begin
 
       --  QUESTION 2 - part 2
       --  create a loop to draw every objects
-      --    use the Draw_Sphere procedure with the Point3D
+      --    use the Draw_Sphere procedure with the Point_3d
       --    argument (using Z = 0.0) to draw
 
       --  update the screen using procedure Swap_Buffers
