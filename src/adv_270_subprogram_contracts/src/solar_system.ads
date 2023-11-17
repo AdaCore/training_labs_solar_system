@@ -19,6 +19,10 @@
 -----------------------------------------------------------------------
 
 with Mage; use Mage;
+
+--  TODO: Remove once lab is done
+pragma Warnings (Off,
+    "no entities of ""Solar_System_Spec"" are referenced in spec");
 with Solar_System_Spec; use Solar_System_Spec;
 
 package Solar_System is

@@ -19,9 +19,18 @@
 -----------------------------------------------------------------------
 
 with Float_Maths; use Float_Maths;
+
+--  TODO: Remove once lab is done
+pragma Warnings (Off,
+    "with clause might be moved to body");
 private with Solar_System.Spec_Conversion; use Solar_System.Spec_Conversion;
 
 package body Solar_System is
+
+   --  TODO: Remove once lab is done
+   pragma Warnings (Off, "not referenced");
+   pragma Warnings (Off,
+       "no entities of ""Solar_System"" are referenced in spec");
 
    function Find (A : Bodies_Array_T; B : Body_T) return Bodies_Enum_T is
    begin

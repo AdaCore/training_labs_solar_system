@@ -18,6 +18,14 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
+--$ begin question
+--  TODO: Remove once lab is done
+pragma Warnings (Off,
+   "no entities of ""Float_Maths"" are referenced");
+pragma Warnings (Off,
+   "use clause for package ""Float_Maths"" has no effect");
+pragma Warnings (Off, "not referenced");
+--$ end question
 with Float_Maths;       use Float_Maths;
 with Vector_Maths;      use Vector_Maths;
 with Vector_Maths.Trig; use Vector_Maths.Trig;
