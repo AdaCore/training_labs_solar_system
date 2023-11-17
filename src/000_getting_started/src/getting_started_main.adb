@@ -44,9 +44,8 @@ procedure Getting_Started_Main is
 begin
    Window :=
      Create_Window
-       (Width  => Integer (Width),
-        Height => Integer (Height),
-        Name   => "Bouncing ball");
+       (Width => Integer (Width), Height => Integer (Height),
+        Name  => "Bouncing ball");
    Canvas := Get_Canvas (Window);
 
    Next := Clock + Period;
@@ -65,10 +64,8 @@ begin
       Y := Y + Speed_Y;
 
       Draw_Sphere
-        (Canvas   => Canvas,
-         Position => (X, Y, 0.0),
-         Radius   => Ball_Radius,
-         Color    => Red);
+        (Canvas => Canvas, Position => (X, Y, 0.0), Radius => Ball_Radius,
+         Color  => Red);
 
       Handle_Events (Window);
 
