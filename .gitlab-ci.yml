@@ -9,7 +9,7 @@ sphinx:
     paths:
       - doc/_build/html/*
 
-solutions:
+check_builds:
   services:
     - image:ada-trainings
   stage: build
@@ -17,7 +17,9 @@ solutions:
     - mkdir -p alire/cache/
     - cp -r $HOME/mage_*/alire/cache/dependencies alire/cache
     - cp -r $HOME/mage_* alire/cache/dependencies
+    - export ADAFLAGS="-Werror"
     - make build_solutions
+    - make build_problems
 
 check_templates:
   services:

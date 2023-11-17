@@ -84,6 +84,14 @@ generate_subprogram_contracts: $(template_subprogram_contracts)
 		adacut -m answer $$f > src/adv_270_subprogram_contracts/answers/$$(basename $$f); \
 	done
 
+build_problems:
+	set -e; \
+    for lab in "Array_Types" "Record_Types" "Subprograms" "Packages" "Private_Types" "Access_Types" \
+	"Exceptions" "Interfacing_With_C" "Tasking_Protected_Objects" "Subprogram_Contracts"; do \
+		echo $$lab; \
+		Mode=Problem Lab="$$lab" alr build; \
+	done
+
 build_solutions:
 	set -e; \
     for lab in "Array_Types" "Record_Types" "Subprograms" "Packages" "Private_Types" "Access_Types" \

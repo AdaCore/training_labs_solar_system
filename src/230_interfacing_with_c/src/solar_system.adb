@@ -20,6 +20,9 @@
 
 package body Solar_System is
 
+   --  TODO: Remove once subprograms are implemented
+   pragma Warnings (Off, "not referenced");
+
    function Get_Body
      (B      : Bodies_Enum_T;
       Bodies : access Bodies_Array_T) return Body_Access_T

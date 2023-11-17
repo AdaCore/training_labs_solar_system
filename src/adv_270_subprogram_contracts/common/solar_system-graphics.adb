@@ -36,7 +36,6 @@ package body Solar_System.Graphics is
             Draw_Body (Obj, Canvas);
          end if;
       end loop;
-
    end Draw_All;
 
 end Solar_System.Graphics;

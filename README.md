@@ -50,7 +50,8 @@ will select a new main file, which contains a solution for each lab.
 Warning: After having changed the "Mode" variable, you may need to recompile the project by force,
 by cleaning it.
 
-All solutions should run out of the box, if they don't it is a bug, feel free to open a ticket.
+All solutions and problems should run out of the box, if they don't it is a bug, feel free to open
+a ticket.
 
 ## Known issues
 

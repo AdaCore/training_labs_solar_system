@@ -68,10 +68,6 @@ procedure Subprograms_Main is
    --  x of the reference + distance * cos(angle)
    function Compute_X
      (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
-
-   function Compute_X
-     (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
    is
    begin
@@ -80,9 +76,6 @@ procedure Subprograms_Main is
 
    --  implement a function to compute the Y coordinate
    --  y of the reference + distance * sin(angle)
-   function Compute_Y
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
 
    function Compute_Y
      (Body_To_Move : Body_T;
@@ -93,8 +86,6 @@ procedure Subprograms_Main is
    end Compute_Y;
 
    --  move a given body over one time step
-   procedure Move
-     (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T);
 
    procedure Move
      (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T) is
@@ -109,8 +100,6 @@ procedure Subprograms_Main is
 
       Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed;
    end Move;
-
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID);
 
    procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID) is
    begin

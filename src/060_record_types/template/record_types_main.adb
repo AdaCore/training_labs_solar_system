@@ -22,9 +22,26 @@ with Ada.Real_Time; use Ada.Real_Time;
 with Mage;          use Mage;
 with Mage.Draw;     use Mage.Draw;
 with Mage.Event;    use Mage.Event;
+--$ begin question
+
+--  TODO: Remove once Cos and Sin are used
+pragma Warnings (Off,
+    "no entities of ""Float_Maths"" are referenced");
+pragma Warnings (Off,
+    "use clause for package ""Float_Maths"" has no effect");
+--$ end question
 with Float_Maths;   use Float_Maths;
 
 procedure Record_Types_Main is
+   --$ begin question
+
+   --  TODO: Remove once lab is done
+   pragma Warnings (Off,
+      "not referenced");
+   pragma Warnings (Off,
+      "never read and never assigned");
+   pragma Warnings (Off, "assigned but never read");
+   --$ end question
 
    --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
    --  and Satellite
@@ -34,8 +51,11 @@ procedure Record_Types_Main is
    --  that rotate
    subtype Rotating_Bodies_T is Bodies_Enum_T range Earth .. Satellite;
 
-   --  define a type Body_T to store every information about a body
+   --  replace the definition of Body_T by a type that stores every information
+   --  about a body:
    --   X, Y, Distance, Speed, Angle, Color type is RGBA_T, Radius
+   --$ line question
+   subtype Body_T is Integer; -- TODO: Replace by record type
    --$ begin answer
    type Body_T (Visible : Boolean := True) is record
       X            : Float;

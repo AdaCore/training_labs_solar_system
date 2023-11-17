@@ -25,6 +25,8 @@ with Mage.Event;    use Mage.Event;
 with Float_Maths;   use Float_Maths;
 
 procedure Subprograms_Main is
+   --  TODO: Remove once subprograms are implemented
+   pragma Warnings (Off, "not referenced");
 
    --  define type Bodies_Enum_T and Rotating_Bodies_T
    type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet);
@@ -64,12 +66,10 @@ procedure Subprograms_Main is
    --  reference to the graphical canvas associated with the application window
    Canvas : Canvas_ID;
 
+   --  TODO: Remove once function is referenced
+   pragma Warnings (Off, "function ""Compute_X"" is not referenced");
    --  implement a function to compute the X coordinate
    --  x of the reference + distance * cos(angle)
-   function Compute_X
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
-
    function Compute_X
      (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
@@ -80,15 +80,14 @@ procedure Subprograms_Main is
 
    --  implement a function to compute the Y coordinate
    --  y of the reference + distance * sin(angle)
-   function Compute_Y
-     (Body_To_Move : Body_T;
-      Turns_Around : Body_T) return Float;
-
 
    --  move a given body over one time step
-   procedure Move
-     (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T);
 
+   procedure Move
+     (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T) is
+   begin
+      null;
+   end Move;
 
    --  procedure Draw_Body takes 2 parameters of your choice:
    --    it needs something to draw, and something to draw it on
