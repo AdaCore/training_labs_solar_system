@@ -19,6 +19,11 @@
 -----------------------------------------------------------------------
 
 package body Solar_System is
+   --$ begin question
+
+   --  TODO: Remove once subprograms are implemented
+   pragma Warnings (Off, "not referenced");
+   --$ end question
 
    function Get_Body
      (B      : Bodies_Enum_T;
