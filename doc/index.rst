@@ -28,7 +28,7 @@ In order to work on the labs you must first start gnat studio.
 
 On the scenario tab on the left (if it's not there click the View menu > Scenario), choose
 the lab you want to work by setting the "Lab" scenario variable. Make sure that "Mode" is set
-to "Problem".
+to "Question".
 
 On the Project tab, you should then have access to the main file of the lab in question, which
 contains the questions.
@@ -38,7 +38,7 @@ You can compile and run using the dedicated GNAT Studio build / run menus and bu
 Run the solved exercises
 ------------------------
 
-If you want to see or run the solutions, on the scenario tab select "Mode" = "Solution". This
+If you want to see or run the solutions, on the scenario tab select "Mode" = "Answer". This
 will select a new main file, which contains a solution for each lab.
 Warning: After having changed the "Mode" variable, you may need to recompile the project by force,
 by cleaning it.

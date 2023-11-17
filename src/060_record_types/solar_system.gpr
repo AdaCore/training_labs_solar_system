@@ -7,18 +7,18 @@ project Solar_System is
    LOADER : LOADER_Type := external ("LOADER", "ROM");
 
 
-   type Mode_Type is ("Problem", "Solution");
-   Mode : Mode_Type := external ("Mode", "Problem");
+   type Mode_Type is ("Question", "Answer");
+   Mode : Mode_Type := external ("Mode", "Question");
 
    for Main use ("main");
    for Object_Dir use "obj";
    for Languages use ("Ada");
 
    case Mode is
-      when "Problem" =>
+      when "Question" =>
          for Source_Dirs use ("src");
 
-      when "Solution" =>
+      when "Answer" =>
          for Source_Dirs use ("answers");
    end case;
 
