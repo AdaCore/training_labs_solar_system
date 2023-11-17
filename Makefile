@@ -89,7 +89,7 @@ build_problems:
     for lab in "Array_Types" "Record_Types" "Subprograms" "Packages" "Private_Types" "Access_Types" \
 	"Exceptions" "Interfacing_With_C" "Tasking_Protected_Objects" "Subprogram_Contracts"; do \
 		echo $$lab; \
-		Mode=Problem Lab="$$lab" alr build; \
+		Mode=Question Lab="$$lab" alr build; \
 	done
 
 build_solutions:
