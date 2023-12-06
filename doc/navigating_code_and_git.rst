@@ -14,7 +14,7 @@ Question 1
 ----------
 
 We want to get familiar with the Mage package, and we're going to use GNAT Studio to help with that.
-From :filename:`getting_started_main.adb`, navigate to the definition of :ada:`Window_ID`, then to the private
+From ``getting_started_main.adb``, navigate to the definition of :ada:`Window_ID`, then to the private
 completion of this type.
 
 ----------
@@ -36,7 +36,7 @@ Question 4
 ----------
 
 Notice that the :ada:`package Mage_Config.Hardware` doesn't bare the same name as its file. This
-is due to a custom compiler setup, which happens in :filename:`mage.gpr`. Open that GPR file.
+is due to a custom compiler setup, which happens in ``mage.gpr``. Open that GPR file.
 
 ----------
 Question 5
@@ -52,7 +52,7 @@ the app to see what happens.
 Question 6
 ----------
 
-Open :filename:`mage.adb` and locate the use of :ada:`Unbounded_String`, jump to its declaration.
+Open ``mage.adb`` and locate the use of :ada:`Unbounded_String`, jump to its declaration.
 Using the outline view, notice all that the :ada:`package Ada.Strings.Unbounded` exports.
 
 ----------
@@ -65,5 +65,5 @@ Locate :ada:`Ada.Strings.Unbounded.To_Unbounded_String (Source : String)`, and l
 Question 8
 ----------
 
-Open the git history of :filename:`getting_started_main.adb`, then the git history of :filename:`labs_solar_system.gpr` (hint: this second one may require opening another view than the Project view).
+Open the git history of ``getting_started_main.adb``, then the git history of ``labs_solar_system.gpr`` (hint: this second one may require opening another view than the Project view).
 
