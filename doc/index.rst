@@ -64,6 +64,7 @@ All solutions should run out of the box, if they don't it is a bug, feel free to
    adv_240_tasking_protected_objects
    adv_270_subprogram_contracts
    navigating_code_and_git
+   advanced_code_edition
 
 
 Indices and tables
