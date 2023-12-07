@@ -37,7 +37,7 @@ Click on the "+" in the breakpoints view.
 
 .. figure:: img/add_breakpoint.png
 
-From the top-down-list on top, select "Break on exception"
+From the top-down-list on top, select "break on exception"
 
 .. figure:: img/break_on_exception.png
 
