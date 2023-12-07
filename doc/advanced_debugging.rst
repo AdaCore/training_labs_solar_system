@@ -61,11 +61,13 @@ Continue running the program.
 
 Notice that :ada:'Now' is being updated on two different lines during the life of the application.
 
+Stop the debugging session.
+
 ----------
 Question 4
 ----------
 
-Add a breakpoint to the :ada:`Move` procedure, then start with the debugger.
+Add a breakpoint to the :ada:`Move` procedure, then start a new debugging session.
 
 Once the breakpoint is reached, move through the stack by using the "Call Stack" view.
 
