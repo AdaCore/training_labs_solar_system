@@ -31,7 +31,7 @@ In the Scenario tab, select "debug" as the "Build mode" (topmost)
 
 .. figure:: img/build_mode-debug.png
 
-Start the debugger by clicking "Build and Debug", GNAT Studio will automatically enter the debug perspective.
+Start the debugger by clicking "Build and Debug". GNAT Studio will automatically enter the debug perspective.
 
 Click on the "+" in the breakpoints view.
 
@@ -54,12 +54,12 @@ Question 3
 We want to track all updates to the :ada:`Now` variable.
 Restart the program in debug mode, while selecting "Stop at beginning of main
 subprogram".
-Once the debugger stopped, right-click the :ada:`Now` variable, and select "Debug > Set
+Once the debugger stops, right-click the :ada:`Now` variable, and select "Debug > Set
 Watchpoint"
-on Now.
+on :ada:'Now'.
 Continue running the program.
 
-Notice that now is being updated on two different lines during the life of the application.
+Notice that :ada:'Now' is being updated on two different lines during the life of the application.
 
 ----------
 Question 4
@@ -67,15 +67,15 @@ Question 4
 
 Add a breakpoint to the :ada:`Move` procedure, then start with the debugger.
 
-Once the breakpoint reached, move through the stack by using the "Call Stack" view.
+Once the breakpoint is reached, move through the stack by using the "Call Stack" view.
 
-Type ``info tasks`` in the debugger console, this will list all the active tasks.
+Type ``info tasks`` in the debugger console; this will list all the active tasks.
 
-Switch to the main task, by typing the ``task 1`` command.
+Switch to the main task by typing the ``task 1`` command.
 
-Get back to the previous task.
+Return to the previous task.
 
-Print ``Body_To_Move`` by typing ``print body_to_move`` in the "Debugger Console". Then *watch* the ``Body_To_Move`` variable.
+Print :ada:'Body_To_Move' by typing ``print body_to_move`` in the "Debugger Console". Then *watch* the :ada:'Body_To_Move' variable.
 
 On the "Variables" view, display all the content of this variable, and right click on the value
 of its radius, then set it to 100.0.
