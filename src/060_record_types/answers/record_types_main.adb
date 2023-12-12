@@ -34,8 +34,8 @@ procedure Record_Types_Main is
    --  that rotate
    subtype Rotating_Bodies_T is Bodies_Enum_T range Earth .. Satellite;
 
-   --  replace the definition of Body_T by a type that stores every information
-   --  about a body:
+   --  Question: replace the definition of Body_T by a type that stores
+   --  body attributes
    --   X, Y, Distance, Speed, Angle, Color type is RGBA_T, Radius
    type Body_T (Visible : Boolean := True) is record
       X            : Float;

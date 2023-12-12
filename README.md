@@ -8,6 +8,12 @@ bodies using the Mage library which is itself based on the SDL.
 Alire installed. The GNAT compiler, if you don't have one, Alire can install the FSF
 version. GNAT Studio. If you don't have it you can download it from a github release.
 
+To rebuild the source, you will need the python package `adacut`
+
+```
+$ pip install adacut
+```
+
 # Install and run the code
 
 ## Build the doc and setup the SDL
