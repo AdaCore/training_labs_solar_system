@@ -19,7 +19,7 @@ In the code for :ada:`Move`, change the following lines
 
 to
 
-:ada:`Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed / Body_To_Move.X;`
+:ada:`Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed / Body_To_Move.Pos.X;`
 
 Try compiling and running, and see that a ``CONSTRAINT_ERROR`` is raised on this line.
 
