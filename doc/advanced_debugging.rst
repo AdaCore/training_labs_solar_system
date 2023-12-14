@@ -31,6 +31,9 @@ In the Scenario tab, select "debug" as the "Build mode" (topmost)
 
 .. figure:: img/build_mode-debug.png
 
+
+Clean the project by clicking "Build > Clean > Clean All"
+
 Start the debugger by clicking "Build and Debug". GNAT Studio will automatically enter the debug perspective.
 
 Click on the "+" in the breakpoints view.
