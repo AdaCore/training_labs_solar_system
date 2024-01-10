@@ -44,4 +44,9 @@ From the main loop call :code:`Draw_Body` instead of directly drawing :code:`Dra
 Question 4
 ----------
 
-Add a comet in motion around the :code:`Sun`.
+Add a tail to the  comet that rotates around the :code:`Sun`.
+
+Hint: Try adding a :code:`Has_Tail` component to :code:`Body_T`, then modifying :code:`Draw` to display the tail properly.
+
+Hint #2: An object that has a tail can be seen as being "followed" by small circles that are
+**moved** in the opposite direction from the body being drawn.
