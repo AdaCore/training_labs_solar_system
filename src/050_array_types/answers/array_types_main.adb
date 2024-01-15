@@ -31,6 +31,8 @@ procedure Array_Types_Main is
    --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
    --  and Satellite
    type Bodies_Enum_T is (Sun, Earth, Moon, Satellite);
+   subtype Rotating_Bodies_T is Bodies_Enum_T
+      range Earth .. Bodies_Enum_T'Last;
 
    --  define type Parameters_Enum_T as an enumeration of parameter X, Y,
    --  Radius, Speed, Distance, Angle
@@ -126,7 +128,7 @@ begin
       --    angle a is (d*cos(a), d*sin(a))
       --    - update angle parameter of each body adding speed to the previous
       --    angle.
-      for B in Earth .. Satellite loop
+      for B in Rotating_Bodies_T loop
          --  This solution illustrates the use of a block statement with
          --  local constants to reduce repetition and improve readability
          --  in the loop body.
