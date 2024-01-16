@@ -18,8 +18,12 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
---$ line answer
+--$ begin answer
+with Ada.Text_IO;
 with Ada.Real_Time; use Ada.Real_Time;
+with Ada.Exceptions;
+with GNAT.Traceback.Symbolic;
+--$ end answer
 with Float_Maths;   use Float_Maths;
 
 package body Solar_System is
@@ -179,7 +183,12 @@ package body Solar_System is
          Bodies (B).Set_Data (Current);
          delay until Now + Period;
       end loop;
-
+   exception
+      when Err : others =>
+         --  Tasks crash silently - make them noisy
+         Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (Err));
+         Ada.Text_IO.Put_Line ("Exception traceback: " &
+            GNAT.Traceback.Symbolic.Symbolic_Traceback (Err));
    end T_Move_Body;
 
    procedure Terminate_Tasks is

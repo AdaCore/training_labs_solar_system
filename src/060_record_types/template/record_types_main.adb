@@ -49,7 +49,8 @@ procedure Record_Types_Main is
 
    --  define subtype Rotating_Bodies_T which only contains bodies
    --  that rotate
-   subtype Rotating_Bodies_T is Bodies_Enum_T range Earth .. Satellite;
+   subtype Rotating_Bodies_T is Bodies_Enum_T
+     range Earth .. Bodies_Enum_T'Last;
 
    --  Question: replace the definition of Body_T by a type that stores
    --  body attributes

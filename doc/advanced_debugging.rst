@@ -19,7 +19,7 @@ In the code for :ada:`Move`, change the following lines
 
 to
 
-:ada:`Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed / Body_To_Move.X;`
+:ada:`Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed / Body_To_Move.Pos.X;`
 
 Try compiling and running, and see that a ``CONSTRAINT_ERROR`` is raised on this line.
 
@@ -30,6 +30,9 @@ Question 2
 In the Scenario tab, select "debug" as the "Build mode" (topmost)
 
 .. figure:: img/build_mode-debug.png
+
+
+Clean the project by clicking "Build > Clean > Clean All"
 
 Start the debugger by clicking "Build and Debug". GNAT Studio will automatically enter the debug perspective.
 
