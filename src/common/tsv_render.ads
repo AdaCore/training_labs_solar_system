@@ -18,31 +18,47 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Float_Maths; use Float_Maths;
+with Mage;
+with Mage.Model;
 
-package body Vector_Maths_Trig is
+package TSV_Render is
+   --  This package is a TSV front end for the labs
+   --  that is it produces a text output.
+   type RGBA_T is (Yellow, Blue, White, Red);
+   subtype Point_3d is Mage.Model.Point_3d;
 
-   function Angle_With_X (Right : Real_Vector) return Real_Angle_Radians
-      --  FIXME implement and use atan2-variant
-   is
-      V_Is_0_0 : constant Boolean := Right = (0.0, 0.0);
-      Pure_X : constant Boolean
-        := V_Is_0_0
-        or else abs
-          (abs (Right (Right'First) / abs (Right)) - 1.0) <= 1.0e-4;
+   type Sphere_T is record
+       Position : Point_3d;
+       Radius : Float;
+       Color : RGBA_T;
+   end record;
 
-      Cos_Value : constant Float
-        := (if V_Is_0_0 then 1.0 else Right (Right'First) / abs (Right));
-      Half_Angle  : constant Float
-        := (if Pure_X then 0.0 else Arccos (Cos_Value));
-      Bottom_Half : constant Boolean := Right (Right'First + 1) < 0.0;
-   begin
-      return
-        (if Bottom_Half then
-           (if Pure_X
-            then Ada.Numerics.Pi
-            else 2.0 * Ada.Numerics.Pi - Half_Angle)
-         else Half_Angle);
-   end Angle_With_X;
+   type Sphere_Arr is array (Positive range <>) of Sphere_T;
 
-end Vector_Maths_Trig;
+   type Canvas_T is record
+       Spheres : Sphere_Arr (1 .. 20);
+       Number_Of_Spheres : Natural range 0 .. 20 := 0;
+       Frame_Count : Natural := 0;
+   end record;
+
+   type Canvas_ID is null record;
+
+   type Window_ID is null record;
+
+   function Create_Window (Width, Height : Positive; Name : String)
+       return Window_ID;
+
+   function Get_Canvas (W : Window_ID) return Canvas_ID;
+
+   procedure Draw_Sphere (Canvas : in out Canvas_ID;
+                          Position : Point_3d;
+                          Radius : Float;
+                          Color : RGBA_T);
+
+   procedure Handle_Events (W : in out Window_ID);
+
+   Is_Killed : Boolean := False;
+
+   task Input_Capture is
+   end Input_Capture;
+end TSV_Render;

@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -30,11 +30,8 @@ package Vector_Maths_Trig is
    subtype Real_Angle_Radians is
      Real range 0.0 .. Real'Pred (2.0 * Ada.Numerics.Pi);
 
-   --  Non-oriented angle of a non-null 2D vector to (1, 0), in degrees
+   --  Non-oriented angle of a non-null 2D vector to (1, 0), in radians
    --  e.g. (1, 0) => 0.0, (0, 1) => Pi / 2, (0, -1) => 3 * Pi / 2
-   function Angle_With_X (Right : Real_Vector) return Real_Angle_Radians
-     --  poles of arccos at 1 and -1
-     with
-     Pre => abs (abs (Right (Right'First) / abs (Right)) - 1.0) > 1.0e-4;
+   function Angle_With_X (Right : Real_Vector) return Real_Angle_Radians;
 
 end Vector_Maths_Trig;
