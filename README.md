@@ -59,6 +59,15 @@ by cleaning it.
 All solutions and problems should run out of the box, if they don't it is a bug, feel free to open
 a ticket.
 
+## Use TSV Render
+
+If you want to use the TSV renderer, which gives a result in console instead of on a screen, remove
+Mage import and add
+`with TSV_Render; use TSV_Render;`
+
+It should display each frame in console, and you can then exit by typing `Q<enter>` in this same
+console.
+
 ## Known issues
 
 1. On Windows `make run` may fail silently. In that case start `make edit` and run the "getting_starting" lab
