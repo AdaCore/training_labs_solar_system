@@ -222,8 +222,8 @@ begin
       --$ end question
       --$ line answer
       Move_All (Bodies);
-      -- QUESTION 2
-      -- Implement Draw_All in a *new* package Graphics of Solar_System
+      --  QUESTION 2
+      --  Implement Draw_All in a *new* package Graphics of Solar_System
       --$ line answer
       Draw_All (Bodies, Canvas);
 

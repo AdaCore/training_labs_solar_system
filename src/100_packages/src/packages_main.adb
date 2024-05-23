@@ -168,8 +168,8 @@ begin
          Draw_Body (Bodies (B), Canvas);
 
       end loop;
-      -- QUESTION 2
-      -- Implement Draw_All in a *new* package Graphics of Solar_System
+      --  QUESTION 2
+      --  Implement Draw_All in a *new* package Graphics of Solar_System
 
       Handle_Events (Window);
 

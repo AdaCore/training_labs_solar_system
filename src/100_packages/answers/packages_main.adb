@@ -134,8 +134,8 @@ begin
    while not Is_Killed loop
 
       Move_All (Bodies);
-      -- QUESTION 2
-      -- Implement Draw_All in a *new* package Graphics of Solar_System
+      --  QUESTION 2
+      --  Implement Draw_All in a *new* package Graphics of Solar_System
       Draw_All (Bodies, Canvas);
 
       Handle_Events (Window);

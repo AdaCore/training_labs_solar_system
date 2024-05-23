@@ -24,8 +24,8 @@ with Mage; use Mage;
 --$ end answer
 package Solar_System is
 
-   -- QUESTION 1 - Part 1
-   -- Move the types and write the specification for the subprogram Move_All
+   --  QUESTION 1 - Part 1
+   --  Move the types and write the specification for the subprogram Move_All
 
    --$ begin answer
    --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
