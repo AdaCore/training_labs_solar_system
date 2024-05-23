@@ -72,8 +72,10 @@ procedure Subprograms_Main is
    --  TODO: Remove once function is referenced
    pragma Warnings (Off, "function ""Compute_X"" is not referenced");
    --$ end question
+   --  QUESTION 1 - Part 1
    --  implement a function to compute the X coordinate
    --  x of the reference + distance * cos(angle)
+
    function Compute_X
      (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
@@ -85,6 +87,7 @@ procedure Subprograms_Main is
       return Turns_Around.X + Body_To_Move.Distance * Cos (Body_To_Move.Angle);
    end Compute_X;
 
+   --  QUESTION 1 - Part 2
    --  implement a function to compute the Y coordinate
    --  y of the reference + distance * sin(angle)
 
@@ -98,6 +101,7 @@ procedure Subprograms_Main is
    end Compute_Y;
 
    --$ end answer
+   --  QUESTION 2 - Part 1
    --  move a given body over one time step
 
    procedure Move
@@ -120,6 +124,7 @@ procedure Subprograms_Main is
       --$ end answer
    end Move;
 
+   --  QUESTION 3
    --$ begin question
    --  procedure Draw_Body takes 2 parameters of your choice:
    --    it needs something to draw, and something to draw it on
@@ -143,6 +148,9 @@ begin
    --  retrieve the graphical canvas associated with the main window
    Canvas := Get_Canvas (Window);
 
+   --  QUESTION 4 - Add a comet
+   --    Tip: Make it a body that is drawn as several circles that
+   --    follow each others.
    Bodies :=
      (Sun =>
         (Distance     => 0.0,
@@ -202,16 +210,20 @@ begin
       --  update angle parameter of each body adding speed to the previous
       --  angle
       for B in Rotating_Bodies_T loop
+
+         --  QUESTION 1 - Part 3: call Compute_X
          Bodies (B).X := Bodies (Bodies (B).Turns_Around).X
            + Bodies (B).Distance
            * Cos (Bodies (B).Angle);
 
+         --  QUESTION 1 - Part 4: call Compute_Y
          Bodies (B).Y := Bodies (Bodies (B).Turns_Around).Y
            + Bodies (B).Distance
            * Sin (Bodies (B).Angle);
 
          Bodies (B).Angle := Bodies (B).Angle +
            Bodies (B).Speed;
+         --  QUESTION 2 - Part 2: call Move
       end loop;
 
       --  create a loop to draw every objects
