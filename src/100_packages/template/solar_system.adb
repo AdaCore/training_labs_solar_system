@@ -24,17 +24,10 @@ with Float_Maths; use Float_Maths;
 --$ end answer
 package body Solar_System is
 
+   --  QUESTION 1 - Part 2
+   --  Move subprograms to this body to implement Move_All
+
    --$ begin answer
-   --  implement a function to compute the X coordinate
-   --  x of the reference + distance * cos(angle)
-   function Compute_X
-     (Body_To_Move : Body_T; Turns_Around : Body_T) return Float;
-
-   --  implement a function to compute the Y coordinate
-   --  y of the reference + distance * sin(angle)
-   function Compute_Y
-     (Body_To_Move : Body_T; Turns_Around : Body_T) return Float;
-
    function Compute_X
      (Body_To_Move : Body_T; Turns_Around : Body_T) return Float
    is
@@ -67,7 +60,11 @@ package body Solar_System is
       Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed;
 
    end Move;
+   --$ end answer
+   --  QUESTION 1 - Part 3
+   --  Implement the subprogram Move_All
 
+   --$ begin answer
    procedure Move_All (Bodies : in out Bodies_Array_T) is
    begin
 
