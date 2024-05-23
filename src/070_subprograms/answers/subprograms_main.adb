@@ -64,8 +64,10 @@ procedure Subprograms_Main is
    --  reference to the graphical canvas associated with the application window
    Canvas : Canvas_ID;
 
+   --  QUESTION 1 - Part 1
    --  implement a function to compute the X coordinate
    --  x of the reference + distance * cos(angle)
+
    function Compute_X
      (Body_To_Move : Body_T;
       Turns_Around : Body_T) return Float
@@ -74,6 +76,7 @@ procedure Subprograms_Main is
       return Turns_Around.X + Body_To_Move.Distance * Cos (Body_To_Move.Angle);
    end Compute_X;
 
+   --  QUESTION 1 - Part 2
    --  implement a function to compute the Y coordinate
    --  y of the reference + distance * sin(angle)
 
@@ -85,6 +88,7 @@ procedure Subprograms_Main is
       return Turns_Around.Y + Body_To_Move.Distance * Sin (Body_To_Move.Angle);
    end Compute_Y;
 
+   --  QUESTION 2 - Part 1
    --  move a given body over one time step
 
    procedure Move
@@ -101,6 +105,7 @@ procedure Subprograms_Main is
       Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed;
    end Move;
 
+   --  QUESTION 3
    procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID) is
    begin
       Draw_Sphere
@@ -118,6 +123,9 @@ begin
    --  retrieve the graphical canvas associated with the main window
    Canvas := Get_Canvas (Window);
 
+   --  QUESTION 4 - Add a comet
+   --    Tip: Make it a body that is drawn as several circles that
+   --    follow each others.
    Bodies :=
      (Sun =>
         (Distance     => 0.0,
