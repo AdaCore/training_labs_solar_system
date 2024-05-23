@@ -22,7 +22,7 @@ with Float_Maths; use Float_Maths;
 
 package body Solar_System is
 
-   --  Question 1
+   --  QUESTION 1
    --  declare an exception called Bodies_Collision
 
    procedure Init_Body
@@ -97,7 +97,7 @@ package body Solar_System is
          if Body_To_Move /= Body_Collision_Check
            and then Colliding (Body_To_Move, Body_Collision_Check)
          then
-            --  Question 2
+            --  QUESTION 2
             --  raise an exception in case of collision between both bodies
             null;
          end if;
@@ -116,7 +116,7 @@ package body Solar_System is
             --  call the move procedure for each body
             Move (B, Bodies);
 
-            --  Question 3
+            --  QUESTION 3
             --  catch the exception around this call
             --  and set B.Speed to -B.Speed
          end;

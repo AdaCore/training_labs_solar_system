@@ -41,10 +41,10 @@ package Solar_System_Spec is
    Pi : constant Float := Ada.Numerics.Pi;
    Pi_2 : constant Float := Pi * 2.0;
 
-   --  Question 1.a: Implement the Epsilon constant.
+   --  QUESTION 1.a: Implement the Epsilon constant.
    Epsilon : constant Float := 1.0e-5;
 
-   --  Question 1.b: Implement the following function, which checks that two
+   --  QUESTION 1.b: Implement the following function, which checks that two
    --  floats are equal, to an epsilon.
    --  Error (= X - Y) must be inferior to X * Epsilon
    function Almost_Equal (X, Y : Float) return Boolean
@@ -56,7 +56,7 @@ package Solar_System_Spec is
    -- Attributes --
    ----------------
 
-   --  Question 2.a
+   --  QUESTION 2.a
    --  Add three subtypes to handle Floats:
    --  - one for those that are > 0.0
    --  - one for those that are >= 0.0
@@ -71,7 +71,7 @@ package Solar_System_Spec is
    function Round_Angle (Raw_Angle : Float) return Mod2Pi_Float
       is (Raw_Angle - (Pi_2 * Float'Floor (Raw_Angle / Pi_2)));
 
-   --  Question 2.b
+   --  QUESTION 2.b
    --  Implement the function for the visibility contract
    --  - Visible bodies have a radius which is stricly positive
    --  - Invisible bodies have the Black color, and a null radius, by
@@ -91,7 +91,7 @@ package Solar_System_Spec is
    --  The X and Y coordinates of orbiting bodies must match their distance
    --  and angle at any point in the program execution.
 
-   --  Question 5.a: Implement the function to check distances:
+   --  QUESTION 5.a: Implement the function to check distances:
    --    Distance = Sqrt ((X - Xcenter) ** 2 + (Y - Ycenter) ** 2)
    function Distance_Matches
      (X_Coordinate, Y_Coordinate : Float;
@@ -104,7 +104,7 @@ package Solar_System_Spec is
                ((X_Coordinate - X_Center_Coordinate) ** 2 +
                 (Y_Coordinate - Y_Center_Coordinate) ** 2)));
 
-   --  Question 5.b: Nothing to do for angle, the function is already
+   --  QUESTION 5.b: Nothing to do for angle, the function is already
    --  implemented.
 
    --  Function to check angles
@@ -154,7 +154,7 @@ package Solar_System_Spec is
    --  Orbit_Centers'(Earth => Sun, Moon => Earth, ...)
    type Orbit_Centers is array (Body_Id range <>) of Body_Id;
 
-   --  Question
+   --  QUESTION
    --  Implement the function which detects if a body is rotating around
    --  another one, or instead does not orbit.
    --  By convention, an object does not orbit around another one if it is
@@ -162,7 +162,7 @@ package Solar_System_Spec is
    function Does_Orbit (X : Body_Id; Turns_Around : Body_Id) return Boolean
       is (X /= Turns_Around);
 
-   --  Question
+   --  QUESTION
    --  Implement the function, which verifies that the attributes of the
    --  body are correct, depending on whether it orbits or not.
    function Body_Orbits_Or_Has_Zero_Orbit
@@ -181,7 +181,7 @@ package Solar_System_Spec is
        Speed : Float) return Boolean
       is (Does_Orbit (X, Turns_Around) and then Speed /= 0.0);
 
-   --  Question
+   --  QUESTION
    --  Implement the function, which detects recursively if an object Orbits
    --  around another one.
    --  That is if Orbits (A, B) and Orbits (B, C) then Orbits (A, C)
@@ -196,7 +196,7 @@ package Solar_System_Spec is
               or else Orbits
                 (All_Turns_Around, All_Turns_Around (X), Y)));
 
-   --  Question 7.a
+   --  QUESTION 7.a
    --  Implement the function, which detects a cycle in the rotation order
    --  Since we don't want cycles, we return True when there are none, which
    --  mean our solar system is correct.

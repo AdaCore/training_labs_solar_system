@@ -169,7 +169,7 @@ package body Solar_System is
    --$ end answer
    function Init_With_No_Cycle (Bodies : Bodies_Array_T) return Boolean is
    begin
-      --  Question 7.b
+      --  QUESTION 7.b
       --  Check that there are no cycles in the orbits by calling the
       --  proper spec function.
       --$ line question
@@ -222,7 +222,7 @@ package body Solar_System is
    --$ end answer
    begin
 
-      --  Question 3.b: Fix the runtime error by handling issues with
+      --  QUESTION 3.b: Fix the runtime error by handling issues with
       --  overflows and underflows.
 
       --$ begin answer

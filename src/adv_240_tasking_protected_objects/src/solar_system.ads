@@ -41,7 +41,7 @@ package Solar_System is
 
    procedure Move_All (Bodies : in out Bodies_Array_T);
 
-   --  Question: implement a procedure Terminate_Tasks to terminate
+   --  QUESTION: implement a procedure Terminate_Tasks to terminate
    --  all running tasks, so that the app can exit
 
 private

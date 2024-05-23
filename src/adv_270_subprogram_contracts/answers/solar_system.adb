@@ -139,7 +139,7 @@ package body Solar_System is
 
    function Init_With_No_Cycle (Bodies : Bodies_Array_T) return Boolean is
    begin
-      --  Question 7.b
+      --  QUESTION 7.b
       --  Check that there are no cycles in the orbits by calling the
       --  proper spec function.
       return Solar_System_Spec.No_Cycle (To_Orbit_Centers (Bodies));
@@ -185,7 +185,7 @@ package body Solar_System is
    is
    begin
 
-      --  Question 3.b: Fix the runtime error by handling issues with
+      --  QUESTION 3.b: Fix the runtime error by handling issues with
       --  overflows and underflows.
 
       if Body_To_Move.Speed > 0.0
