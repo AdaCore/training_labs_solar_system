@@ -56,7 +56,8 @@ private
 
    --  type Body_T stores every information about a body
 
-   --  QUESTION 3.a: Use the new types to update the definition of Body_T
+   --  QUESTION 3 - Part 1
+   --  Use the new types to update the definition of Body_T
    type Body_T is record
       X            : Float   := 0.0;
       Y            : Float   := 0.0;
