@@ -125,7 +125,7 @@ begin
 
    --  QUESTION 4 - Add a comet
    --    Tip: Make it a body that is drawn as several circles that
-   --    follow each others.
+   --    follow each other.
    Bodies :=
      (Sun =>
         (Distance     => 0.0,
