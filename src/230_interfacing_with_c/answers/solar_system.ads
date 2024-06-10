@@ -49,7 +49,7 @@ package Solar_System is
    procedure Move_All (Bodies : access Bodies_Array_T);
 
 private
-   --  Question: this data structure must be exported, for that the
+   --  QUESTION 4: this data structure must be exported, for that the
    --  convention must be set to C.
    type Body_T is record
       X            : Float   := 0.0;

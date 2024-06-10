@@ -20,4 +20,7 @@
 
 package Solar_System is
 
+   --  QUESTION 1 - Part 1
+   --  Move the types and write the specification for the subprogram Move_All
+
 end Solar_System;

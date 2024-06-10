@@ -36,7 +36,7 @@ package Solar_System is
       (B : Bodies_Enum_T; Turns_Around : Bodies_Enum_T; Speed : Float)
       return Boolean;
 
-   --  Question 4: Use the new types, and the visibility contract
+   --  QUESTION 4: Use the new types, and the visibility contract
    procedure Init_Body
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
@@ -54,7 +54,7 @@ package Solar_System is
        and then Body_Is_Visible_Or_Has_Default_Appearance
          (Visible, Color = Black, Radius));
 
-   --  Question 10
+   --  QUESTION 10
    --  Notice the simplified contracts due to the API
    --  being more specialized.
 
@@ -92,7 +92,8 @@ private
 
    --  type Body_T stores every information about a body
 
-   --  Question 3.a: Use the new types to update the definition of Body_T
+   --  QUESTION 3 - Part 1
+   --  Use the new types to update the definition of Body_T
    type Body_T is record
       X            : Float   := 0.0;
       Y            : Float   := 0.0;

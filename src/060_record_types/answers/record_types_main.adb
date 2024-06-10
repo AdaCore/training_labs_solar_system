@@ -35,7 +35,7 @@ procedure Record_Types_Main is
    subtype Rotating_Bodies_T is Bodies_Enum_T
      range Earth .. Bodies_Enum_T'Last;
 
-   --  Question: replace the definition of Body_T by a type that stores
+   --  QUESTION 1: replace the definition of Body_T by a type that stores
    --  body attributes
    --   X, Y, Distance, Speed, Angle, Color type is RGBA_T, Radius
    type Body_T (Visible : Boolean := True) is record
@@ -83,6 +83,7 @@ begin
    --  retrieve the graphical canvas from the window
    Canvas := Get_Canvas (Window);
 
+   --  QUESTION 2
    --  initialize Bodies variable with parameters for each body using an
    --  aggregate
    --    Sun Distance = 0.0, Angle = 0.0, Speed = 0.0, Radius = 20.0,
@@ -158,6 +159,8 @@ begin
 
       --  create a loop to draw every objects
       --  use the Draw_Sphere procedure to do it
+      --  QUESTION 4: Once finished -> implement black holes
+      --  as discriminated records without radius or color.
       for B in Bodies_Enum_T loop
          declare
             --  constant to clarify code

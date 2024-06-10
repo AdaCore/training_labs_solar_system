@@ -77,7 +77,7 @@ package body Solar_System is
 
    function Init_With_No_Cycle (Bodies : Bodies_Array_T) return Boolean is
    begin
-      --  Question 7.b
+      --  QUESTION 7 - Part 2
       --  Check that there are no cycles in the orbits by calling the
       --  proper spec function.
       return Solar_System_Spec.Not_Implemented;
@@ -104,7 +104,8 @@ package body Solar_System is
    procedure Move (Body_To_Move : in out Body_T; Bodies : Bodies_Array_T) is
    begin
 
-      --  Question 3.b: Fix the runtime error by handling issues with
+      --  QUESTION 3 - Part 2
+      --  Fix the runtime error by handling issues with
       --  overflows and underflows.
 
       Body_To_Move.X :=

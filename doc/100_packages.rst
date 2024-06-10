@@ -19,7 +19,7 @@ The purpose of this exercise is to factor out the code for stars into a package.
 Question 1
 ----------
 
-From the exercise *03_subprograms*, the structures and subprograms are now declared
+From the exercise *Subprograms*, the structures and subprograms are now declared
 in an external package, called :code:`Solar_System`.
 
 Implement the subprogram :code:`Move_All` that moves all the objects of a solar

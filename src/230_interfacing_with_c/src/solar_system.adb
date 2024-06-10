@@ -56,11 +56,13 @@ package body Solar_System is
 
    end Init_Body;
 
-   --  Question: import the 'compute_x' function from the C compute library
+   --  QUESTION 3 - Part 1
+   --  import the 'compute_x' function from the C compute library
    function Compute_X (Body_To_Move : Body_T) return Float
       is (0.0);
 
-   --  Question: import the 'compute_y' function from the C compute library
+   --  QUESTION 3 - Part 2
+   --  import the 'compute_y' function from the C compute library
    function Compute_Y (Body_To_Move : Body_T) return Float
       is (0.0);
 

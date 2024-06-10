@@ -36,7 +36,7 @@ package Solar_System is
    --  Checks if the body B is orbiting, from its Enum and Turns_Around
    --  attributes
 
-   --  Question 4: Use the new types, and the visibility contract
+   --  QUESTION 4: Use the new types, and the visibility contract
    procedure Init_Body
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
@@ -56,7 +56,8 @@ private
 
    --  type Body_T stores every information about a body
 
-   --  Question 3.a: Use the new types to update the definition of Body_T
+   --  QUESTION 3 - Part 1
+   --  Use the new types to update the definition of Body_T
    type Body_T is record
       X            : Float   := 0.0;
       Y            : Float   := 0.0;

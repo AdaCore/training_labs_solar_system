@@ -22,8 +22,8 @@ with Float_Maths; use Float_Maths;
 
 package Ada_Float_Maths is
 
-   --  Question: export the Ada_Cos function so that the C compute library
-   --  can use it
+   --  QUESTION 1 - Part 1
+   --  export the Ada_Cos function so that the C compute library can use it
    function Ada_Cos (X : Float) return Float
    is
    --$ line question
@@ -31,8 +31,8 @@ package Ada_Float_Maths is
    --$ line answer
      (Cos (X)) with Export, Convention => C;
 
-   --  Question: export the Ada_Sin function so that the C compute library
-   --  can use it
+   --  QUESTION 1 - Part 2
+   --  export the Ada_Sin function so that the C compute library can use it
    function Ada_Sin (X : Float) return Float
    is
    --$ line question

@@ -38,7 +38,7 @@ package Solar_System is
       Tail         :        Boolean := False;
       Visible      :        Boolean := True);
 
-   --  Question: implement a procedure Terminate_Tasks to terminate
+   --  QUESTION: implement a procedure Terminate_Tasks to terminate
    --  all running tasks, so that the app can exit
    procedure Terminate_Tasks;
 

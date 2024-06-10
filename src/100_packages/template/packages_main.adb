@@ -32,12 +32,8 @@ with Solar_System.Graphics; use Solar_System.Graphics;
 procedure Packages_Main is
 
    --$ begin question
-   --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
-   --  and Satellite
    type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet);
 
-   --  define a type Body_T to store every information about a body
-   --   X, Y, Distance, Speed, Angle, Color, Radius
    type Body_T is record
       X            : Float := 0.0;
       Y            : Float := 0.0;
@@ -49,19 +45,13 @@ procedure Packages_Main is
       Turns_Around : Bodies_Enum_T;
    end record;
 
-   --  define type Bodies_Array_T as an array of Body_T indexed by bodies
-   --  enumeration
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
    --$ end question
-   --  declare variable Bodies which is an array of Body_Type
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
    --  reference to the application window
@@ -71,8 +61,6 @@ procedure Packages_Main is
    Canvas : Canvas_ID;
 
    --$ begin question
-   --  implement a function to compute the X coordinate
-   --  x of the reference + distance * cos(angle)
    function Compute_X
      (Body_To_Move : Body_T; Turns_Around : Body_T) return Float;
 
@@ -83,8 +71,6 @@ procedure Packages_Main is
       return Turns_Around.X + Body_To_Move.Distance * Cos (Body_To_Move.Angle);
    end Compute_X;
 
-   --  implement a function to compute the Y coordinate
-   --  y of the reference + distance * sin(angle)
    function Compute_Y
      (Body_To_Move : Body_T; Turns_Around : Body_T) return Float;
 
@@ -234,10 +220,12 @@ begin
 
       end loop;
       --$ end question
-      --$ begin answer
+      --$ line answer
       Move_All (Bodies);
+      --  QUESTION 2
+      --  Implement Draw_All in a *new* package Graphics of Solar_System
+      --$ line answer
       Draw_All (Bodies, Canvas);
-      --$ end answer
 
       Handle_Events (Window);
 

@@ -29,7 +29,7 @@ Question 2
 ----------
 
 Modify the functions in :file:`compute_c/compute.c` so that they call the
-:C:`ada_cin` and :C:`ada_cos` functions.
+:C:`ada_sin` and :C:`ada_cos` functions.
 
 NB: If you're not comfortable using C you can skip this question by copying
 the answer source from the solution directly.
