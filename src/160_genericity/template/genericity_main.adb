@@ -17,7 +17,7 @@
 -- Place - Suite 330, Boston, MA 02111-1307, USA.                    --
 -----------------------------------------------------------------------
 
-with Ada.Real_Time; use Ada.Real_Time;
+with Ada.Real_Time;         use Ada.Real_Time;
 
 --$ line question
 with Solar_System;          use Solar_System;
