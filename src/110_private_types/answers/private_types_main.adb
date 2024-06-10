@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Ada.Real_Time; use Ada.Real_Time;
+with Ada.Real_Time;         use Ada.Real_Time;
 with Mage;                  use Mage;
 with Mage.Draw;             use Mage.Draw;
 with Mage.Event;            use Mage.Event;
