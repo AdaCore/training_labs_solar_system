@@ -82,3 +82,5 @@ Once you have updated a `template/xxx.adb` file, you can regenerate the associat
 
 When releasing to Alire, please do not forget to update the `CHANGELOG` file, the version in the
 `alire.toml` file, and to tag the new release so that it can be retrieved easily from within `git`. 
+
+Then run `alr publish https://github.com/adacore/training_labs_solar_system <HASH>`
