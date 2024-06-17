@@ -2,7 +2,7 @@
 
 * Improve questions, and numbers match instructions
 * Add a GNAT-studio-related labs
-* All labs build initialy without warning 
+* All labs build initially without warning 
 * tasking: exception handler for tasks
 
 # v1.0.0
