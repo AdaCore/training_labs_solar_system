@@ -1,3 +1,10 @@
+# v1.1.0
+
+* Improve questions, and numbers match instructions
+* Add a GNAT-studio-related labs
+* All labs build initialy without warning 
+* tasking: exception handler for tasks
+
 # v1.0.0
 
 * Add back: 160 genericity and 170 multiple inheritance labs
