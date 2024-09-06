@@ -50,7 +50,7 @@ package TSV_Render is
 
    function Get_Canvas (W : Window_ID) return Canvas_ID;
 
-   procedure Draw_Sphere (Canvas : in out Canvas_ID;
+   procedure Draw_Sphere (Canvas : Canvas_ID;
                           Position : Point_3d;
                           Radius : Float;
                           Color : RGBA_T);
