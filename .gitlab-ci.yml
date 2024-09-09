@@ -14,6 +14,11 @@ check_builds:
     - image:ada-trainings
   stage: build
   script:
+    - alr --version
+    - find $HOME -name cache 
+    - ls $HOME/.config
+    - ls $HOME/.config/alire/*
+    - mkdir -p $HOME/.config/alire/cache/dependencies
     - cp -r $HOME/mage_* $HOME/.config/alire/cache/dependencies/
     - export ADAFLAGS="-Werror"
     - make build_solutions
