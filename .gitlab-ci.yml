@@ -15,8 +15,13 @@ check_builds:
   stage: build
   script:
     - mkdir -p alire/cache/
-    - alr build mage
+    - env
     - ls
+    - ls $HOME
+    - ls $HOME/mage_*
+    - ls $HOME/mage_*/alire/
+    - ls $HOME/mage_*/alire/cache/
+    - ls $HOME/mage_*/alire/cache/dependencies
     - cp -r $HOME/mage_*/alire/cache/dependencies alire/cache
     - cp -r $HOME/mage_* alire/cache/dependencies
     - export ADAFLAGS="-Werror"
