@@ -14,9 +14,7 @@ check_builds:
     - image:ada-trainings
   stage: build
   script:
-    - mkdir -p alire/cache/
-    - cp -r $HOME/mage_*/alire/cache/dependencies alire/cache
-    - cp -r $HOME/mage_* alire/cache/dependencies
+    - cp -r $HOME/mage* $HOME/.local/share/alire/releases/
     - export ADAFLAGS="-Werror"
     - make build_solutions
     - make build_problems
