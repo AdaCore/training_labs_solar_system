@@ -33,4 +33,8 @@ lint:
     - image:lint
   stage: test
   script:
-    - autolint .
+    - autolint --output-code-climate-report code_quality_report.json .
+  artifacts:
+    when: always
+    reports:
+      codequality: code_quality_report.json
