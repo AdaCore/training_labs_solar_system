@@ -26,4 +26,15 @@ check_templates:
   script:
     - cp -r src src.actual
     - make generate
-    - diff -rb src.actual src 
+    - diff -rb src.actual src
+
+lint:
+  services:
+    - image:lint
+  stage: test
+  script:
+    - autolint --output-code-climate-report code_quality_report.json .
+  artifacts:
+    when: always
+    reports:
+      codequality: code_quality_report.json
