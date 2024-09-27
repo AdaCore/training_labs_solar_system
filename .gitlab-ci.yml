@@ -26,4 +26,11 @@ check_templates:
   script:
     - cp -r src src.actual
     - make generate
-    - diff -rb src.actual src 
+    - diff -rb src.actual src
+
+lint:
+  services:
+    - image:lint
+  stage: test
+  script:
+    - autolint .
