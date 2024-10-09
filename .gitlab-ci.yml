@@ -14,7 +14,6 @@ check_builds:
     - image:ada-trainings
   stage: build
   script:
-    - cp -r $HOME/mage* $HOME/.local/share/alire/releases/
     - export ADAFLAGS="-Werror"
     - make build_solutions
     - make build_problems
