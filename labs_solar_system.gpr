@@ -22,6 +22,9 @@ project Labs_Solar_System is
    type Mode_Type is ("Question", "Answer");
    Mode : Mode_Type := external ("Mode", "Question");
 
+   type Backend_T is ("Mage", "TSV");
+   Backend : Backend_T := external("Backend", "Mage");
+
    Answer_Mode_Dir := "";
    case Mode is
       when "Question" =>
@@ -94,6 +97,15 @@ project Labs_Solar_System is
    for Exec_Dir use "bin";
    for Main use (Lab_Name & "_main");
 
+   package Naming is
+      case Backend is
+      when "Mage" =>
+         for Spec ("Draw.Config") use "draw-config.use-mage.ads";
+      when "TSV" =>
+         for Spec ("Draw.Config") use "draw-config.use-tsv.ads";
+      end case;
+   end Naming;
+
    package Builder is
       for Default_Switches ("Ada") use (
          "-m2" --  Use file content to check re-compilation
@@ -102,7 +114,7 @@ project Labs_Solar_System is
 
    package Compiler is
       for Default_Switches ("Ada") use Labs_Solar_System_Config.Ada_Compiler_Switches
-         & ("-O0", "-g", "-gnata") & Lab_Switches_Ada;
+         & ("-Og", "-g", "-gnata") & Lab_Switches_Ada;
       for Default_Switches ("C") use ("-Wall", "-pedantic", "-Werror");
    end Compiler;
 

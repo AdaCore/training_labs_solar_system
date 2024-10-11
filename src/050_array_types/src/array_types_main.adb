@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Mage;          use Mage;
-with Mage.Draw;     use Mage.Draw;
-with Mage.Event;    use Mage.Event;
+with Draw; use Draw;
 
 --  TODO: Remove these two lines once Cos and Sin are used
 pragma Warnings (Off,
@@ -43,7 +41,7 @@ procedure Array_Types_Main is
    --  define type Bodies_Array_T as an array of float indexed by bodies and
    --  parameters
 
-   --  define type Colors_Array_T as an array of color (RGBA_T) indexed by
+   --  define type Colors_Array_T as an array of color (Color_T) indexed by
    --  bodies
 
    --  declare variable Bodies which is an instance of Bodies_Array_T
@@ -57,24 +55,12 @@ procedure Array_Types_Main is
    --  which defines the looping period
    Period  : constant Time_Span := Milliseconds (40);
 
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  TODO: Remove once you are drawing on the screen
-   pragma Warnings (Off,
-      "variable ""Canvas"" is assigned but never read");
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
-
 begin
 
    --  create a window 240x320
-   Window := Create_Window (Width  => 240,
-                            Height => 320,
-                            Name   => "Solar System");
-
-   --  retrieve the graphical canvas from the window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width  => 240,
+                  Height => 320,
+                  Name   => "Solar System");
 
    --  QUESTION 1 - Part 2
    --  initialize Bodies variable with parameters for each body using an
@@ -91,7 +77,7 @@ begin
    --  initialize the Next step time as current time (Clock) + period
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       --  QUESTION 2 - part 1
       --  create a loop to update each body position and angles
@@ -110,7 +96,7 @@ begin
       --    argument (using Z = 0.0) to draw
 
       --  update the screen using procedure Swap_Buffers
-      Handle_Events (Window);
+      New_Frame;
 
       --  wait until Next
       delay until Next;

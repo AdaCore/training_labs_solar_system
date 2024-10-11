@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Mage;          use Mage;
-with Mage.Draw;     use Mage.Draw;
-with Mage.Event;    use Mage.Event;
+with Draw; use Draw;
 with Float_Maths;   use Float_Maths;
 
 procedure Array_Types_Main is
@@ -42,9 +40,9 @@ procedure Array_Types_Main is
    --  parameters
    type Bodies_Array_T is array (Bodies_Enum_T, Parameters_Enum_T) of Float;
 
-   --  define type Colors_Array_T as an array of color (RGBA_T) indexed by
+   --  define type Colors_Array_T as an array of color (Color_T) indexed by
    --  bodies
-   type Colors_Array_T is array (Bodies_Enum_T) of RGBA_T;
+   type Colors_Array_T is array (Bodies_Enum_T) of Color_T;
 
    --  declare variable Bodies which is an instance of Bodies_Array_T
    Bodies : Bodies_Array_T;
@@ -59,21 +57,12 @@ procedure Array_Types_Main is
    --  which defines the looping period
    Period  : constant Time_Span := Milliseconds (40);
 
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
-
 begin
 
    --  create a window 240x320
-   Window := Create_Window (Width  => 240,
-                            Height => 320,
-                            Name   => "Solar System");
-
-   --  retrieve the graphical canvas from the window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width  => 240,
+                  Height => 320,
+                  Name   => "Solar System");
 
    --  QUESTION 1 - Part 2
    --  initialize Bodies variable with parameters for each body using an
@@ -118,7 +107,7 @@ begin
    --  initialize the Next step time as current time (Clock) + period
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       --  QUESTION 2 - part 1
       --  create a loop to update each body position and angles
@@ -150,14 +139,13 @@ begin
       --    use the Draw_Sphere procedure with the Point_3d
       --    argument (using Z = 0.0) to draw
       for B in Bodies_Enum_T loop
-         Draw_Sphere (Canvas   => Canvas,
-                      Position => (Bodies (B, X), Bodies (B, Y), 0.0),
+         Draw_Sphere (Position => (Bodies (B, X), Bodies (B, Y)),
                       Radius   => Bodies (B, Radius),
                       Color    => Colors (B));
       end loop;
 
       --  update the screen using procedure Swap_Buffers
-      Handle_Events (Window);
+      New_Frame;
 
       --  wait until Next
       delay until Next;

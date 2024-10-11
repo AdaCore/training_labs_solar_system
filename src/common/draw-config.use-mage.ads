@@ -18,49 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage;
-with Mage.Model;
-
-package TSV_Render is
-   --  This package is a TSV front end for the labs
-   --  that is it produces a text output.
-   type RGBA_T is (Yellow, Blue, White, Red, Black);
-   subtype Point_3d is Mage.Model.Point_3d;
-
-   type Sphere_T is record
-       Position : Point_3d;
-       Radius : Float;
-       Color : RGBA_T;
-   end record;
-
-   type Sphere_Arr is array (Positive range <>) of Sphere_T;
-
-   type Canvas_T is record
-       Spheres : Sphere_Arr (1 .. 20);
-       Number_Of_Spheres : Natural range 0 .. 20 := 0;
-       Frame_Count : Natural := 0;
-   end record;
-
-   type Canvas_ID is null record;
-
-   type Window_ID is null record;
-
-   function Create_Window (Width, Height : Positive; Name : String)
-       return Window_ID;
-
-   function Get_Canvas (W : Window_ID) return Canvas_ID;
-
-   procedure Draw_Sphere (Canvas : Canvas_ID;
-                          Position : Point_3d;
-                          Radius : Float;
-                          Color : RGBA_T);
-
-   procedure Handle_Events (W : in out Window_ID);
-
-   Is_Killed : Boolean := False;
-
-   task Input_Capture is
-      entry Start;
-      entry Quit;
-   end Input_Capture;
-end TSV_Render;
+package Draw.Config is
+   --  This package is a common front end for the labs.
+   Backend : constant Backend_T := Mage;
+end Draw.Config;
