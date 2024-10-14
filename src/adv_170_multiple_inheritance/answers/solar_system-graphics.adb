@@ -40,7 +40,7 @@ package body Solar_System.Graphics is
    end Move;
 
    function Create_Visible
-     (B : access Orbiting_Body_T; Radius : Float; Color : RGBA_T)
+     (B : access Orbiting_Body_T; Radius : Float; Color : Color_T)
       return access Visible_Orbiting_Body_T
    is
    begin
@@ -50,7 +50,7 @@ package body Solar_System.Graphics is
    end Create_Visible;
 
    function Create_Visible
-     (B : access Still_Body_T; Radius : Float; Color : RGBA_T)
+     (B : access Still_Body_T; Radius : Float; Color : Color_T)
       return access Visible_Still_Body_T
    is
    begin
@@ -60,11 +60,10 @@ package body Solar_System.Graphics is
    end Create_Visible;
 
    overriding procedure Draw
-      (Drawable : Visible_Body_Decorator_T; Canvas : Canvas_ID) is
+      (Drawable : Visible_Body_Decorator_T) is
    begin
       Draw_Sphere
-        (Canvas   => Canvas,
-         Position => (Drawable.Object_Ptr.X, Drawable.Object_Ptr.Y, 0.0),
+        (Position => (Drawable.Object_Ptr.X, Drawable.Object_Ptr.Y),
          Radius   => Drawable.Graphic.Radius, Color => Drawable.Graphic.Color);
    end Draw;
 
@@ -76,16 +75,16 @@ package body Solar_System.Graphics is
    end Create_Visible;
 
    overriding procedure Draw
-      (Drawable : Visible_Solar_System_T; Canvas : Canvas_ID) is
+      (Drawable : Visible_Solar_System_T) is
    begin
       for B of Drawable.Object_Ptr.Still_Objects loop
          if Still_Body_I'Class (B.all) in Drawable_I'Class then
-            Drawable_I'Class (Still_Body_I'Class (B.all)).Draw (Canvas);
+            Drawable_I'Class (Still_Body_I'Class (B.all)).Draw;
          end if;
       end loop;
       for B of Drawable.Object_Ptr.Moving_Objects loop
          if Movable_I'Class (B.all) in Drawable_I'Class then
-            Drawable_I'Class (Movable_I'Class (B.all)).Draw (Canvas);
+            Drawable_I'Class (Movable_I'Class (B.all)).Draw;
          end if;
       end loop;
    end Draw;

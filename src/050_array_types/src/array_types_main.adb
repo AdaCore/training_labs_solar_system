@@ -19,7 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Draw; use Draw;
+with Draw;          use Draw;
 
 --  TODO: Remove these two lines once Cos and Sin are used
 pragma Warnings (Off,
@@ -92,8 +92,7 @@ begin
 
       --  QUESTION 2 - part 2
       --  create a loop to draw every objects
-      --    use the Draw_Sphere procedure with the Point_3d
-      --    argument (using Z = 0.0) to draw
+      --    use the Draw_Sphere procedure with the Point_T argument
 
       --  update the screen using procedure Swap_Buffers
       New_Frame;

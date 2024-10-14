@@ -36,7 +36,10 @@ package body Draw is
          when Yellow => TSV_Render.Yellow,
          when Blue   => TSV_Render.Blue,
          when White  => TSV_Render.White,
-         when Red    => TSV_Render.Red);
+         when Red    => TSV_Render.Red,
+         when Cyan   => TSV_Render.Cyan,
+         when Green  => TSV_Render.Green,
+         when Orange => TSV_Render.Orange);
 
    function "+" (Color : Color_T) return M.RGBA_T is
       (case Color is
@@ -44,6 +47,9 @@ package body Draw is
          when Blue   => M.Blue,
          when White  => M.White,
          when Red    => M.Red,
+         when Cyan   => M.Cyan,
+         when Green  => M.Green,
+         when Orange  => (255, 150, 0, 255),
          when Black  => M.Black);
 
    function "+" (Color : Point_T) return M.Model.Point_3d is

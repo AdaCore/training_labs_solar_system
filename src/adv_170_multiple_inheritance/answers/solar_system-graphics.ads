@@ -18,18 +18,17 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage.Draw; use Mage.Draw;
-with Mage;      use Mage;
+with Draw; use Draw;
 
 package Solar_System.Graphics is
 
    type Drawable_I is interface;
-   procedure Draw (Drawable : Drawable_I; Canvas : Canvas_ID) is abstract;
+   procedure Draw (Drawable : Drawable_I) is abstract;
 
    type Visible_Body_Decorator_T is
      abstract new Drawable_I and Still_Body_I with private;
    overriding procedure Draw
-     (Drawable : Visible_Body_Decorator_T; Canvas : Canvas_ID);
+     (Drawable : Visible_Body_Decorator_T);
    overriding function Get_X
      (Drawable : Visible_Body_Decorator_T) return Float;
    overriding function Get_Y
@@ -39,12 +38,12 @@ package Solar_System.Graphics is
      new Visible_Body_Decorator_T and Movable_I with private;
    overriding procedure Move (B : in out Visible_Orbiting_Body_T);
    function Create_Visible
-     (B : access Orbiting_Body_T; Radius : Float; Color : RGBA_T)
+     (B : access Orbiting_Body_T; Radius : Float; Color : Color_T)
       return access Visible_Orbiting_Body_T;
 
    type Visible_Still_Body_T is new Visible_Body_Decorator_T with private;
    function Create_Visible
-     (B : access Still_Body_T; Radius : Float; Color : RGBA_T)
+     (B : access Still_Body_T; Radius : Float; Color : Color_T)
       return access Visible_Still_Body_T;
 
    type Visible_Solar_System_T is
@@ -56,14 +55,14 @@ package Solar_System.Graphics is
    overriding procedure Add_Moving_Body
      (S : in out Visible_Solar_System_T; B : access Movable_I'Class);
    overriding procedure Draw
-     (Drawable : Visible_Solar_System_T; Canvas : Canvas_ID);
+     (Drawable : Visible_Solar_System_T);
    overriding procedure Move (B : in out Visible_Solar_System_T);
 
 private
 
    type Sphere_Type is record
       Radius : Float;
-      Color  : RGBA_T;
+      Color  : Color_T;
    end record;
 
    type Visible_Body_Decorator_T is

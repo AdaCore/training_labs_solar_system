@@ -21,7 +21,7 @@
 package Draw is
    --  This package is a common front end for the labs.
 
-   type Color_T is (Yellow, Blue, White, Red, Black);
+   type Color_T is (Yellow, Blue, White, Red, Cyan, Green, Orange, Black);
 
    type Point_T is record
       X, Y : Float;

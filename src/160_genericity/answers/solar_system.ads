@@ -17,7 +17,7 @@
 -- Place - Suite 330, Boston, MA 02111-1307, USA.                    --
 -----------------------------------------------------------------------
 
-with Mage;      use Mage;
+with Draw;      use Draw;
 
 generic
    type Bodies_Enum_T is (<>);
@@ -29,7 +29,7 @@ package Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Float;
       Angle        :        Float;
       Speed        :        Float;
@@ -50,7 +50,7 @@ private
       Speed        : Float;
       Angle        : Float;
       Radius       : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Visible      : Boolean := True;
       Turns_Around : Bodies_Enum_T;
    end record;

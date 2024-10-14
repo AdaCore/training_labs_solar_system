@@ -20,21 +20,20 @@
 
 package body Solar_System.Graphics is
 
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID) is
+   procedure Draw_Body (Object : Body_T) is
    begin
       if Object.Visible then
          Draw_Sphere
-           (Canvas   => Canvas,
-            Position => (Object.X, Object.Y, 0.0),
+           (Position => (Object.X, Object.Y),
             Radius   => Object.Radius,
             Color    => Object.Color);
       end if;
    end Draw_Body;
-   procedure Draw_All (Bodies : Bodies_Array_T; Canvas : Canvas_ID) is
+   procedure Draw_All (Bodies : Bodies_Array_T) is
    begin
       for Obj of Bodies loop
          if Obj.Visible then
-            Draw_Body (Obj, Canvas);
+            Draw_Body (Obj);
          end if;
       end loop;
    end Draw_All;

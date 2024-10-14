@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Mage;          use Mage;
-with Mage.Draw;     use Mage.Draw;
-with Mage.Event;    use Mage.Event;
+with Draw;          use Draw;
 with Float_Maths;   use Float_Maths;
 
 procedure Subprograms_Main is
@@ -43,7 +41,7 @@ procedure Subprograms_Main is
       Distance     : Float;
       Speed        : Float;
       Angle        : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Radius       : Float;
       Turns_Around : Bodies_Enum_T;
    end record;
@@ -61,12 +59,6 @@ procedure Subprograms_Main is
    --  declare a constant Period of 40 milliseconds of type Time_Span defining
    --  the loop period
    Period : constant Time_Span := Milliseconds (40);
-
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
 
    --$ begin question
    --  TODO: Remove once function is referenced
@@ -130,11 +122,10 @@ procedure Subprograms_Main is
    --    it needs something to draw, and something to draw it on
    --$ end question
    --$ begin answer
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID) is
+   procedure Draw_Body (Object : Body_T) is
    begin
       Draw_Sphere
-        (Canvas   => Canvas,
-         Position => (Object.X, Object.Y, 0.0),
+        (Position => (Object.X, Object.Y),
          Radius   => Object.Radius,
          Color    => Object.Color);
    end Draw_Body;
@@ -142,11 +133,7 @@ procedure Subprograms_Main is
 
 begin
 
-   --  create the main window
-   Window :=
-     Create_Window (Width => 240, Height => 320, Name => "Solar System");
-   --  retrieve the graphical canvas associated with the main window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
    --  QUESTION 4 - Add a comet
    --    Tip: Make it a body that is drawn as several circles that
@@ -201,7 +188,7 @@ begin
    --  initialize the Next step time as the current time (Clock) + the period
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       --$ begin question
       --  update each body position and angles
@@ -229,8 +216,7 @@ begin
       --  create a loop to draw every objects
       --  use the Draw_Sphere procedure to do it
       for B in Bodies_Enum_T loop
-         Draw_Sphere (Canvas   => Canvas,
-                      Position => (Bodies (B).X, Bodies (B).Y, 0.0),
+         Draw_Sphere (Position => (Bodies (B).X, Bodies (B).Y),
                       Radius   => Bodies (B).Radius,
                       Color    => Bodies (B).Color);
       end loop;
@@ -243,11 +229,11 @@ begin
 
       for B in Bodies_Enum_T loop
          --  draw each body
-         Draw_Body (Bodies (B), Canvas);
+         Draw_Body (Bodies (B));
       end loop;
       --$ end answer
 
-      Handle_Events (Window);
+      New_Frame;
 
       --  wait until Now + Period time elapsed before the next
       delay until Next;

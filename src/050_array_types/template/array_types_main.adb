@@ -19,7 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Draw; use Draw;
+with Draw;          use Draw;
 --$ begin question
 
 --  TODO: Remove these two lines once Cos and Sin are used
@@ -157,8 +157,7 @@ begin
 
       --  QUESTION 2 - part 2
       --  create a loop to draw every objects
-      --    use the Draw_Sphere procedure with the Point_3d
-      --    argument (using Z = 0.0) to draw
+      --    use the Draw_Sphere procedure with the Point_T argument
       --$ begin answer
       for B in Bodies_Enum_T loop
          Draw_Sphere (Position => (Bodies (B, X), Bodies (B, Y)),

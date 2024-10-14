@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Mage;          use Mage;
-with Mage.Draw;     use Mage.Draw;
-with Mage.Event;    use Mage.Event;
+with Draw;          use Draw;
 with Float_Maths;   use Float_Maths;
 
 procedure Packages_Main is
@@ -34,7 +32,7 @@ procedure Packages_Main is
       Distance     : Float;
       Speed        : Float;
       Angle        : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Radius       : Float;
       Turns_Around : Bodies_Enum_T;
    end record;
@@ -46,12 +44,6 @@ procedure Packages_Main is
    Next : Time;
 
    Period : constant Time_Span := Milliseconds (40);
-
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
 
    function Compute_X
      (Body_To_Move : Body_T; Turns_Around : Body_T) return Float;
@@ -92,20 +84,16 @@ procedure Packages_Main is
 
    end Move;
 
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID) is
+   procedure Draw_Body (Object : Body_T) is
    begin
       Draw_Sphere
-        (Canvas => Canvas, Position => (Object.X, Object.Y, 0.0),
+        (Position => (Object.X, Object.Y),
          Radius => Object.Radius, Color => Object.Color);
    end Draw_Body;
 
 begin
 
-   --  Create the main window
-   Window :=
-     Create_Window (Width => 240, Height => 320, Name => "Solar System");
-   --  retrieve the graphical canvas associated with the main window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
    --  initialize Bodies variable with parameters for each body using an
    --  aggregate
@@ -159,19 +147,19 @@ begin
    --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       for B in Bodies_Enum_T loop
 
          --  call the move procedure for each body
          Move (Bodies, B);
-         Draw_Body (Bodies (B), Canvas);
+         Draw_Body (Bodies (B));
 
       end loop;
       --  QUESTION 2
       --  Implement Draw_All in a *new* package Graphics of Solar_System
 
-      Handle_Events (Window);
+      New_Frame;
 
       delay until Next;
       Next := Next + Period;

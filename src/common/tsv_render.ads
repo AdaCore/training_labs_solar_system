@@ -24,7 +24,7 @@ with Mage.Model;
 package TSV_Render is
    --  This package is a TSV front end for the labs
    --  that is it produces a text output.
-   type RGBA_T is (Yellow, Blue, White, Red, Black);
+   type RGBA_T is (Yellow, Blue, White, Red, Cyan, Green, Orange, Black);
    subtype Point_3d is Mage.Model.Point_3d;
 
    type Sphere_T is record

@@ -18,16 +18,14 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage.Draw; use Mage.Draw;
-
 --$ line answer
 generic
 package Solar_System.Graphics is
 
-   procedure Draw_All (Bodies : Bodies_Array_T; Canvas : Canvas_ID);
+   procedure Draw_All (Bodies : Bodies_Array_T);
 
 private
 
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID);
+   procedure Draw_Body (Object : Body_T);
 
 end Solar_System.Graphics;

@@ -20,9 +20,7 @@
 with Ada.Real_Time;         use Ada.Real_Time;
 
 with Solar_System;          use Solar_System;
-with Mage;                  use Mage;
-with Mage.Event;            use Mage.Event;
-with Mage.Draw;             use Mage.Draw;
+with Draw;                  use Draw;
 with Solar_System.Graphics; use Solar_System.Graphics;
 
 procedure Genericity_Main is
@@ -35,19 +33,9 @@ procedure Genericity_Main is
 
    Period : constant Time_Span := Milliseconds (40);
 
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
-
 begin
 
-   --  Create the main window
-   Window :=
-     Create_Window (Width => 240, Height => 320, Name => "Solar System");
-   --  retrieve the graphical canvas associated with the main window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
    --  initialize Bodies using Init_Body procedure
    Init_Body
@@ -133,12 +121,12 @@ begin
 
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       Move_All (Bodies);
-      Draw_All (Bodies, Canvas);
+      Draw_All (Bodies);
 
-      Handle_Events (Window);
+      New_Frame;
 
       delay until Next;
       Next := Next + Period;

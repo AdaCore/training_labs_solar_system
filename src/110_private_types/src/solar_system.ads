@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage; use Mage;
+with Draw; use Draw;
 
 package Solar_System is
 
@@ -34,7 +34,7 @@ package Solar_System is
       Speed        : Float;
       Angle        : Float;
       Radius       : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Visible      : Boolean := True;
       Turns_Around : Bodies_Enum_T;
    end record;

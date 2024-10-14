@@ -29,7 +29,7 @@ package body Solar_System is
    procedure Init_Body
      (B            :        Bodies_Enum_T;
       Radius       :        Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Float;
       Angle        :        Float;
       Speed        :        Float;

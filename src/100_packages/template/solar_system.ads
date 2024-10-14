@@ -19,7 +19,7 @@
 -----------------------------------------------------------------------
 
 --$ begin answer
-with Mage; use Mage;
+with Draw; use Draw;
 
 --$ end answer
 package Solar_System is
@@ -41,7 +41,7 @@ package Solar_System is
       Distance     : Float;
       Speed        : Float;
       Angle        : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Radius       : Float;
       Turns_Around : Bodies_Enum_T;
       Visible      : Boolean := True;

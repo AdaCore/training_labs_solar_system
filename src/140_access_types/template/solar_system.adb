@@ -46,7 +46,7 @@ package body Solar_System is
       --$ line answer
       (B            : Body_Access_T;
        Radius       : Float;
-       Color        : RGBA_T;
+       Color        : Color_T;
        Distance     : Float;
        Angle        : Float;
        Speed        : Float;

@@ -33,7 +33,7 @@ package body Solar_System is
       --$ line question
       Bodies       : in out Bodies_Array_T;
       Radius       :        Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Float;
       Angle        :        Float;
       Speed        :        Float;
