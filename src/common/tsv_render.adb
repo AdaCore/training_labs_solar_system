@@ -33,6 +33,7 @@ package body TSV_Render is
    function Create_Window
      (Width, Height : Positive; Name : String) return Window_ID
    is
+      pragma Unreferenced (Width, Height, Name);
    begin
       Inner_Canvas :=
         (Spheres     => (others => <>),
@@ -42,6 +43,7 @@ package body TSV_Render is
    end Create_Window;
 
    function Get_Canvas (W : Window_ID) return Canvas_ID is
+      pragma Unreferenced (W);
    begin
       return (null record);
    end Get_Canvas;
@@ -110,11 +112,13 @@ package body TSV_Render is
      (Canvas : Canvas_ID; Position : Point_3d; Radius : Float;
       Color  : RGBA_T)
    is
+      pragma Unreferenced (Canvas);
    begin
       Append (Inner_Canvas, Sphere_T'(Position, Radius, Color));
    end Draw_Sphere;
 
    procedure Handle_Events (W : in out Window_ID) is
+      pragma Unreferenced (W);
    begin
       Inner_Canvas.Frame_Count := Inner_Canvas.Frame_Count + 1;
       Print_Out_TSV (Inner_Canvas);
