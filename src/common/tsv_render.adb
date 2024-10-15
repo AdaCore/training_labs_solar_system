@@ -19,13 +19,10 @@
 -----------------------------------------------------------------------
 
 with Ada.Text_IO; use Ada.Text_IO;
-with GNAT.Traceback.Symbolic;
 with Ada.Characters.Latin_1;
 with Vector_Maths_Trig;
 with Float_Maths;
 with Ada.Numerics;
-with Ada.Exceptions;
-with Ada.IO_Exceptions;
 
 package body TSV_Render is
    Inner_Canvas : Canvas_T;
@@ -125,32 +122,4 @@ package body TSV_Render is
       Empty (Inner_Canvas);
    end Handle_Events;
 
-   task body Input_Capture is
-   begin
-      select
-         accept Start;
-      or
-         accept Quit do
-            Is_Killed := True;
-         end Quit;
-      end select;
-
-      while not Is_Killed loop
-         Put_Line ("Q<enter> to quit");
-         declare
-            I : constant String := Get_Line;
-         begin
-            if I'Length = 1 and then I = "Q" then
-               Is_Killed := True;
-            end if;
-         end;
-      end loop;
-   exception
-      when Ada.IO_Exceptions.End_Error =>
-         Is_Killed := True;
-      when E : others =>
-         Is_Killed := True;
-         Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Name (E));
-         Ada.Text_IO.Put_Line (GNAT.Traceback.Symbolic.Symbolic_Traceback (E));
-   end Input_Capture;
 end TSV_Render;

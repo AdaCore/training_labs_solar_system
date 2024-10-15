@@ -19,6 +19,7 @@
 -----------------------------------------------------------------------
 
 with Draw.Config;
+with SDL;
 with Mage;
 with Mage.Draw;
 with Mage.Event;
@@ -75,13 +76,12 @@ package body Draw is
       pragma Assert (not Initialized, "Cannot create multiple windows");
       case State.Backend is
       when TSV =>
+         SDL.Finalise;
          State.TSV_Window := TSV_Render.Create_Window (Width, Height, Name);
          State.TSV_Canvas := TSV_Render.Get_Canvas (State.TSV_Window);
-         TSV_Render.Input_Capture.Start;
       when Mage =>
          State.Mage_Window := M.Draw.Create_Window (Width, Height, Name);
          State.Mage_Canvas := M.Draw.Get_Canvas (State.Mage_Window);
-         TSV_Render.Input_Capture.Quit;
       end case;
       Initialized := True;
    end Create_Window;

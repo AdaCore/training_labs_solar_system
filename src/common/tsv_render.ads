@@ -58,9 +58,4 @@ package TSV_Render is
    procedure Handle_Events (W : in out Window_ID);
 
    Is_Killed : Boolean := False;
-
-   task Input_Capture is
-      entry Start;
-      entry Quit;
-   end Input_Capture;
 end TSV_Render;
