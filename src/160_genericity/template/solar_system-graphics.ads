@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -18,16 +18,14 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage.Draw; use Mage.Draw;
-
 --$ line answer
 generic
 package Solar_System.Graphics is
 
-   procedure Draw_All (Bodies : Bodies_Array_T; Canvas : Canvas_ID);
+   procedure Draw_All (Bodies : Bodies_Array_T);
 
 private
 
-   procedure Draw_Body (Object : Body_T; Canvas : Canvas_ID);
+   procedure Draw_Body (Object : Body_T);
 
 end Solar_System.Graphics;

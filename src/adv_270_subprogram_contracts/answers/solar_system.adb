@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -51,7 +51,7 @@ package body Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Natural_Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Natural_Float;
       Angle        :        Mod2Pi_Float;
       Speed        :        Float;
@@ -76,7 +76,7 @@ package body Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Positive_Float;
-      Color        :        RGBA_T)
+      Color        :        Color_T)
    is
    begin
       Init_Body
@@ -118,7 +118,7 @@ package body Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Positive_Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Positive_Float;
       Angle        :        Mod2Pi_Float;
       Speed        :        Float;

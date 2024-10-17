@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time;         use Ada.Real_Time;
-with Mage;                  use Mage;
-with Mage.Draw;             use Mage.Draw;
-with Mage.Event;            use Mage.Event;
+with Draw;             use Draw;
 with Solar_System;          use Solar_System;
 with Solar_System.Graphics; use Solar_System.Graphics;
 
@@ -33,20 +31,9 @@ procedure Tasking_Protected_Objects_Main is
    --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
-
 begin
 
-   --  Create the main window
-   Window :=
-     Create_Window (Width => 240, Height => 320, Name => "Solar System");
-
-   --  retrieve the graphical canvas associated with the main window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
    --  initialize Bodies using Init_Body procedure
    Init_Body
@@ -129,11 +116,11 @@ begin
    --  call Move_All procedure
    --  wait until Now + Period time elapsed before the next
    Now := Clock;
-   while not Is_Killed loop
+   while Running loop
 
-      Draw_All (Canvas);
+      Draw_All;
 
-      Handle_Events (Window);
+      New_Frame;
 
       delay until Now + Period;
       Now := Now + Period;

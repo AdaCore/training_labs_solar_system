@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage; use Mage;
+with Draw; use Draw;
 
 --  TODO: Remove once lab is done
 pragma Warnings (Off,
@@ -41,7 +41,7 @@ package Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Float;
       Angle        :        Float;
       Speed        :        Float;
@@ -65,7 +65,7 @@ private
       Angle        : Float;
       Speed        : Float;
       Radius       : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Visible      : Boolean := True;
       Turns_Around : Bodies_Enum_T;
    end record;

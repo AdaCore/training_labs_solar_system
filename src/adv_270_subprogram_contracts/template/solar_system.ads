@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage; use Mage;
+with Draw; use Draw;
 --$ begin question
 
 --  TODO: Remove once lab is done
@@ -52,7 +52,7 @@ package Solar_System is
       Radius       :        Float;
       --$ line answer
       Radius       :        Natural_Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       --$ begin question
       Distance     :        Float;
       Angle        :        Float;
@@ -82,7 +82,7 @@ package Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Positive_Float;
-      Color        :        RGBA_T);
+      Color        :        Color_T);
 
    procedure Init_Invisible_Body
      (B            :        Bodies_Enum_T;
@@ -97,7 +97,7 @@ package Solar_System is
      (B            :        Bodies_Enum_T;
       Bodies       : in out Bodies_Array_T;
       Radius       :        Positive_Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Positive_Float;
       Angle        :        Mod2Pi_Float;
       Speed        :        Float;
@@ -130,7 +130,7 @@ private
       Speed        : Float;
       Radius       : Natural_Float;
       --$ end answer
-      Color        : RGBA_T;
+      Color        : Color_T;
       Visible      : Boolean := True;
       Turns_Around : Bodies_Enum_T;
    end record;

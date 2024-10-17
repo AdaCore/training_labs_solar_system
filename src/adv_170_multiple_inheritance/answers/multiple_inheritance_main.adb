@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time;         use Ada.Real_Time;
-with Mage;                  use Mage;
-with Mage.Draw;             use Mage.Draw;
-with Mage.Event;            use Mage.Event;
+with Draw;                  use Draw;
 with Solar_System;          use Solar_System;
 with Solar_System.Graphics; use Solar_System.Graphics;
 
@@ -34,19 +32,12 @@ procedure Multiple_Inheritance_Main is
 
    Period : constant Time_Span := Milliseconds (40);
 
-   Window : Window_ID;
-   Canvas : Canvas_ID;
-
    Sun        : access Still_Body_I'Class;
    Black_Hole : access Orbiting_Body_I'Class;
 
 begin
 
-   --  create the main window
-   Window :=
-     Create_Window (Width => 240, Height => 320, Name => "Solar System");
-   --  retrieve the graphical canvas associated with the main window
-   Canvas := Get_Canvas (Window);
+   Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
    Sun := Create_Visible (Create_Still (0.0, 0.0), 20.0, Yellow);
 
@@ -84,12 +75,12 @@ begin
 
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       S.Move;
-      S.Draw (Canvas);
+      S.Draw;
 
-      Handle_Events (Window);
+      New_Frame;
 
       delay until Next;
       Next := Next + Period;

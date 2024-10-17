@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -22,12 +22,12 @@ with Float_Maths; use Float_Maths;
 
 package body Solar_System is
 
-   function Get_X (O : Body_Base_T) return Float is
+   overriding function Get_X (O : Body_Base_T) return Float is
    begin
       return O.X;
    end Get_X;
 
-   function Get_Y (O : Body_Base_T) return Float is
+   overriding function Get_Y (O : Body_Base_T) return Float is
    begin
       return O.Y;
    end Get_Y;
@@ -43,7 +43,7 @@ package body Solar_System is
            Angle => Angle, Turns_Around => Turns_Around);
    end Create_Orbiting;
 
-   procedure Move (B : in out Orbiting_Body_T) is
+   overriding procedure Move (B : in out Orbiting_Body_T) is
    begin
 
       B.X := B.Turns_Around.Get_X + B.Distance * Cos (B.Angle);
@@ -64,21 +64,21 @@ package body Solar_System is
       return new Solar_System_T;
    end Create_Solar_System;
 
-   procedure Add_Still_Body
+   overriding procedure Add_Still_Body
      (S : in out Solar_System_T; B : access Still_Body_I'Class)
    is
    begin
       S.Still_Objects.Append (Still_Body_Access_I (B));
    end Add_Still_Body;
 
-   procedure Add_Moving_Body
+   overriding procedure Add_Moving_Body
      (S : in out Solar_System_T; B : access Movable_I'Class)
    is
    begin
       S.Moving_Objects.Append (Moving_Access_I (B));
    end Add_Moving_Body;
 
-   procedure Move (S : in out Solar_System_T) is
+   overriding procedure Move (S : in out Solar_System_T) is
    begin
       for B of S.Moving_Objects loop
          Movable_I'Class (B.all).Move;

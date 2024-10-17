@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage; use Mage;
+with Draw; use Draw;
 
 package Solar_System is
 
@@ -34,7 +34,7 @@ package Solar_System is
       --$ line question
       Bodies       : in out Bodies_Array_T;
       Radius       :        Float;
-      Color        :        RGBA_T;
+      Color        :        Color_T;
       Distance     :        Float;
       Angle        :        Float;
       Speed        :        Float;
@@ -79,7 +79,7 @@ private
       Speed        : Float;
       Angle        : Float;
       Radius       : Float;
-      Color        : RGBA_T;
+      Color        : Color_T;
       Visible      : Boolean := True;
       Turns_Around : Bodies_Enum_T;
       --$ begin answer

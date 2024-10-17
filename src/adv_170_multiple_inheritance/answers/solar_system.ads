@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -35,7 +35,7 @@ package Solar_System is
 
    type Orbiting_Body_T is new Orbiting_Body_I with private;
 
-   procedure Move (B : in out Orbiting_Body_T);
+   overriding procedure Move (B : in out Orbiting_Body_T);
    function Create_Orbiting
      (Distance     : Float; Speed : Float; Angle : Float;
       Turns_Around : access Orbit_Ref_I'Class) return access Orbiting_Body_T;
@@ -56,20 +56,20 @@ package Solar_System is
 
    type Solar_System_T is new Solar_System_I with private;
    function Create_Solar_System return access Solar_System_T;
-   procedure Add_Still_Body
+   overriding procedure Add_Still_Body
      (S : in out Solar_System_T; B : access Still_Body_I'Class);
-   procedure Add_Moving_Body
+   overriding procedure Add_Moving_Body
      (S : in out Solar_System_T; B : access Movable_I'Class);
 
-   procedure Move (S : in out Solar_System_T);
+   overriding procedure Move (S : in out Solar_System_T);
 
 private
    type Body_Base_T is new Orbit_Ref_I with record
       X : Float;
       Y : Float;
    end record;
-   function Get_X (O : Body_Base_T) return Float;
-   function Get_Y (O : Body_Base_T) return Float;
+   overriding function Get_X (O : Body_Base_T) return Float;
+   overriding function Get_Y (O : Body_Base_T) return Float;
 
    type Orbiting_Body_T is new Body_Base_T and Orbiting_Body_I with record
       Distance     : Float;
@@ -82,10 +82,12 @@ private
 
    type Object_Range_T is range 1 .. 100;
 
-   --     package Still_Container is new Ada.Containers.Vectors(Index_Type   => Object_Range_T,
-   --                                                           Element_Type => Still_Body_Access_I);
-   --     package Orbiting_Container is new Ada.Containers.Vectors(Index_Type   => Object_Range_T,
-   --                                                              Element_Type => Moving_Access_I);
+   --     package Still_Container is new Ada.Containers.Vectors
+   --       (Index_Type   => Object_Range_T,
+   --        Element_Type => Still_Body_Access_I);
+   --     package Orbiting_Container is new Ada.Containers.Vectors
+   --       (Index_Type   => Object_Range_T,
+   --        Element_Type => Moving_Access_I);
 
    package Still_Container is new Ada.Containers.Bounded_Vectors
      (Index_Type => Object_Range_T, Element_Type => Still_Body_Access_I);

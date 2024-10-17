@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -18,9 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
-with Mage;          use Mage;
-with Mage.Draw;     use Mage.Draw;
-with Mage.Event;    use Mage.Event;
+with Draw;          use Draw;
 with Ada.Real_Time; use Ada.Real_Time;
 
 procedure Getting_Started_Main is
@@ -35,22 +33,14 @@ procedure Getting_Started_Main is
    Next    : Time;
    Period  : constant Time_Span := Milliseconds (40);
 
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
-
 begin
-   Window :=
-     Create_Window
+   Create_Window
        (Width => Integer (Width), Height => Integer (Height),
         Name  => "Bouncing ball");
-   Canvas := Get_Canvas (Window);
 
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       if (abs X) + Ball_Radius >= Width / 2.0 then
          Speed_X := -Speed_X;
@@ -64,10 +54,10 @@ begin
       Y := Y + Speed_Y;
 
       Draw_Sphere
-        (Canvas => Canvas, Position => (X, Y, 0.0), Radius => Ball_Radius,
+        (Position => (X, Y), Radius => Ball_Radius,
          Color  => Red);
 
-      Handle_Events (Window);
+      New_Frame;
 
       delay until Next;
       Next := Next + Period;

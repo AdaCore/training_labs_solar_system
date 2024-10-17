@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------
 --                              Ada Labs                             --
 --                                                                   --
---                 Copyright (C) 2008-2023, AdaCore                  --
+--                 Copyright (C) 2008-2024, AdaCore                  --
 --                                                                   --
 -- This program is free software: you can redistribute it and/or     --
 -- modify it under the terms of the GNU General Public License as    --
@@ -19,9 +19,7 @@
 -----------------------------------------------------------------------
 
 with Ada.Real_Time; use Ada.Real_Time;
-with Mage;          use Mage;
-with Mage.Draw;     use Mage.Draw;
-with Mage.Event;    use Mage.Event;
+with Draw;          use Draw;
 with Float_Maths;   use Float_Maths;
 
 procedure Record_Types_Main is
@@ -37,7 +35,7 @@ procedure Record_Types_Main is
 
    --  QUESTION 1: replace the definition of Body_T by a type that stores
    --  body attributes
-   --   X, Y, Distance, Speed, Angle, Color type is RGBA_T, Radius
+   --   X, Y, Distance, Speed, Angle, Color type is Color_T, Radius
    type Body_T (Visible : Boolean := True) is record
       X            : Float;
       Y            : Float;
@@ -47,7 +45,7 @@ procedure Record_Types_Main is
       Turns_Around : Bodies_Enum_T;
       case Visible is
          when True =>
-            Color        : RGBA_T;
+            Color        : Color_T;
             Radius       : Float;
          when others =>
             null;
@@ -67,21 +65,11 @@ procedure Record_Types_Main is
    --  the loop period
    Period  : constant Time_Span := Milliseconds (40);
 
-   --  reference to the application window
-   Window : Window_ID;
-
-   --  reference to the graphical canvas associated with the application window
-   Canvas : Canvas_ID;
-
 begin
 
-   --  create a window 240x320
-   Window := Create_Window (Width  => 240,
+   Create_Window (Width  => 240,
                             Height => 320,
                             Name   => "Solar System");
-
-   --  retrieve the graphical canvas from the window
-   Canvas := Get_Canvas (Window);
 
    --  QUESTION 2
    --  initialize Bodies variable with parameters for each body using an
@@ -134,7 +122,7 @@ begin
    --  initialize the Next step time at current time (Clock) + the period
    Next := Clock + Period;
 
-   while not Is_Killed loop
+   while Running loop
 
       --  create a loop to update each body position and angles
       --    the position of an object around (0,0) at distance d with an angle
@@ -167,16 +155,15 @@ begin
             Drawn_Body : constant Body_T := Bodies (B);
          begin
             if Drawn_Body.Visible then
-               Draw_Sphere (Canvas   => Canvas,
-                            Position => (Drawn_Body.X, Drawn_Body.Y, 0.0),
+               Draw_Sphere (Position => (Drawn_Body.X, Drawn_Body.Y),
                             Radius   => Drawn_Body.Radius,
                             Color    => Drawn_Body.Color);
             end if;
          end;
       end loop;
 
-      --  update the screen using procedure Swap_Buffers
-      Handle_Events (Window);
+      --  update the screen
+      New_Frame;
 
       --  wait until Next
       delay until Next;

@@ -86,16 +86,18 @@ generate_subprogram_contracts: $(template_subprogram_contracts)
 
 build_problems:
 	set -e; \
-    for lab in "Array_Types" "Record_Types" "Subprograms" "Packages" "Private_Types" "Access_Types" \
-	"Exceptions" "Interfacing_With_C" "Tasking_Protected_Objects" "Subprogram_Contracts"; do \
+	for lab in Getting_Started Array_Types Record_Types Subprograms Packages Private_Types \
+    			Access_Types Genericity Multiple_Inheritance Exceptions Interfacing_With_C \
+			Tasking_Protected_Objects Subprogram_Contracts; do \
 		echo $$lab; \
 		Mode=Question Lab="$$lab" alr build; \
 	done
 
 build_solutions:
 	set -e; \
-    for lab in "Array_Types" "Record_Types" "Subprograms" "Packages" "Private_Types" "Access_Types" \
-	"Exceptions" "Interfacing_With_C" "Tasking_Protected_Objects" "Subprogram_Contracts"; do \
+	for lab in Getting_Started Array_Types Record_Types Subprograms Packages Private_Types \
+    			Access_Types Genericity Multiple_Inheritance Exceptions Interfacing_With_C \
+			Tasking_Protected_Objects Subprogram_Contracts; do \
 		echo $$lab; \
 		Mode=Answer Lab="$$lab" alr build; \
 	done
