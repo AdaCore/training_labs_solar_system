@@ -41,8 +41,9 @@ On order to work on the labs you must first start GNAT Studio.
 `make edit`
 
 On the scenario tab on the left (if it's not there click the View menu > Scenario), chose
-the lab you want to work by setting the "Lab" scenario variable. Make sure that "Mode" is set
-to "Question"
+the lab you want to work by setting the "Lab" scenario variable (possible options are in
+`labs_solar_system.gpr.Lab.options`).
+Make sure that "Mode" is set to "Question"
 
 On the Project tab, you should then have access to the main file of the lab in question, which
 contains the questions.
