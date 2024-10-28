@@ -14,6 +14,9 @@ edit: alr_build ALWAYS
 run: ALWAYS
 	alr run
 
+test: ALWAYS
+	python3 testsuite/run_tests.py
+
 generate: \
 	generate_basics \
 	generate_packages \

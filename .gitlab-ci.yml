@@ -37,3 +37,10 @@ lint:
     when: always
     reports:
       codequality: code_quality_report.json
+
+test:
+  services:
+    - image:ada-trainings
+  stage: test
+  script:
+    - make test
