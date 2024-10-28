@@ -1,0 +1,100 @@
+mage: initialize
+Frame	 1
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 0	 50
+RED	 1	 0	 78
+RED	 1	 0	 82
+Frame	 2
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 1	 50
+RED	 1	 1	 78
+RED	 1	 180	 82
+Frame	 3
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 2	 50
+RED	 1	 2	 78
+RED	 1	 180	 82
+Frame	 4
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 3	 50
+RED	 1	 3	 78
+RED	 1	 359	 81
+Frame	 5
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 5	 50
+RED	 1	 4	 78
+RED	 1	 359	 81
+Frame	 6
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 6	 50
+RED	 1	 5	 77
+RED	 1	 358	 80
+Frame	 7
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 7	 50
+RED	 1	 7	 77
+RED	 1	 358	 80
+Frame	 8
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 8	 50
+RED	 1	 8	 77
+RED	 1	 358	 79
+Frame	 9
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 9	 50
+RED	 1	 9	 76
+RED	 1	 358	 78
+Frame	 10
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 10	 50
+RED	 1	 10	 76
+RED	 1	 358	 77
+Frame	 11
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 11	 50
+RED	 1	 11	 75
+RED	 1	 358	 76
+Frame	 12
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 13	 50
+RED	 1	 11	 75
+RED	 1	 358	 75
+Frame	 13
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 14	 50
+RED	 1	 12	 74
+RED	 1	 358	 74
+Frame	 14
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 15	 50
+RED	 1	 13	 73
+RED	 1	 358	 73
+Frame	 15
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 16	 50
+RED	 1	 14	 73
+RED	 1	 358	 71
+Frame	 16
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
+BLUE	 5	 17	 50
+RED	 1	 15	 72
+RED	 1	 359	 70
+Frame	 17
+Color	Radius	Angle	Distance
+YELLOW	 20	 0	 0
