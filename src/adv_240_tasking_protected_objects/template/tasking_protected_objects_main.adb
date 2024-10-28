@@ -30,11 +30,8 @@ procedure Tasking_Protected_Objects_Main is
    Bodies : Bodies_Array_T;
 
    --$ end question
-   --  declare a variable Now of type Time to record current time
    Now : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
 begin
@@ -135,10 +132,6 @@ begin
       Tail         => True,
       Turns_Around => Black_Hole);
 
-   --  create an infinite loop
-   --  update the Now time with current clock
-   --  call Move_All procedure
-   --  wait until Now + Period time elapsed before the next
    Now := Clock;
    while Running loop
 

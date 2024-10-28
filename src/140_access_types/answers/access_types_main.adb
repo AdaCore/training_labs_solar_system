@@ -26,11 +26,8 @@ with Solar_System.Graphics; use Solar_System.Graphics;
 
 procedure Access_Types_Main is
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period  : constant Time_Span := Milliseconds (40);
 
 begin
@@ -113,15 +110,11 @@ begin
               Speed        => 0.1,
               Turns_Around => Get_Body (Black_Hole, Bodies'Access));
 
-   --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
    --  create an infinite loop
    --  call Move_All procedure
    --  call Draw_All procedure
-   --  call Swap_Buffers to update the screen
-   --  wait until Next time
-   --  update the Next time
    while Running loop
 
       Move_All (Bodies'Access);
