@@ -3,7 +3,6 @@ from pathlib import Path
 import difflib
 import os
 import subprocess
-from epycs.subprocess import cmd, find_program, python_to_subprocess
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,10 +22,10 @@ def build(o):
         if f.is_file():
             f.unlink()
 
-    rc = cmd.alr(
-        "build",
-        additional_env={"Lab": o, "Mode": "Answer", "Backend": "TSV"},
-        check=False,
+    new_env = os.environ.copy()
+    new_env.update({"Lab": o, "Mode": "Answer", "Backend": "TSV"})
+    rc = subprocess.run(
+        ["alr", "build"], text=True, check=False, env=new_env
     ).returncode
     if rc == 0:
         exe_name = next(iter(f for f in BIN.glob("*") if f.is_file()))
@@ -36,10 +35,13 @@ def build(o):
 
 
 def run_for(exe_name, n):
-    exe = find_program(exe_name)
-    running_lab = exe(stdout=subprocess.PIPE, background=True)
-    res = cmd.head(
-        "-n", n, stdout=subprocess.PIPE, stdin=running_lab.stdout, check=False
+    running_lab = subprocess.Popen([exe_name], stdout=subprocess.PIPE)
+    res = subprocess.run(
+        ["head", "-n", str(n)],
+        text=True,
+        stdout=subprocess.PIPE,
+        stdin=running_lab.stdout,
+        check=False,
     )
     running_lab.kill()
     return res.returncode, res.stdout
