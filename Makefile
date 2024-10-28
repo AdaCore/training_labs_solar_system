@@ -14,6 +14,9 @@ edit: alr_build ALWAYS
 run: ALWAYS
 	alr run
 
+test: ALWAYS
+	python3 testsuite/run_tests.py
+
 generate: \
 	generate_basics \
 	generate_packages \
@@ -86,18 +89,14 @@ generate_subprogram_contracts: $(template_subprogram_contracts)
 
 build_problems:
 	set -e; \
-	for lab in Getting_Started Array_Types Record_Types Subprograms Packages Private_Types \
-    			Access_Types Genericity Multiple_Inheritance Exceptions Interfacing_With_C \
-			Tasking_Protected_Objects Subprogram_Contracts; do \
+	for lab in $$(cat labs_solar_system.gpr.Lab.options); do \
 		echo $$lab; \
 		Mode=Question Lab="$$lab" alr build; \
 	done
 
 build_solutions:
 	set -e; \
-	for lab in Getting_Started Array_Types Record_Types Subprograms Packages Private_Types \
-    			Access_Types Genericity Multiple_Inheritance Exceptions Interfacing_With_C \
-			Tasking_Protected_Objects Subprogram_Contracts; do \
+	for lab in $$(cat labs_solar_system.gpr.Lab.options); do \
 		echo $$lab; \
 		Mode=Answer Lab="$$lab" alr build; \
 	done
