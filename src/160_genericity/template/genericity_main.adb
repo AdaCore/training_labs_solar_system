@@ -53,7 +53,6 @@ procedure Genericity_Main is
    Bodies2 : My_Solar_System2.Bodies_Array_T;
    --$ end answer
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
    Period : constant Time_Span := Milliseconds (40);

@@ -25,14 +25,10 @@ with Solar_System.Graphics; use Solar_System.Graphics;
 
 procedure Private_Types_Main is
 
-   --  declare variable Bodies which is an array of Body_T
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
 begin

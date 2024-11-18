@@ -65,16 +65,13 @@ procedure Array_Types_Main is
    --$ line answer
    Colors : Colors_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
-   Next : Time;
-
-   --  declare a constant Period of 40 milliseconds of type Time_Span
-   --  which defines the looping period
+   --  refresh period
    Period  : constant Time_Span := Milliseconds (40);
+
+   Next : Time;
 
 begin
 
-   --  create a window 240x320
    Create_Window (Width  => 240,
                   Height => 320,
                   Name   => "Solar System");
@@ -123,7 +120,7 @@ begin
               Satellite => Red);
    --$ end answer
 
-   --  initialize the Next step time as current time (Clock) + period
+   --  next render time
    Next := Clock + Period;
 
    while Running loop
@@ -166,10 +163,9 @@ begin
       end loop;
       --$ end answer
 
-      --  update the screen using procedure Swap_Buffers
+      --  update the screen
       New_Frame;
 
-      --  wait until Next
       delay until Next;
 
       --  update the Next time adding the period for the next step

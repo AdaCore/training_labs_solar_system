@@ -144,7 +144,6 @@ begin
          Color        => Yellow,
          Turns_Around => Sun));
 
-   --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
    while Running loop

@@ -194,7 +194,6 @@ begin
          Turns_Around => Black_Hole));
       --$ end answer
 
-   --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
    while Running loop
