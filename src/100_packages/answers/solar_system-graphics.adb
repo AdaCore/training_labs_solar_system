@@ -30,14 +30,4 @@ package body Solar_System.Graphics is
       end if;
    end Draw_Body;
 
-   procedure Draw_All (Bodies : Bodies_Array_T) is
-   begin
-      for Obj of Bodies loop
-         if Obj.Visible then
-            Draw_Body (Obj);
-         end if;
-      end loop;
-
-   end Draw_All;
-
 end Solar_System.Graphics;

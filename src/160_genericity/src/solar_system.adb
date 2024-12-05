@@ -89,13 +89,10 @@ package body Solar_System is
 
    procedure Move_All (Bodies : in out Bodies_Array_T) is
    begin
-
       --  loop over all bodies and call Move procedure
       for B of Bodies loop
-
          Move (B, Bodies);
       end loop;
-
    end Move_All;
 
 end Solar_System;

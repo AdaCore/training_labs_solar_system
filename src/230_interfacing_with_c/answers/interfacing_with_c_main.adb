@@ -116,7 +116,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       Move_All (Bodies'Access);
       Draw_All (Bodies);
       New_Frame;

@@ -23,7 +23,7 @@ with Float_Maths; use Float_Maths;
 package body Solar_System is
 
    --  QUESTION 1 - Part 2
-   --  Move subprograms to this body to implement Move_All
+   --  Move subprogram completions here
 
    function Compute_X
      (Body_To_Move : Body_T; Turns_Around : Body_T) return Float
@@ -40,9 +40,6 @@ package body Solar_System is
    end Compute_Y;
 
    procedure Move
-     (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T);
-
-   procedure Move
      (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T) is
       Body_To_Move : Body_T renames Bodies (Body_To_Move_Index);
       Turns_Around : constant Body_T := Bodies (Body_To_Move.Turns_Around);
@@ -57,18 +54,4 @@ package body Solar_System is
       Body_To_Move.Angle := Body_To_Move.Angle + Body_To_Move.Speed;
 
    end Move;
-   --  QUESTION 1 - Part 3
-   --  Implement the subprogram Move_All
-
-   procedure Move_All (Bodies : in out Bodies_Array_T) is
-   begin
-
-      --  loop over all bodies and call Move procedure
-      for B in Bodies'Range loop
-
-         Move (Bodies, B);
-      end loop;
-
-   end Move_All;
-
 end Solar_System;

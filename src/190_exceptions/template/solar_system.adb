@@ -120,10 +120,8 @@ package body Solar_System is
 
       --  loop over all bodies and call Move procedure
       for B of Bodies loop
-
          declare
          begin
-
             Move (B, Bodies);
 
             --  QUESTION 3
@@ -138,7 +136,6 @@ package body Solar_System is
          --$ end answer
          end;
       end loop;
-
    end Move_All;
 
 end Solar_System;

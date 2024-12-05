@@ -189,7 +189,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       --$ begin question
       --  update each body position and angles
       --    the position of an object around (0,0) at distance d with an
@@ -197,7 +196,6 @@ begin
       --  update angle parameter of each body adding speed to the previous
       --  angle
       for B in Rotating_Bodies_T loop
-
          --  QUESTION 1 - Part 3: call Compute_X
          Bodies (B).X := Bodies (Bodies (B).Turns_Around).X
            + Bodies (B).Distance
@@ -223,7 +221,6 @@ begin
       --$ end question
       --$ begin answer
       for B in Rotating_Bodies_T loop
-
          Move (Bodies, B);
       end loop;
 

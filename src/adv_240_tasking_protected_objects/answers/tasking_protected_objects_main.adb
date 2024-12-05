@@ -116,7 +116,6 @@ begin
 
    Now := Clock;
    while Running loop
-
       Draw_All;
 
       New_Frame;

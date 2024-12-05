@@ -92,10 +92,8 @@ package body Solar_System is
 
    procedure Move_All (Bodies : access Bodies_Array_T) is
    begin
-
       --  loop over all bodies and call Move procedure
       for B in Bodies_Enum_T loop
-
          Move (Get_Body (B, Bodies));
       end loop;
    end Move_All;

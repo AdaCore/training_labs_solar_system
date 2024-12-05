@@ -140,7 +140,6 @@ begin
 
    Now := Clock;
    while Running loop
-
       --$ begin question
       Move_All (Bodies);
       Draw_All (Bodies);
