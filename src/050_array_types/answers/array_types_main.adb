@@ -146,7 +146,6 @@ begin
       --  update the screen using procedure Swap_Buffers
       New_Frame;
 
-      --  wait until Next
       delay until Next;
 
       --  update the Next time adding the period for the next step

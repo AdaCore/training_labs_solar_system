@@ -82,10 +82,7 @@ begin
    Next := Clock + Period;
 
    --  create an infinite loop
-   --  call Move_All procedure
-   --  call Draw_All procedure
-   --  call Swap_Buffers to update the screen
-   --  wait until Next time
+
    --  update the Next time
    while Running loop
 

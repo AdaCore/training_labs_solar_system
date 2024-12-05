@@ -223,7 +223,7 @@ begin
       --$ end question
       --$ begin answer
       for B in Rotating_Bodies_T loop
-         --  call the move procedure for each body
+
          Move (Bodies, B);
       end loop;
 
@@ -235,7 +235,6 @@ begin
 
       New_Frame;
 
-      --  wait until Now + Period time elapsed before the next
       delay until Next;
       Next := Next + Period;
    end loop;

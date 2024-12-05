@@ -127,7 +127,6 @@ package body Solar_System is
       --  loop over all bodies and call Move procedure
       for B in Bodies_Enum_T loop
 
-         --  call the move procedure for each body
          --$ line question
          Move (Bodies, B);
          --$ line answer

@@ -123,7 +123,7 @@ package body Solar_System is
 
          declare
          begin
-            --  call the move procedure for each body
+
             Move (B, Bodies);
 
             --  QUESTION 3

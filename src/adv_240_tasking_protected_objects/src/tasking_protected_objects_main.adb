@@ -123,8 +123,7 @@ begin
 
    --  create an infinite loop
    --  update the Now time with current clock
-   --  call Move_All procedure
-   --  wait until Now + Period time elapsed before the next
+
    Now := Clock;
    while Running loop
 

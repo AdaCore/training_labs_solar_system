@@ -96,7 +96,6 @@ package body Solar_System is
       --  loop over all bodies and call Move procedure
       for B of Bodies loop
 
-         --  call the move procedure for each body
          Move (B, Bodies);
       end loop;
 

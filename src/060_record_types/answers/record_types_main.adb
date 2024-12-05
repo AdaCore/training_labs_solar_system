@@ -165,7 +165,6 @@ begin
       --  update the screen
       New_Frame;
 
-      --  wait until Next
       delay until Next;
 
       --  update the Next time adding the period for the next step

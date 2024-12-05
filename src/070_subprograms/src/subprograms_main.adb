@@ -180,7 +180,6 @@ begin
 
       New_Frame;
 
-      --  wait until Now + Period time elapsed before the next
       delay until Next;
       Next := Next + Period;
    end loop;

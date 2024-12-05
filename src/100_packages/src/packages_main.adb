@@ -151,7 +151,6 @@ begin
 
       for B in Bodies_Enum_T loop
 
-         --  call the move procedure for each body
          Move (Bodies, B);
          Draw_Body (Bodies (B));
 
