@@ -20,8 +20,6 @@
 
 package Solar_System.Graphics is
 
-   procedure Draw_All (Bodies : Bodies_Array_T);
-
    procedure Draw_Body (Object : Body_T);
 
 end Solar_System.Graphics;

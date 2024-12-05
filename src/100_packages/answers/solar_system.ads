@@ -25,13 +25,9 @@ package Solar_System is
    --  QUESTION 1 - Part 1
    --  Move the types and write the specification for the subprogram Move_All
 
-   --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
-   --  and Satellite
    type Bodies_Enum_T is
      (Sun, Earth, Moon, Satellite, Comet, Black_Hole, Asteroid_1, Asteroid_2);
 
-   --  define a type Body_T to store every information about a body
-   --  X, Y, Distance, Speed, Angle, Color, Radius
    type Body_T is record
       X            : Float   := 0.0;
       Y            : Float   := 0.0;
@@ -44,10 +40,8 @@ package Solar_System is
       Visible      : Boolean := True;
    end record;
 
-   --  define type Bodies_Array_T as an array of Body_T indexed by bodies
-   --  enumeration
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
-   procedure Move_All (Bodies : in out Bodies_Array_T);
-
+   procedure Move
+     (Bodies : in out Bodies_Array_T; Body_To_Move_Index : Bodies_Enum_T);
 end Solar_System;
