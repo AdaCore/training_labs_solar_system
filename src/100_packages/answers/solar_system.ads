@@ -23,7 +23,7 @@ with Draw; use Draw;
 package Solar_System is
 
    --  QUESTION 1 - Part 1
-   --  Move the types and write the specification for the subprogram Move_All
+   --  Move the types and subprograms specifications here
 
    type Bodies_Enum_T is
      (Sun, Earth, Moon, Satellite, Comet, Black_Hole, Asteroid_1, Asteroid_2);

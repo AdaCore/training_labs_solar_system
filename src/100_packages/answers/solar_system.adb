@@ -23,7 +23,7 @@ with Float_Maths; use Float_Maths;
 package body Solar_System is
 
    --  QUESTION 1 - Part 2
-   --  Move subprograms to this body to implement Move_All
+   --  Move subprograms completions here
 
    function Compute_X
      (Body_To_Move : Body_T; Turns_Around : Body_T) return Float
