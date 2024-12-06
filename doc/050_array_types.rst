@@ -54,4 +54,7 @@ iteration. Each object is supposed to rotate around the previous one in the
 
 Use a :code:`delay until` statement in the loop to control the iteration period.
 
+Remove the now useless :code:`pragma Warnings`, check that your code compiles without 
+issues.
+
 Refine the values chosen in the previous question in order to have a smooth movement.

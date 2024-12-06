@@ -22,7 +22,7 @@ with Ada.Real_Time; use Ada.Real_Time;
 with Draw;          use Draw;
 --$ begin question
 
---  TODO: Remove these two lines once Cos and Sin are used
+--  QUESTION 2 - Part 3: Remove these two lines once Cos and Sin are used
 pragma Warnings (Off,
    "no entities of ""Float_Maths"" are referenced");
 pragma Warnings (Off,
