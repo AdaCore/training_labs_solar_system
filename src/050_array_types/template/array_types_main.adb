@@ -123,7 +123,7 @@ begin
 
    while Running loop
 
-      --  QUESTION 2 - part 1
+      --  QUESTION 2 - Part 1
       --  create a loop to update each body position and angles
       --  Note: the Sun does not orbit against any body, you may declare
       --  and use a subtype to reference the orbiting bodies
@@ -150,7 +150,7 @@ begin
 
       --  loop to draw every objects
 
-      --  QUESTION 2 - part 2
+      --  QUESTION 2 - Part 2
       --  create a loop to draw every objects
       --    use the Draw_Sphere procedure with the Point_T argument
       --$ begin answer
