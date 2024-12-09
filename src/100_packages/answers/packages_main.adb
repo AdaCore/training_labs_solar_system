@@ -34,7 +34,6 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
    while Running loop

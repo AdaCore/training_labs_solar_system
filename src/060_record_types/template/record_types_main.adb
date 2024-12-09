@@ -41,12 +41,8 @@ procedure Record_Types_Main is
    pragma Warnings (Off, "assigned but never read");
    --$ end question
 
-   --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
-   --  and Satellite
    type Bodies_Enum_T is (Sun, Earth, Moon, Satellite);
 
-   --  define subtype Rotating_Bodies_T which only contains bodies
-   --  that rotate
    subtype Rotating_Bodies_T is Bodies_Enum_T
      range Earth .. Bodies_Enum_T'Last;
 
@@ -73,18 +69,13 @@ procedure Record_Types_Main is
    end record;
    --$ end answer
 
-   --  define type Bodies_Array_T as an array of Body_T indexed by bodies
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
-   --  declare variable Bodies which is an array of Body_T
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
-   Next : Time;
-
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period  : constant Time_Span := Milliseconds (40);
+
+   Next : Time;
 
 begin
 
@@ -142,7 +133,6 @@ begin
                             Turns_Around => Earth));
    --$ end answer
 
-   --  initialize the Next step time at current time (Clock) + the period
    Next := Clock + Period;
 
    while Running loop
@@ -193,8 +183,6 @@ begin
       New_Frame;
 
       delay until Next;
-
-      --  update the Next time adding the period for the next step
       Next := Next + Period;
 
    end loop;
