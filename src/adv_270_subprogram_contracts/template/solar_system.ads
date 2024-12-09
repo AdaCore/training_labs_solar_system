@@ -21,7 +21,7 @@
 with Draw; use Draw;
 --$ begin question
 
---  TODO: Remove once lab is done
+--  QUESTION - Bonus: Remove once lab is done
 pragma Warnings (Off,
     "no entities of ""Solar_System_Spec"" are referenced in spec");
 --$ end question
