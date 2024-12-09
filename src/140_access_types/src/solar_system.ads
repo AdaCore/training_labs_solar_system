@@ -28,11 +28,11 @@ package Solar_System is
      (Sun, Earth, Moon, Satellite, Comet, Black_Hole, Asteroid_1,
       Asteroid_2);
 
-   --  QUESTION 1 : declare type Body_Access_T as an access type to all Body_T
+   --  QUESTION 1: declare type Body_Access_T as an access type to all Body_T
 
    type Bodies_Array_T is private;
 
-   --  QUESTION 2 - Part 1 : Specify Get_Body returning an access of type Body_Access_T
+   --  QUESTION 2 - Part 1: Specify Get_Body returning an access of type Body_Access_T
    --  function Get_Body (B : Bodies_Enum_T; Bodies : access Bodies_Array_T)
    --  return Body_Access_T;
 
@@ -71,7 +71,7 @@ private
       Radius   : Float   := 0.0;
       Color    : Color_T;
       Visible  : Boolean := True;
-      --  QUESTION 4 : Modify Turns_Around as an access to Body_T using
+      --  QUESTION 4: Modify Turns_Around as an access to Body_T using
       --  Body_Access_T type
       Turns_Around : Bodies_Enum_T := Sun;
    end record;
@@ -80,7 +80,7 @@ private
    --  enumeration
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
-   --  QUESTION 5 : Modify the Move procedure with the following profile
+   --  QUESTION 5: Modify the Move procedure with the following profile
    --  procedure Move (Body_To_Move : Body_Access_T);
    procedure Move (Bodies : in out Bodies_Array_T; B : Bodies_Enum_T);
 end Solar_System;
