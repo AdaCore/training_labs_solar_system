@@ -36,6 +36,7 @@ begin
                   Height => 320,
                   Name   => "Solar System");
 
+   --  QUESTION 3 - Part 3
    --  initialize Bodies using Init_Body procedure
    Init_Body
              (B            => Get_Body (Sun, Bodies'Access),

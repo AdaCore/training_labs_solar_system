@@ -28,7 +28,7 @@ package Solar_System is
      (Sun, Earth, Moon, Satellite, Comet, Black_Hole, Asteroid_1,
       Asteroid_2);
 
-   --  TODO : declare type Body_Access_T as an access type to all Body_T
+   --  QUESTION 1 : declare type Body_Access_T as an access type to all Body_T
    --$ begin answer
    type Body_T is private;
    type Body_Access_T is access all Body_T;
@@ -37,7 +37,7 @@ package Solar_System is
    type Bodies_Array_T is private;
 
    --$ begin question
-   --  TODO : Implement Get_Body returning an access of type Body_Access_T
+   --  QUESTION 2 - Part 1 : Specify Get_Body returning an access of type Body_Access_T
    --  function Get_Body (B : Bodies_Enum_T; Bodies : access Bodies_Array_T)
    --  return Body_Access_T;
    --$ end question
@@ -48,7 +48,7 @@ package Solar_System is
    --$ end answer
 
    --$ begin question
-   --  TODO : Modify Init_Body with the following profile
+   --  QUESTION 3 - Part 1: Modify Init_Body with the following profile
    --    procedure Init_Body
    --      (B            : Body_Access_T;
    --       Radius       : Float;
@@ -94,7 +94,7 @@ private
       Radius   : Float   := 0.0;
       Color    : Color_T;
       Visible  : Boolean := True;
-      --  TODO : Modify Turns_Around as an access to Body_T using
+      --  QUESTION 4 : Modify Turns_Around as an access to Body_T using
       --  Body_Access_T type
       --$ line question
       Turns_Around : Bodies_Enum_T := Sun;
@@ -109,7 +109,7 @@ private
    --$ line answer
    type Bodies_Array_T is array (Bodies_Enum_T) of aliased Body_T;
 
-   --  TODO : Modify the Move procedure with the following profile
+   --  QUESTION 5 : Modify the Move procedure with the following profile
    --  procedure Move (Body_To_Move : Body_Access_T);
    --$ line question
    procedure Move (Bodies : in out Bodies_Array_T; B : Bodies_Enum_T);
