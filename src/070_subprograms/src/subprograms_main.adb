@@ -147,7 +147,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       --  update each body position and angles
       --    the position of an object around (0,0) at distance d with an
       --    angle a is (d*cos(a), d*sin(a))

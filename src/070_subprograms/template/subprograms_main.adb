@@ -189,7 +189,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       --$ begin question
       --  update each body position and angles
       --    the position of an object around (0,0) at distance d with an
@@ -222,7 +221,6 @@ begin
       --$ end question
       --$ begin answer
       for B in Rotating_Bodies_T loop
-
          Move (Bodies, B);
       end loop;
 

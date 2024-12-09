@@ -164,9 +164,7 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       for B in Rotating_Bodies_T loop
-
          Move (Bodies, B);
       end loop;
 
