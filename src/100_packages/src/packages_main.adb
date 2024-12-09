@@ -24,7 +24,8 @@ with Float_Maths;   use Float_Maths;
 
 procedure Packages_Main is
 
-   type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet, Black_Hole, Asteroid_1, Asteroid_2);
+   type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet, Black_Hole,
+      Asteroid_1, Asteroid_2);
 
    type Body_T is record
       X            : Float   := 0.0;

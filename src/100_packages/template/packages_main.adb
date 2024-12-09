@@ -31,7 +31,8 @@ with Solar_System.Data; use Solar_System.Data;
 procedure Packages_Main is
 
    --$ begin question
-   type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet, Black_Hole, Asteroid_1, Asteroid_2);
+   type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet, Black_Hole,
+      Asteroid_1, Asteroid_2);
 
    type Body_T is record
       X            : Float   := 0.0;
