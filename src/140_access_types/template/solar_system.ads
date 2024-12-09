@@ -37,7 +37,8 @@ package Solar_System is
    type Bodies_Array_T is private;
 
    --$ begin question
-   --  QUESTION 2 - Part 1: Specify Get_Body returning an access of type Body_Access_T
+   --  QUESTION 2 - Part 1: Specify Get_Body returning an access of
+   --  type Body_Access_T
    --  function Get_Body (B : Bodies_Enum_T; Bodies : access Bodies_Array_T)
    --  return Body_Access_T;
    --$ end question
