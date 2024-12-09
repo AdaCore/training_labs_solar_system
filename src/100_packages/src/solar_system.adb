@@ -21,6 +21,6 @@
 package body Solar_System is
 
    --  QUESTION 1 - Part 2
-   --  Move subprograms completions here
+   --  Move subprogram completions here
 
 end Solar_System;

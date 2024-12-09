@@ -25,7 +25,7 @@ with Float_Maths; use Float_Maths;
 package body Solar_System is
 
    --  QUESTION 1 - Part 2
-   --  Move subprograms completions here
+   --  Move subprogram completions here
 
    --$ begin answer
    function Compute_X

@@ -25,7 +25,7 @@ with Draw; use Draw;
 package Solar_System is
 
    --  QUESTION 1 - Part 1
-   --  Move the types and subprograms specifications here
+   --  Move the types and subprogram specifications here
 
    --$ begin answer
    type Bodies_Enum_T is
