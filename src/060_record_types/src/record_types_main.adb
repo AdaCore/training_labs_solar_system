@@ -21,7 +21,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Draw;          use Draw;
 
---  TODO: Remove once Cos and Sin are used
+--  QUESTION - Bonus: Remove once Cos and Sin are used
 pragma Warnings (Off,
     "no entities of ""Float_Maths"" are referenced");
 pragma Warnings (Off,
@@ -30,7 +30,7 @@ with Float_Maths;   use Float_Maths;
 
 procedure Record_Types_Main is
 
-   --  TODO: Remove once lab is done
+   --  QUESTION - Bonus: Remove once lab is done
    pragma Warnings (Off,
       "not referenced");
    pragma Warnings (Off,
@@ -45,7 +45,7 @@ procedure Record_Types_Main is
    --  QUESTION 1: replace the definition of Body_T by a type that stores
    --  body attributes
    --   X, Y, Distance, Speed, Angle, Color type is Color_T, Radius
-   subtype Body_T is Integer; -- TODO: Replace by record type
+   subtype Body_T is Integer; -- QUESTION 1: Replace by record type
 
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 

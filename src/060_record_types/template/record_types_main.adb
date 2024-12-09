@@ -22,7 +22,7 @@ with Ada.Real_Time; use Ada.Real_Time;
 with Draw;          use Draw;
 --$ begin question
 
---  TODO: Remove once Cos and Sin are used
+--  QUESTION - Bonus: Remove once Cos and Sin are used
 pragma Warnings (Off,
     "no entities of ""Float_Maths"" are referenced");
 pragma Warnings (Off,
@@ -33,7 +33,7 @@ with Float_Maths;   use Float_Maths;
 procedure Record_Types_Main is
    --$ begin question
 
-   --  TODO: Remove once lab is done
+   --  QUESTION - Bonus: Remove once lab is done
    pragma Warnings (Off,
       "not referenced");
    pragma Warnings (Off,
@@ -50,7 +50,7 @@ procedure Record_Types_Main is
    --  body attributes
    --   X, Y, Distance, Speed, Angle, Color type is Color_T, Radius
    --$ line question
-   subtype Body_T is Integer; -- TODO: Replace by record type
+   subtype Body_T is Integer; -- QUESTION 1: Replace by record type
    --$ begin answer
    type Body_T (Visible : Boolean := True) is record
       X            : Float;
