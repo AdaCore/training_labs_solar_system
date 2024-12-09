@@ -104,7 +104,7 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  QUESTION 4 - Add a comet
+   --  QUESTION 4: Add a comet
    --    Tip: Make it a body that is drawn as several circles that
    --    follow each other.
    Bodies :=

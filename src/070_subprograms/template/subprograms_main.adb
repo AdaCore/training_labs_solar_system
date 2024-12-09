@@ -24,7 +24,7 @@ with Float_Maths;   use Float_Maths;
 
 procedure Subprograms_Main is
    --$ begin question
-   --  TODO: Remove once subprograms are implemented
+   --  QUESTION - Bonus: Remove once subprograms are implemented
    pragma Warnings (Off, "not referenced");
    --$ end question
 
@@ -55,7 +55,7 @@ procedure Subprograms_Main is
    Period : constant Time_Span := Milliseconds (40);
 
    --$ begin question
-   --  TODO: Remove once function is referenced
+   --  QUESTION - Bonus: Remove once function is referenced
    pragma Warnings (Off, "function ""Compute_X"" is not referenced");
    --$ end question
    --  QUESTION 1 - Part 1
@@ -129,7 +129,7 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  QUESTION 4 - Add a comet
+   --  QUESTION 4: Add a comet
    --    Tip: Make it a body that is drawn as several circles that
    --    follow each other.
    Bodies :=
