@@ -21,7 +21,7 @@
 package body Solar_System is
    --$ begin question
 
-   --  TODO: Remove once subprograms are implemented
+   --  QUESTION - Bonus: Remove once subprograms are implemented
    pragma Warnings (Off, "not referenced");
    --$ end question
 

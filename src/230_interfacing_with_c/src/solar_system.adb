@@ -20,7 +20,7 @@
 
 package body Solar_System is
 
-   --  TODO: Remove once subprograms are implemented
+   --  QUESTION - Bonus: Remove once subprograms are implemented
    pragma Warnings (Off, "not referenced");
 
    function Get_Body
