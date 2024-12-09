@@ -110,7 +110,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       Move_All (Bodies1);
       Move_All (Bodies2);
 

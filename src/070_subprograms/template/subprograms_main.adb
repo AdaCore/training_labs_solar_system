@@ -197,7 +197,6 @@ begin
       --  update angle parameter of each body adding speed to the previous
       --  angle
       for B in Rotating_Bodies_T loop
-
          --  QUESTION 1 - Part 3: call Compute_X
          Bodies (B).X := Bodies (Bodies (B).Turns_Around).X
            + Bodies (B).Distance

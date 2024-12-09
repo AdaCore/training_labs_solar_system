@@ -198,7 +198,6 @@ begin
 
    --  update the Next time
    while Running loop
-
       --$ line question
       Move_All (Bodies);
       --$ line answer

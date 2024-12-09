@@ -38,7 +38,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       for B in Bodies_Enum_T loop
 
          Move (Bodies, B);

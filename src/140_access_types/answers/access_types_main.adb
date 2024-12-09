@@ -120,7 +120,6 @@ begin
 
    --  update the Next time
    while Running loop
-
       Move_All (Bodies'Access);
       Draw_All (Bodies);
       New_Frame;

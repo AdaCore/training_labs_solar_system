@@ -126,7 +126,6 @@ begin
 
    Now := Clock;
    while Running loop
-
       Move_All (Bodies);
       Draw_All (Bodies);
 

@@ -23,7 +23,6 @@ with Draw;          use Draw;
 with Float_Maths;   use Float_Maths;
 
 procedure Array_Types_Main is
-
    --  QUESTION 1 - Part 1
 
    --  define type Bodies_Enum_T as an enumeration of Sun, Earth, Moon,
@@ -58,7 +57,6 @@ procedure Array_Types_Main is
    Period  : constant Time_Span := Milliseconds (40);
 
 begin
-
    --  create a window 240x320
    Create_Window (Width  => 240,
                   Height => 320,
@@ -150,6 +148,6 @@ begin
 
       --  update the Next time adding the period for the next step
       Next := Next + Period;
-
    end loop;
+
 end Array_Types_Main;

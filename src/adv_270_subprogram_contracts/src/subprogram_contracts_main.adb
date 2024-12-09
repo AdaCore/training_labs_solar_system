@@ -85,7 +85,6 @@ begin
 
    --  update the Next time
    while Running loop
-
       Move_All (Bodies);
       Draw_All (Bodies);
       New_Frame;
