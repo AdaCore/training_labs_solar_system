@@ -21,7 +21,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Draw;          use Draw;
 
---  TODO: Remove these two lines once Cos and Sin are used
+--  QUESTION 2 - Part 3: Remove these two lines once Cos and Sin are used
 pragma Warnings (Off,
    "no entities of ""Float_Maths"" are referenced");
 pragma Warnings (Off,
@@ -47,15 +47,12 @@ procedure Array_Types_Main is
 
    --  declare variable Colors which is an instance of Colors_Array_T
 
-   --  declare a variable Next of type Time to store the Next step time
-   Next : Time;
-
-   --  declare a constant Period of 40 milliseconds of type Time_Span
-   --  which defines the looping period
+   --  refresh period
    Period  : constant Time_Span := Milliseconds (40);
 
+   Next : Time;
+
 begin
-   --  create a window 240x320
    Create_Window (Width  => 240,
                   Height => 320,
                   Name   => "Solar System");
@@ -72,12 +69,12 @@ begin
    --  initialize Colors variable:
    --  Sun is Yellow, Earth is Blue, Moon is White, Satellite is Red
 
-   --  initialize the Next step time as current time (Clock) + period
+   --  next render time
    Next := Clock + Period;
 
    while Running loop
 
-      --  QUESTION 2 - part 1
+      --  QUESTION 2 - Part 1
       --  create a loop to update each body position and angles
       --  Note: the Sun does not orbit against any body, you may declare
       --  and use a subtype to reference the orbiting bodies
@@ -88,11 +85,11 @@ begin
 
       --  loop to draw every objects
 
-      --  QUESTION 2 - part 2
+      --  QUESTION 2 - Part 2
       --  create a loop to draw every objects
       --    use the Draw_Sphere procedure with the Point_T argument
 
-      --  update the screen using procedure Swap_Buffers
+      --  update the screen
       New_Frame;
 
       delay until Next;

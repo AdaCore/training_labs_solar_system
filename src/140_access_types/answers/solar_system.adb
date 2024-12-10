@@ -22,7 +22,8 @@ with Float_Maths; use Float_Maths;
 
 package body Solar_System is
 
-   --  TODO : Implement Get_Body returning an access of type Body_Access_T
+   --  QUESTION 2 - Part 2: Implement Get_Body returning an access of
+   --  type Body_Access_T
    function Get_Body
      (B      : Bodies_Enum_T;
       Bodies : access Bodies_Array_T) return Body_Access_T
@@ -33,6 +34,7 @@ package body Solar_System is
    end Get_Body;
 
    procedure Init_Body
+      --  QUESTION 3 - Part 2: Modify Init_Body
       (B            : Body_Access_T;
        Radius       : Float;
        Color        : Color_T;

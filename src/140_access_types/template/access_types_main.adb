@@ -32,11 +32,8 @@ procedure Access_Types_Main is
    Bodies : Bodies_Array_T;
 
    --$ end question
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period  : constant Time_Span := Milliseconds (40);
 
 begin
@@ -45,6 +42,7 @@ begin
                   Height => 320,
                   Name   => "Solar System");
 
+   --  QUESTION 3 - Part 3
    --  initialize Bodies using Init_Body procedure
    Init_Body
    --$ begin question
@@ -191,12 +189,8 @@ begin
    --$ line answer
               Turns_Around => Get_Body (Black_Hole, Bodies'Access));
 
-   --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
-   --  create an infinite loop
-
-   --  update the Next time
    while Running loop
       --$ line question
       Move_All (Bodies);

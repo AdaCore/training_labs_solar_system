@@ -18,7 +18,7 @@
 -- <https://www.gnu.org/licenses/>.                                  --
 -----------------------------------------------------------------------
 
---  TODO: Remove once lab is done
+--  QUESTION - Bonus: Remove once lab is done
 pragma Warnings (Off,
    "no entities of ""Float_Maths"" are referenced");
 pragma Warnings (Off,

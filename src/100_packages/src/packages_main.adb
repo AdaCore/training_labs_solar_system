@@ -178,7 +178,6 @@ begin
          Visible      => True,
          Turns_Around => Black_Hole));
 
-   --  initialize the Next step time at the current time (Clock) + period
    Next := Clock + Period;
 
    while Running loop

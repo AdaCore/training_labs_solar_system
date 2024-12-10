@@ -42,18 +42,12 @@ procedure Subprograms_Main is
       Turns_Around : Bodies_Enum_T;
    end record;
 
-   --  define type Bodies_Array as an array of Body_Type indexed by
-   --  bodies enumeration
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
-   --  declare variable Bodies which is an array of Body_Type
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
    --  QUESTION 1 - Part 1
@@ -110,7 +104,7 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  QUESTION 4 - Add a comet
+   --  QUESTION 4: Add a comet
    --    Tip: Make it a body that is drawn as several circles that
    --    follow each other.
    Bodies :=
@@ -160,7 +154,6 @@ begin
          Color        => Yellow,
          Turns_Around => Sun));
 
-   --  initialize the Next step time as the current time (Clock) + the period
    Next := Clock + Period;
 
    while Running loop
