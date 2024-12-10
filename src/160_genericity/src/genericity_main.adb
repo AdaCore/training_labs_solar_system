@@ -28,7 +28,6 @@ procedure Genericity_Main is
    --  declare variable Bodies which is an array of Body_T
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
    Period : constant Time_Span := Milliseconds (40);
@@ -122,7 +121,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       Move_All (Bodies);
       Draw_All (Bodies);
 

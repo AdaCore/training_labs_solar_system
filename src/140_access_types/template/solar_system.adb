@@ -22,7 +22,8 @@ with Float_Maths; use Float_Maths;
 
 package body Solar_System is
 
-   --  TODO : Implement Get_Body returning an access of type Body_Access_T
+   --  QUESTION 2 - Part 2: Implement Get_Body returning an access of
+   --  type Body_Access_T
    --$ begin question
    --  function Get_Body (B : Bodies_Enum_T; Bodies : access Bodies_Array_T)
    --  return Body_Access_T;
@@ -39,6 +40,7 @@ package body Solar_System is
    --$ end answer
 
    procedure Init_Body
+      --  QUESTION 3 - Part 2: Modify Init_Body
       --$ begin question
       (B            : Bodies_Enum_T;
        Bodies       : in out Bodies_Array_T;
@@ -123,10 +125,8 @@ package body Solar_System is
    --$ line answer
    procedure Move_All (Bodies : access Bodies_Array_T) is
    begin
-
       --  loop over all bodies and call Move procedure
       for B in Bodies_Enum_T loop
-
          --$ line question
          Move (Bodies, B);
          --$ line answer

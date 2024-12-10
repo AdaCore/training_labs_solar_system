@@ -33,7 +33,6 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  initialize Bodies using Init_Body procedure
    Init_Body
      (B            => Get_Body (Sun, Bodies'Access),
       Radius       => 20.0,
@@ -110,7 +109,6 @@ begin
    Next := Clock + Period;
 
    while Running loop
-
       Move_All (Bodies'Access);
       Draw_All (Bodies);
       New_Frame;

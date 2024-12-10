@@ -22,9 +22,7 @@ package body Solar_System is
 
    function Get_Body
      (B      : Bodies_Enum_T;
-      Bodies : access Bodies_Array_T) return Body_Access_T
-   is
-
+      Bodies : access Bodies_Array_T) return Body_Access_T is
    begin
       return Bodies (B)'Access;
    end Get_Body;
@@ -79,7 +77,6 @@ package body Solar_System is
 
          Move (Get_Body (B, Bodies).all);
       end loop;
-
    end Move_All;
 
 end Solar_System;

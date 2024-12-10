@@ -24,11 +24,8 @@ with Solar_System;          use Solar_System;
 with Solar_System.Graphics; use Solar_System.Graphics;
 
 procedure Tasking_Protected_Objects_Main is
-   --  declare a variable Now of type Time to record current time
    Now : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
 begin
@@ -111,12 +108,8 @@ begin
       Tail         => True,
       Turns_Around => Black_Hole);
 
-   --  create an infinite loop
-   --  update the Now time with current clock
-
    Now := Clock;
    while Running loop
-
       Draw_All;
 
       New_Frame;

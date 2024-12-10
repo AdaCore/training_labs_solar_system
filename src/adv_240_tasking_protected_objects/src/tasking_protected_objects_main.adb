@@ -28,11 +28,8 @@ procedure Tasking_Protected_Objects_Main is
    --  declare variable Bodies which is an array of Body_T
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Now of type Time to record current time
    Now : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
 begin
@@ -121,12 +118,8 @@ begin
       Speed        => 0.1,
       Turns_Around => Black_Hole);
 
-   --  create an infinite loop
-   --  update the Now time with current clock
-
    Now := Clock;
    while Running loop
-
       Move_All (Bodies);
       Draw_All (Bodies);
 

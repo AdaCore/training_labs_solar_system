@@ -24,7 +24,7 @@ with Float_Maths;   use Float_Maths;
 
 procedure Subprograms_Main is
    --$ begin question
-   --  TODO: Remove once subprograms are implemented
+   --  QUESTION - Bonus: Remove once subprograms are implemented
    pragma Warnings (Off, "not referenced");
    --$ end question
 
@@ -46,22 +46,16 @@ procedure Subprograms_Main is
       Turns_Around : Bodies_Enum_T;
    end record;
 
-   --  define type Bodies_Array as an array of Body_Type indexed by
-   --  bodies enumeration
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
-   --  declare variable Bodies which is an array of Body_Type
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
    --$ begin question
-   --  TODO: Remove once function is referenced
+   --  QUESTION - Bonus: Remove once function is referenced
    pragma Warnings (Off, "function ""Compute_X"" is not referenced");
    --$ end question
    --  QUESTION 1 - Part 1
@@ -135,7 +129,7 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  QUESTION 4 - Add a comet
+   --  QUESTION 4: Add a comet
    --    Tip: Make it a body that is drawn as several circles that
    --    follow each other.
    Bodies :=
@@ -185,11 +179,9 @@ begin
          Color        => Yellow,
          Turns_Around => Sun));
 
-   --  initialize the Next step time as the current time (Clock) + the period
    Next := Clock + Period;
 
    while Running loop
-
       --$ begin question
       --  update each body position and angles
       --    the position of an object around (0,0) at distance d with an
@@ -197,7 +189,6 @@ begin
       --  update angle parameter of each body adding speed to the previous
       --  angle
       for B in Rotating_Bodies_T loop
-
          --  QUESTION 1 - Part 3: call Compute_X
          Bodies (B).X := Bodies (Bodies (B).Turns_Around).X
            + Bodies (B).Distance
@@ -223,7 +214,6 @@ begin
       --$ end question
       --$ begin answer
       for B in Rotating_Bodies_T loop
-
          Move (Bodies, B);
       end loop;
 

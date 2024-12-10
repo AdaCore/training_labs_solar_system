@@ -21,7 +21,7 @@
 with Float_Maths; use Float_Maths;
 --$ begin question
 
---  TODO: Remove once lab is done
+--  QUESTION - Bonus: Remove once lab is done
 pragma Warnings (Off,
     "with clause might be moved to body");
 --$ end question
@@ -30,7 +30,7 @@ private with Solar_System.Spec_Conversion; use Solar_System.Spec_Conversion;
 package body Solar_System is
    --$ begin question
 
-   --  TODO: Remove once lab is done
+   --  QUESTION - Bonus: Remove once lab is done
    pragma Warnings (Off, "not referenced");
    pragma Warnings (Off,
        "no entities of ""Solar_System"" are referenced in spec");

@@ -25,14 +25,10 @@ with Solar_System.Graphics; use Solar_System.Graphics;
 
 procedure Subprogram_Contracts_Main is
 
-   --  declare variable Bodies which is an array of Body_T
    Bodies : Bodies_Array_T;
 
-   --  declare a variable Next of type Time to store the Next step time
    Next : Time;
 
-   --  declare a constant Period of 40 milliseconds of type Time_Span defining
-   --  the loop period
    Period : constant Time_Span := Milliseconds (40);
 
 begin
@@ -78,14 +74,9 @@ begin
    --  check that there is no cycle in the orbits
    pragma Assert (Solar_System.Init_With_No_Cycle (Bodies));
 
-   --  initialize the Next step time at the current time (Clock) + the period
    Next := Clock + Period;
 
-   --  create an infinite loop
-
-   --  update the Next time
    while Running loop
-
       Move_All (Bodies);
       Draw_All (Bodies);
       New_Frame;

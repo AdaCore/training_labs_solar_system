@@ -25,29 +25,32 @@ with Float_Maths;   use Float_Maths;
 --$ begin answer
 with Solar_System;          use Solar_System;
 with Solar_System.Graphics; use Solar_System.Graphics;
+with Solar_System.Data; use Solar_System.Data;
 --$ end answer
 
 procedure Packages_Main is
 
    --$ begin question
-   type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet);
+   type Bodies_Enum_T is (Sun, Earth, Moon, Satellite, Comet, Black_Hole,
+      Asteroid_1, Asteroid_2);
 
    type Body_T is record
-      X            : Float := 0.0;
-      Y            : Float := 0.0;
+      X            : Float   := 0.0;
+      Y            : Float   := 0.0;
       Distance     : Float;
       Speed        : Float;
       Angle        : Float;
       Color        : Color_T;
       Radius       : Float;
       Turns_Around : Bodies_Enum_T;
+      Visible      : Boolean := True;
    end record;
 
    type Bodies_Array_T is array (Bodies_Enum_T) of Body_T;
 
-   --$ end question
    Bodies : Bodies_Array_T;
 
+   --$ end question
    Next : Time;
 
    Period : constant Time_Span := Milliseconds (40);
@@ -104,8 +107,9 @@ begin
 
    Create_Window (Width => 240, Height => 320, Name => "Solar System");
 
-   --  initialize Bodies variable with parameters for each body using an
-   --  aggregate
+   --$ begin question
+   --  QUESTION 2
+   --  Initialize Bodies variable in a new package
    Bodies :=
      (Sun =>
         (Distance     => 0.0,
@@ -113,7 +117,6 @@ begin
          Radius       => 20.0,
          X            => 0.0,
          Y            => 0.0,
-         --$ line answer
          Visible      => True,
          Angle        => 0.0,
          Color        => Yellow,
@@ -124,7 +127,6 @@ begin
          Radius       => 5.0,
          X            => 0.0,
          Y            => 0.0,
-         --$ line answer
          Visible      => True,
          Angle        => 0.0,
          Color        => Blue,
@@ -135,7 +137,6 @@ begin
          Radius       => 2.0,
          X            => 0.0,
          Y            => 0.0,
-         --$ line answer
          Visible      => True,
          Angle        => 0.0,
          Color        => White,
@@ -146,7 +147,6 @@ begin
          Radius       => 1.0,
          X            => 0.0,
          Y            => 0.0,
-         --$ line answer
          Visible      => True,
          Angle        => 0.0,
          Color        => Red,
@@ -158,12 +158,8 @@ begin
          Radius       => 1.0,
          X            => 0.0,
          Y            => 0.0,
-         --$ line answer
          Visible      => True,
          Color        => Yellow,
-         --$ line question
-         Turns_Around => Sun));
-      --$ begin answer
          Turns_Around => Sun),
       Black_Hole =>
         (Distance     => 75.0,
@@ -192,27 +188,17 @@ begin
          Y            => 0.0,
          Visible      => True,
          Turns_Around => Black_Hole));
-      --$ end answer
 
-   --  initialize the Next step time at the current time (Clock) + period
+   --$ end question
    Next := Clock + Period;
 
    while Running loop
-
-      --$ begin question
       for B in Bodies_Enum_T loop
 
          Move (Bodies, B);
          Draw_Body (Bodies (B));
 
       end loop;
-      --$ end question
-      --$ line answer
-      Move_All (Bodies);
-      --  QUESTION 2
-      --  Implement Draw_All in a *new* package Graphics of Solar_System
-      --$ line answer
-      Draw_All (Bodies);
 
       New_Frame;
 
