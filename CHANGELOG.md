@@ -1,3 +1,14 @@
+# v1.2.0
+
+* Switch from epycs back to os.subprocess
+* Replace TODO by proper Questions
+* Improve questions related to `Move_All` and `Draw_All`
+* Remove comments that were not informational
+* Add TSV renderer
+* Fix implementation for `angle_with_x`
+* Add CI code quality check
+* Fix alire misconfiguration
+
 # v1.1.0
 
 * Improve questions, and numbers match instructions
